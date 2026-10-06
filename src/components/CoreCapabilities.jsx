@@ -15,10 +15,10 @@ export default function CoreCapabilities({ onOpenConsultation }) {
     <section
       id="services"
       style={{
-        padding: '6rem 0',
-        backgroundColor: '#0B1632',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+        padding: '5.5rem 0',
+        backgroundColor: '#0F1626',
+        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
         position: 'relative',
       }}
     >
@@ -27,18 +27,18 @@ export default function CoreCapabilities({ onOpenConsultation }) {
           
           {/* Left Column: Heading & Introduction (4 cols) */}
           <div style={{ gridColumn: 'span 12' }} className="capabilities-left-col">
-            <div className="gold-badge" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', fontWeight: 600 }}>
+            <div className="gold-badge" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', fontWeight: 700 }}>
               {t.capabilities.badge}
             </div>
             
             <h2
               style={{
-                fontSize: 'clamp(1.75rem, 2.8vw, 2.35rem)',
-                fontWeight: 700,
-                color: '#F8FAFC',
+                fontSize: 'clamp(1.8rem, 2.9vw, 2.45rem)',
+                fontWeight: 800,
+                color: '#FFFFFF',
                 lineHeight: 1.25,
                 marginBottom: '1rem',
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.015em',
               }}
             >
               {t.capabilities.title}
@@ -46,11 +46,11 @@ export default function CoreCapabilities({ onOpenConsultation }) {
 
             <p
               style={{
-                fontSize: '0.94rem',
+                fontSize: '0.96rem',
                 color: '#94A3B8',
                 lineHeight: 1.68,
                 marginBottom: '1.8rem',
-                maxWidth: '360px',
+                maxWidth: '380px',
               }}
             >
               {t.capabilities.description}
@@ -83,42 +83,41 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                     key={cap.number}
                     className="glass-card"
                     style={{
-                      padding: '2rem 1.6rem',
+                      padding: '2.2rem 1.7rem',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
                       position: 'relative',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
-                      backgroundColor: 'rgba(10, 18, 36, 0.7)',
+                      borderTop: '2px solid rgba(56, 189, 248, 0.4)',
                     }}
                   >
                     {/* Top Row: Index number */}
                     <div>
                       <div
                         style={{
-                          fontSize: '0.82rem',
+                          fontSize: '0.8rem',
                           fontFamily: 'var(--font-mono)',
-                          fontWeight: 500,
-                          color: '#64748B',
+                          fontWeight: 700,
+                          color: 'var(--theme-light)',
                           marginBottom: '1.25rem',
                         }}
                       >
                         {cap.number}
                       </div>
 
-                      {/* Icon with Blue Circle Background */}
+                      {/* Icon with Subtle Warm & Azure Background */}
                       <div
                         style={{
-                          width: '48px',
-                          height: '48px',
-                          borderRadius: '50%',
-                          border: '1px solid rgba(0, 163, 255, 0.35)',
-                          backgroundColor: 'rgba(0, 163, 255, 0.06)',
+                          width: '46px',
+                          height: '46px',
+                          borderRadius: '8px',
+                          border: '1px solid rgba(56, 189, 248, 0.25)',
+                          backgroundColor: 'rgba(0, 163, 255, 0.08)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           marginBottom: '1.25rem',
-                          color: 'var(--theme-primary)',
+                          color: 'var(--theme-light)',
                         }}
                       >
                         <IconComponent size={22} strokeWidth={1.8} />
@@ -129,8 +128,9 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                         style={{
                           fontSize: '1.2rem',
                           fontWeight: 700,
-                          color: '#F8FAFC',
+                          color: '#FFFFFF',
                           marginBottom: '0.75rem',
+                          lineHeight: 1.35,
                         }}
                       >
                         {cap.title}
@@ -139,9 +139,9 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                       {/* Description */}
                       <p
                         style={{
-                          fontSize: '0.86rem',
+                          fontSize: '0.88rem',
                           lineHeight: 1.62,
-                          color: '#8B9BB4',
+                          color: '#94A3B8',
                           marginBottom: '1.5rem',
                         }}
                       >
@@ -156,17 +156,17 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                         style={{
                           display: 'inline-flex',
                           alignItems: 'center',
-                          gap: '0.4rem',
-                          fontSize: '0.85rem',
+                          gap: '0.45rem',
+                          fontSize: '0.86rem',
                           fontWeight: 600,
                           color: '#E2E8F0',
-                          letterSpacing: '0.02em',
+                          letterSpacing: '0.01em',
                           transition: 'color 0.2s ease, transform 0.2s ease',
                           padding: '4px 0',
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.color = 'var(--theme-cyan)';
-                          e.currentTarget.style.transform = 'translateX(4px)';
+                          e.currentTarget.style.color = 'var(--theme-light)';
+                          e.currentTarget.style.transform = 'translateX(3px)';
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.color = '#E2E8F0';
@@ -174,7 +174,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                         }}
                       >
                         {t.capabilities.learnMore}
-                        <ArrowRight size={14} color="var(--theme-primary)" />
+                        <ArrowRight size={14} color="var(--theme-light)" />
                       </button>
                     </div>
                   </div>

@@ -61,10 +61,10 @@ export default function Footer({ onOpenConsultation }) {
     <footer
       id="contact"
       style={{
-        backgroundColor: '#070E20',
+        backgroundColor: '#070B14',
         color: '#94A3B8',
         padding: '5rem 0 2rem 0',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
         position: 'relative',
       }}
     >
@@ -76,10 +76,10 @@ export default function Footer({ onOpenConsultation }) {
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '1.25rem',
             marginBottom: '4rem',
-            padding: '1.8rem',
-            backgroundColor: 'rgba(16, 30, 62, 0.65)',
+            padding: '1.6rem 1.8rem',
+            backgroundColor: 'rgba(16, 24, 40, 0.75)',
             borderRadius: '8px',
-            border: '1px solid rgba(0, 163, 255, 0.25)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
           }}
         >
           {/* Phone */}
@@ -89,35 +89,35 @@ export default function Footer({ onOpenConsultation }) {
               display: 'flex',
               alignItems: 'center',
               gap: '1rem',
-              color: '#FFF',
+              color: '#FFFFFF',
               padding: '0.5rem',
               borderRadius: '6px',
               transition: 'all 0.2s ease',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(0, 163, 255, 0.1)')}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.04)')}
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
           >
             <div
               style={{
                 width: '42px',
                 height: '42px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(0, 163, 255, 0.15)',
-                border: '1px solid var(--theme-primary)',
+                borderRadius: '8px',
+                backgroundColor: 'rgba(255, 255, 255, 0.04)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'var(--theme-cyan)',
+                color: 'var(--theme-light)',
                 flexShrink: 0,
               }}
             >
               <Phone size={18} />
             </div>
             <div>
-              <div style={{ fontSize: '0.75rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.74rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
                 {t.contact.phoneLabel}
               </div>
-              <div style={{ fontSize: '0.98rem', fontWeight: 700, color: '#FFF' }}>
+              <div style={{ fontSize: '0.96rem', fontWeight: 700, color: '#FFFFFF' }}>
                 {t.contact.phone}
               </div>
             </div>
@@ -130,35 +130,35 @@ export default function Footer({ onOpenConsultation }) {
               display: 'flex',
               alignItems: 'center',
               gap: '1rem',
-              color: '#FFF',
+              color: '#FFFFFF',
               padding: '0.5rem',
               borderRadius: '6px',
               transition: 'all 0.2s ease',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(0, 163, 255, 0.1)')}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.04)')}
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
           >
             <div
               style={{
                 width: '42px',
                 height: '42px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(0, 163, 255, 0.15)',
-                border: '1px solid var(--theme-primary)',
+                borderRadius: '8px',
+                backgroundColor: 'rgba(255, 255, 255, 0.04)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'var(--theme-cyan)',
+                color: 'var(--theme-light)',
                 flexShrink: 0,
               }}
             >
               <Mail size={18} />
             </div>
             <div>
-              <div style={{ fontSize: '0.75rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.74rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
                 {t.contact.emailLabel}
               </div>
-              <div style={{ fontSize: '0.98rem', fontWeight: 700, color: '#FFF' }}>
+              <div style={{ fontSize: '0.96rem', fontWeight: 700, color: '#FFFFFF' }}>
                 {t.contact.email}
               </div>
             </div>

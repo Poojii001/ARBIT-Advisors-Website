@@ -7,8 +7,7 @@ export default function ImpactStats() {
   const { t } = useLanguage();
 
   useEffect(() => {
-    let start = 0;
-    const duration = 1600;
+    const duration = 1400;
     const startTime = performance.now();
 
     const updateCounter = (currentTime) => {
@@ -17,15 +16,15 @@ export default function ImpactStats() {
       const ease = 1 - Math.pow(1 - progress, 3);
 
       setCounts({
-        campaigns: Math.floor(ease * 150),
-        reach: Math.floor(ease * 500),
-        trust: Math.floor(ease * 95),
+        campaigns: Math.floor(ease * 35),
+        reach: Math.floor(ease * 50),
+        trust: Math.floor(ease * 92),
       });
 
       if (progress < 1) {
         requestAnimationFrame(updateCounter);
       } else {
-        setCounts({ campaigns: 150, reach: 500, trust: 95 });
+        setCounts({ campaigns: 35, reach: 50, trust: 92 });
       }
     };
 
@@ -59,44 +58,33 @@ export default function ImpactStats() {
       id="impact"
       style={{
         position: 'relative',
-        padding: '5.5rem 0',
-        backgroundColor: '#091228',
+        padding: '3.5rem 0',
+        backgroundColor: '#090E1A',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
       }}
     >
-      {/* Background Graphic with rally crowd and flags texture - High Visibility */}
+      {/* New Subtle Abstract Texture Background */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'url(/assets/flags_crowd.png)',
+          backgroundImage: 'url(/assets/impact_bg.jpg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center 35%',
-          opacity: 0.85,
-          filter: 'contrast(1.15) saturate(1.1) brightness(0.72)',
+          backgroundPosition: 'center 40%',
+          opacity: 0.55,
+          filter: 'contrast(1.15) brightness(0.6)',
           zIndex: 0,
         }}
       />
 
-      {/* Luminous Soft overlay gradient for high contrast readability */}
+      {/* Dark overlay gradient for maximum clarity */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, rgba(9, 18, 40, 0.84) 0%, rgba(9, 18, 40, 0.6) 40%, rgba(9, 18, 40, 0.55) 70%, rgba(9, 18, 40, 0.78) 100%)',
+          background: 'linear-gradient(90deg, rgba(9, 14, 26, 0.95) 0%, rgba(9, 14, 26, 0.82) 40%, rgba(9, 14, 26, 0.75) 70%, rgba(9, 14, 26, 0.92) 100%)',
           zIndex: 1,
-        }}
-      />
-      
-      {/* Top and Bottom soft blend */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(180deg, rgba(9, 18, 40, 0.6) 0%, transparent 20%, transparent 80%, rgba(9, 18, 40, 0.8) 100%)',
-          zIndex: 1,
-          pointerEvents: 'none',
         }}
       />
 
@@ -105,41 +93,53 @@ export default function ImpactStats() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '2.5rem',
+            gap: '2rem',
             alignItems: 'center',
-            marginBottom: '2.5rem',
           }}
         >
           {/* Left Column: Heading (4 cols) */}
-          <div style={{ gridColumn: 'span 12' }} className="impact-left-col">
-            <div className="gold-badge" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', fontWeight: 600 }}>
+          <div style={{ gridColumn: 'span 12' }} className="compact-impact-left">
+            <div className="gold-badge" style={{ fontSize: '0.7rem', letterSpacing: '0.16em', fontWeight: 700, marginBottom: '0.5rem' }}>
               {t.impact.badge}
             </div>
             <h2
               style={{
-                fontSize: 'clamp(1.75rem, 2.8vw, 2.35rem)',
-                fontWeight: 700,
-                color: '#F8FAFC',
-                lineHeight: 1.25,
-                letterSpacing: '-0.01em',
+                fontSize: 'clamp(1.6rem, 2.4vw, 2.1rem)',
+                fontWeight: 800,
+                color: '#FFFFFF',
+                lineHeight: 1.22,
+                letterSpacing: '-0.015em',
+                marginBottom: '0.75rem',
               }}
             >
               {t.impact.title1}<br />
               <span>{t.impact.title2}</span>
             </h2>
+
+            {/* Audit Footnote */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                color: '#94A3B8',
+                fontSize: '0.74rem',
+                marginTop: '0.5rem',
+              }}
+            >
+              <Info size={13} color="var(--theme-light)" style={{ flexShrink: 0 }} />
+              <span>{t.impact.auditFootnote}</span>
+            </div>
           </div>
 
-          {/* Right Column: 3 Stat Cards (8 cols) */}
-          <div style={{ gridColumn: 'span 12' }} className="impact-right-col">
+          {/* Right Column: 3 Compact Metric Cards (8 cols) */}
+          <div style={{ gridColumn: 'span 12' }} className="compact-impact-right">
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: '2rem',
-                borderLeft: '1px solid rgba(0, 163, 255, 0.25)',
-                paddingLeft: '2rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                gap: '1.25rem',
               }}
-              className="impact-stats-grid"
             >
               {stats.map((item, index) => {
                 const IconComponent = item.icon;
@@ -147,60 +147,70 @@ export default function ImpactStats() {
                   <div
                     key={index}
                     style={{
+                      padding: '1.25rem 1.1rem',
+                      backgroundColor: 'rgba(15, 23, 42, 0.75)',
+                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      borderRadius: '8px',
                       display: 'flex',
                       flexDirection: 'column',
-                      alignItems: 'flex-start',
+                      justifyContent: 'space-between',
+                      backdropFilter: 'blur(8px)',
                     }}
                   >
-                    {/* Top Icon */}
-                    <div
-                      style={{
-                        marginBottom: '0.75rem',
-                        color: 'var(--theme-primary)',
-                      }}
-                    >
-                      <IconComponent size={24} strokeWidth={1.8} />
-                    </div>
+                    <div>
+                      <div
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          width: '32px',
+                          height: '32px',
+                          borderRadius: '6px',
+                          backgroundColor: 'rgba(255, 255, 255, 0.04)',
+                          border: '1px solid rgba(255, 255, 255, 0.1)',
+                          color: 'var(--theme-light)',
+                          marginBottom: '0.6rem',
+                        }}
+                      >
+                        <IconComponent size={16} strokeWidth={1.8} />
+                      </div>
 
-                    {/* Stat Number */}
-                    <div
-                      style={{
-                        fontSize: 'clamp(2.1rem, 2.8vw, 2.6rem)',
-                        fontWeight: 700,
-                        color: '#F8FAFC',
-                        fontFamily: 'var(--font-mono)',
-                        lineHeight: 1.1,
-                        marginBottom: '0.4rem',
-                        letterSpacing: '-0.02em',
-                      }}
-                    >
-                      {item.value}
-                    </div>
+                      <div
+                        style={{
+                          fontSize: 'clamp(1.7rem, 2.2vw, 2.2rem)',
+                          fontWeight: 800,
+                          color: '#FFFFFF',
+                          fontFamily: 'var(--font-mono)',
+                          lineHeight: 1.1,
+                          marginBottom: '0.25rem',
+                          letterSpacing: '-0.02em',
+                        }}
+                      >
+                        {item.value}
+                      </div>
 
-                    {/* Label */}
-                    <div
-                      style={{
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
-                        letterSpacing: '0.12em',
-                        color: '#CBD5E1',
-                        textTransform: 'uppercase',
-                        marginBottom: '0.2rem',
-                      }}
-                    >
-                      {item.title}
-                    </div>
+                      <div
+                        style={{
+                          fontSize: '0.72rem',
+                          fontWeight: 700,
+                          letterSpacing: '0.08em',
+                          color: 'var(--theme-light)',
+                          textTransform: 'uppercase',
+                          marginBottom: '0.25rem',
+                        }}
+                      >
+                        {item.title}
+                      </div>
 
-                    {/* Subtitle / Definition */}
-                    <div
-                      style={{
-                        fontSize: '0.82rem',
-                        color: '#CBD5E1',
-                        fontWeight: 400,
-                        lineHeight: 1.45,
-                      }}
-                    >
-                      {item.subtitle}
+                      <p
+                        style={{
+                          fontSize: '0.78rem',
+                          color: '#94A3B8',
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {item.subtitle}
+                      </p>
                     </div>
                   </div>
                 );
@@ -208,39 +218,15 @@ export default function ImpactStats() {
             </div>
           </div>
         </div>
-
-        {/* Audit Footnote for Credibility */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.6rem',
-            paddingTop: '1.2rem',
-            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-            color: '#94A3B8',
-            fontSize: '0.76rem',
-          }}
-        >
-          <Info size={14} color="var(--theme-cyan)" style={{ flexShrink: 0 }} />
-          <span>{t.impact.auditFootnote}</span>
-        </div>
       </div>
 
       <style>{`
-        @media (min-width: 1024px) {
-          .impact-left-col {
+        @media (min-width: 992px) {
+          .compact-impact-left {
             grid-column: span 4 !important;
           }
-          .impact-right-col {
+          .compact-impact-right {
             grid-column: span 8 !important;
-          }
-        }
-        @media (max-width: 768px) {
-          .impact-stats-grid {
-            border-left: none !important;
-            padding-left: 0 !important;
-            border-top: 1px solid rgba(0, 163, 255, 0.25);
-            padding-top: 1.5rem;
           }
         }
       `}</style>

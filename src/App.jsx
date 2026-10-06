@@ -15,25 +15,34 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'services', 'case-studies', 'insights', 'contact'];
-      const scrollPosition = window.scrollY + 200;
+    const sectionIds = ['home', 'services', 'impact', 'about', 'case-studies', 'insights', 'contact'];
+    const observers = [];
 
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          if (id === 'impact') {
+            setActiveSection('services');
+          } else {
+            setActiveSection(id);
           }
         }
-      }
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(handleIntersect, {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0,
+    });
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (

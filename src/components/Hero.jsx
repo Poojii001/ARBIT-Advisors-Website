@@ -17,55 +17,42 @@ export default function Hero({ onOpenConsultation }) {
         overflow: 'hidden',
       }}
     >
-      {/* Background Graphic Blend with Luminous Transparency */}
+      {/* Clear, High-Visibility Background Graphic using home.png */}
       <div
         style={{
           position: 'absolute',
           top: 0,
           right: 0,
-          width: '70%',
+          width: '100%',
           height: '100%',
-          backgroundImage: 'url(/assets/hero_parliament.jpg)',
+          backgroundImage: 'url(/assets/home.png)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center 35%',
-          opacity: 0.92,
+          backgroundPosition: 'center 40%',
+          opacity: 0.95,
           zIndex: 0,
-          maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 12%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,1) 100%)',
-          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 12%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,1) 100%)',
         }}
       />
 
-      {/* Luminous Navy overlay gradients */}
+      {/* Clean Gradient Overlay: Solid Dark on Left for Text, Clear & Visible on Right */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, #091124 0%, #091124 35%, rgba(9, 17, 36, 0.72) 58%, rgba(9, 17, 36, 0.15) 100%)',
+          background: 'linear-gradient(90deg, #0A0E1A 0%, #0A0E1A 30%, rgba(10, 14, 26, 0.72) 52%, rgba(10, 14, 26, 0.25) 85%, rgba(10, 14, 26, 0.15) 100%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
       />
       
-      {/* Subtle top & bottom integration glow */}
+      {/* Subtle Warm Golden & Azure Ambient Illumination for Positive Atmosphere */}
       <div
         style={{
           position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(180deg, rgba(9, 17, 36, 0.45) 0%, transparent 25%, transparent 75%, #091124 100%)',
-          zIndex: 1,
-          pointerEvents: 'none',
-        }}
-      />
-
-      {/* Soft Ambient Cyan Lighting in Hero */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '20%',
-          left: '10%',
-          width: '450px',
-          height: '450px',
-          background: 'radial-gradient(circle, rgba(0, 163, 255, 0.12) 0%, transparent 70%)',
+          top: '15%',
+          right: '15%',
+          width: '500px',
+          height: '500px',
+          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(0, 163, 255, 0.06) 50%, transparent 70%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
@@ -81,42 +68,43 @@ export default function Hero({ onOpenConsultation }) {
             <div
               className="gold-badge animate-fade-in"
               style={{
-                letterSpacing: '0.2em',
+                letterSpacing: '0.16em',
                 marginBottom: '1rem',
                 fontSize: '0.74rem',
-                fontWeight: 600,
+                fontWeight: 700,
               }}
             >
               {t.hero.badge}
             </div>
 
-            {/* Main Headline */}
+            {/* Main Headline with Radiant Positive Gradient */}
             <h1
               className="animate-fade-in"
               style={{
-                fontSize: 'clamp(1.9rem, 3.3vw, 2.75rem)',
-                lineHeight: 1.25,
-                fontWeight: 700,
-                letterSpacing: '-0.015em',
-                color: '#F8FAFC',
+                fontSize: 'clamp(2.1rem, 3.5vw, 2.95rem)',
+                lineHeight: 1.22,
+                fontWeight: 800,
+                letterSpacing: '-0.02em',
+                color: '#FFFFFF',
                 marginBottom: '1.25rem',
-                maxWidth: '620px',
+                maxWidth: '650px',
               }}
             >
               {t.hero.title1}<br />
-              <span>{t.hero.title2}</span>
+              <span className="gradient-highlight">{t.hero.title2}</span>
             </h1>
 
-            {/* Subtitle / Paragraph */}
+            {/* Subtitle / Paragraph with High Contrast */}
             <p
               className="animate-fade-in"
               style={{
-                fontSize: '0.94rem',
-                lineHeight: 1.68,
-                color: '#94A3B8',
-                maxWidth: '520px',
+                fontSize: '1rem',
+                lineHeight: 1.72,
+                color: '#CBD5E1',
+                maxWidth: '560px',
                 marginBottom: '2rem',
                 fontWeight: 400,
+                textShadow: '0 1px 4px rgba(0, 0, 0, 0.6)',
               }}
             >
               {t.hero.subtitle}
@@ -128,9 +116,9 @@ export default function Hero({ onOpenConsultation }) {
                 onClick={onOpenConsultation}
                 className="btn-gold"
                 style={{
-                  padding: '0.85rem 1.85rem',
-                  fontSize: '0.9rem',
-                  fontWeight: 600,
+                  padding: '0.88rem 1.95rem',
+                  fontSize: '0.94rem',
+                  fontWeight: 700,
                 }}
               >
                 {t.hero.cta}
@@ -140,16 +128,16 @@ export default function Hero({ onOpenConsultation }) {
 
           </div>
 
-          {/* Right Floating Strategic Pillar Badges */}
+          {/* Right Floating Strategic Pillar Typography - Clean normal text, no box, no dots */}
           <div className="hero-pillars-watermark">
             <div
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '0.65rem',
+                gap: '0.85rem',
                 textAlign: 'right',
                 letterSpacing: '0.22em',
-                fontSize: '0.72rem',
+                fontSize: '0.82rem',
                 fontWeight: 700,
                 textTransform: 'uppercase',
               }}
@@ -158,9 +146,9 @@ export default function Hero({ onOpenConsultation }) {
                 <span
                   key={index}
                   style={{
-                    color: 'var(--theme-cyan)',
-                    textShadow: '0 0 12px rgba(0, 210, 255, 0.35)',
-                    opacity: 0.95,
+                    color: '#CBD5E1',
+                    letterSpacing: '0.24em',
+                    textShadow: '0 2px 10px rgba(0, 0, 0, 0.8)',
                   }}
                 >
                   {pillar}
@@ -181,7 +169,7 @@ export default function Hero({ onOpenConsultation }) {
             grid-column: span 5 !important;
             display: flex !important;
             justify-content: flex-end !important;
-            padding-right: 1.5rem;
+            padding-right: 2rem;
           }
         }
         @media (max-width: 991px) {

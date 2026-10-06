@@ -10,21 +10,22 @@ export default function Insights() {
     <section
       id="insights"
       style={{
-        padding: '6rem 0',
-        backgroundColor: '#091124',
+        padding: '5.5rem 0',
+        backgroundColor: '#0F1626',
         position: 'relative',
+        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
       }}
     >
       <div className="container">
         {/* Section Header */}
         <div style={{ maxWidth: '640px', marginBottom: '3.5rem' }}>
-          <div className="gold-badge" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', fontWeight: 600 }}>
+          <div className="gold-badge" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', fontWeight: 700 }}>
             {t.insights.badge}
           </div>
-          <h2 style={{ fontSize: 'clamp(1.75rem, 2.8vw, 2.35rem)', fontWeight: 700, color: '#F8FAFC' }}>
+          <h2 style={{ fontSize: 'clamp(1.8rem, 2.9vw, 2.45rem)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.015em' }}>
             {t.insights.title}
           </h2>
-          <p style={{ fontSize: '0.94rem', color: '#94A3B8', marginTop: '0.5rem' }}>
+          <p style={{ fontSize: '0.96rem', color: '#94A3B8', marginTop: '0.5rem' }}>
             {t.insights.subtitle}
           </p>
         </div>
@@ -36,7 +37,7 @@ export default function Insights() {
               key={article.id}
               className="glass-card"
               style={{
-                padding: '2.2rem 1.8rem',
+                padding: '2.4rem 1.9rem',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -44,7 +45,7 @@ export default function Insights() {
             >
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', fontSize: '0.78rem', color: '#64748B' }}>
-                  <span style={{ color: 'var(--theme-cyan)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                  <span style={{ color: 'var(--theme-light)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                     {article.category}
                   </span>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
@@ -54,13 +55,55 @@ export default function Insights() {
                   </div>
                 </div>
 
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#FFF', lineHeight: 1.38, marginBottom: '1rem' }}>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.38, marginBottom: '0.85rem' }}>
                   {article.title}
                 </h3>
 
-                <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.65, marginBottom: '2rem' }}>
+                <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.65, marginBottom: '1.5rem' }}>
                   {article.excerpt}
                 </p>
+
+                {/* Author Byline in Card */}
+                {article.author && (
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.75rem',
+                      paddingTop: '1rem',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.07)',
+                      marginBottom: '1.25rem',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '50%',
+                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                        border: '1px solid rgba(255, 255, 255, 0.12)',
+                        color: 'var(--theme-light)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '0.78rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.05em',
+                        flexShrink: 0,
+                      }}
+                    >
+                      {article.avatar || 'AA'}
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '0.86rem', fontWeight: 600, color: '#F1F5F9' }}>
+                        {article.author}
+                      </div>
+                      <div style={{ fontSize: '0.74rem', color: '#94A3B8', lineHeight: 1.3 }}>
+                        {article.role}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div>
@@ -72,12 +115,21 @@ export default function Insights() {
                     gap: '0.5rem',
                     fontSize: '0.86rem',
                     fontWeight: 600,
-                    color: 'var(--theme-cyan)',
+                    color: '#E2E8F0',
                     padding: '4px 0',
+                    transition: 'color 0.2s ease, transform 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = 'var(--theme-light)';
+                    e.currentTarget.style.transform = 'translateX(3px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#E2E8F0';
+                    e.currentTarget.style.transform = 'translateX(0)';
                   }}
                 >
                   {t.insights.readBrief}
-                  <ArrowRight size={14} />
+                  <ArrowRight size={14} color="var(--theme-light)" />
                 </button>
               </div>
             </article>
@@ -106,6 +158,49 @@ export default function Insights() {
             <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#FFF', lineHeight: 1.3, marginBottom: '0.8rem' }}>
               {selectedArticle.title}
             </h3>
+
+            {/* Author Profile Header in Modal */}
+            {selectedArticle.author && (
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  padding: '0.85rem 1rem',
+                  backgroundColor: 'rgba(0, 163, 255, 0.06)',
+                  border: '1px solid rgba(0, 163, 255, 0.2)',
+                  borderRadius: '6px',
+                  marginBottom: '1.5rem',
+                }}
+              >
+                <div
+                  style={{
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(0, 163, 255, 0.2)',
+                    border: '1.5px solid var(--theme-cyan)',
+                    color: 'var(--theme-cyan)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '0.88rem',
+                    fontWeight: 700,
+                    flexShrink: 0,
+                  }}
+                >
+                  {selectedArticle.avatar || 'AA'}
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.92rem', fontWeight: 700, color: '#FFF' }}>
+                    {selectedArticle.author}
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#94A3B8' }}>
+                    {selectedArticle.role} &bull; <span style={{ color: 'var(--theme-cyan)' }}>Arbit Senior Advisory Council</span>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <div style={{ display: 'flex', gap: '1rem', fontSize: '0.82rem', color: '#64748B', marginBottom: '1.8rem', paddingBottom: '0.8rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
               <span>{selectedArticle.date}</span>

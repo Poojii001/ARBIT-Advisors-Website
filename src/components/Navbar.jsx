@@ -17,8 +17,8 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
 
   const navLinks = [
     { name: t.nav.home, href: '#home', id: 'home' },
-    { name: t.nav.about, href: '#about', id: 'about' },
     { name: t.nav.services, href: '#services', id: 'services' },
+    { name: t.nav.about, href: '#about', id: 'about' },
     { name: t.nav.caseStudies, href: '#case-studies', id: 'case-studies' },
     { name: t.nav.insights, href: '#insights', id: 'insights' },
   ];
