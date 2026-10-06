@@ -101,6 +101,51 @@ export default function About({ onOpenConsultation }) {
           })}
         </div>
 
+        {/* Strategic Overview Showcase with Home Image */}
+        <div
+          style={{
+            position: 'relative',
+            borderRadius: '10px',
+            overflow: 'hidden',
+            border: '1px solid rgba(229, 169, 60, 0.25)',
+            marginBottom: '4rem',
+            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)',
+          }}
+        >
+          <img
+            src="/assets/home.png"
+            alt="Arbit Strategic Platform"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: '480px',
+              objectFit: 'cover',
+              objectPosition: 'top center',
+              display: 'block',
+            }}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(180deg, rgba(4, 8, 16, 0.2) 0%, rgba(4, 8, 16, 0.85) 90%, #040810 100%)',
+              display: 'flex',
+              alignItems: 'flex-end',
+              padding: '2.5rem',
+            }}
+          >
+            <div>
+              <div className="gold-badge" style={{ marginBottom: '0.4rem' }}>INTEGRATED CAMPAIGN COMMAND</div>
+              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#FFF', marginBottom: '0.5rem' }}>
+                Precision-Engineered Electoral War Rooms
+              </h3>
+              <p style={{ color: '#CBD5E1', fontSize: '0.95rem', maxWidth: '650px', lineHeight: 1.6 }}>
+                Combining ground voter pulse, high-frequency media monitoring, and synchronized digital communication for decisive electoral breakthroughs.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Mission Statement Box */}
         <div
           style={{

@@ -65,15 +65,17 @@ export default function CoreCapabilities({ onOpenConsultation }) {
           
           {/* Left Column: Heading & Introduction (4 cols) */}
           <div style={{ gridColumn: 'span 12' }} className="capabilities-left-col">
-            <div className="gold-badge">OUR CORE CAPABILITIES</div>
+            <div className="gold-badge" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', fontWeight: 600 }}>
+              OUR CORE CAPABILITIES
+            </div>
             
             <h2
               style={{
-                fontSize: 'clamp(2rem, 3.2vw, 2.75rem)',
-                fontWeight: 800,
-                color: '#FFFFFF',
-                lineHeight: 1.2,
-                marginBottom: '1.25rem',
+                fontSize: 'clamp(1.75rem, 2.8vw, 2.35rem)',
+                fontWeight: 700,
+                color: '#F8FAFC',
+                lineHeight: 1.22,
+                marginBottom: '1rem',
                 letterSpacing: '-0.01em',
               }}
             >
@@ -82,11 +84,11 @@ export default function CoreCapabilities({ onOpenConsultation }) {
 
             <p
               style={{
-                fontSize: '1rem',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.7,
-                marginBottom: '2rem',
-                maxWidth: '380px',
+                fontSize: '0.94rem',
+                color: '#94A3B8',
+                lineHeight: 1.68,
+                marginBottom: '1.8rem',
+                maxWidth: '360px',
               }}
             >
               We craft powerful narratives, build media relationships and provide strategic guidance to help political leaders, parties and organizations achieve their goals.
@@ -95,10 +97,10 @@ export default function CoreCapabilities({ onOpenConsultation }) {
             <button
               onClick={() => setSelectedService(capabilities[0])}
               className="btn-gold-outline"
-              style={{ padding: '0.85rem 1.65rem' }}
+              style={{ padding: '0.78rem 1.5rem', fontSize: '0.86rem' }}
             >
               Explore Our Services
-              <ArrowRight size={16} />
+              <ArrowRight size={15} />
             </button>
           </div>
 
@@ -119,7 +121,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                     key={cap.number}
                     className="glass-card"
                     style={{
-                      padding: '2.2rem 1.75rem',
+                      padding: '2rem 1.6rem',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
@@ -132,11 +134,11 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                     <div>
                       <div
                         style={{
-                          fontSize: '0.9rem',
+                          fontSize: '0.82rem',
                           fontFamily: 'var(--font-mono)',
-                          fontWeight: 600,
+                          fontWeight: 500,
                           color: '#64748B',
-                          marginBottom: '1.5rem',
+                          marginBottom: '1.25rem',
                         }}
                       >
                         {cap.number}
@@ -145,28 +147,28 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                       {/* Icon with Gold Circle Background */}
                       <div
                         style={{
-                          width: '52px',
-                          height: '52px',
+                          width: '48px',
+                          height: '48px',
                           borderRadius: '50%',
-                          border: '1px solid rgba(229, 169, 60, 0.35)',
-                          backgroundColor: 'rgba(229, 169, 60, 0.06)',
+                          border: '1px solid rgba(229, 169, 60, 0.3)',
+                          backgroundColor: 'rgba(229, 169, 60, 0.05)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          marginBottom: '1.5rem',
+                          marginBottom: '1.25rem',
                           color: 'var(--gold-primary)',
                         }}
                       >
-                        <IconComponent size={24} strokeWidth={1.8} />
+                        <IconComponent size={22} strokeWidth={1.8} />
                       </div>
 
                       {/* Title */}
                       <h3
                         style={{
-                          fontSize: '1.35rem',
+                          fontSize: '1.2rem',
                           fontWeight: 700,
-                          color: '#FFFFFF',
-                          marginBottom: '1rem',
+                          color: '#F8FAFC',
+                          marginBottom: '0.75rem',
                         }}
                       >
                         {cap.title}
@@ -175,10 +177,10 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                       {/* Description */}
                       <p
                         style={{
-                          fontSize: '0.88rem',
-                          lineHeight: 1.65,
-                          color: '#94A3B8',
-                          marginBottom: '1.8rem',
+                          fontSize: '0.86rem',
+                          lineHeight: 1.62,
+                          color: '#8B9BB4',
+                          marginBottom: '1.5rem',
                         }}
                       >
                         {cap.description}

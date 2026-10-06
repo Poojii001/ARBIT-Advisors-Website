@@ -27,28 +27,28 @@ export default function Hero({ onOpenConsultation }) {
           backgroundPosition: 'center 35%',
           opacity: 0.95,
           zIndex: 0,
-          maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 85%, transparent 100%)',
+          maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 15%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,1) 100%)',
           WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 15%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,1) 100%)',
         }}
       />
 
-      {/* Dark overlay gradients for contrast */}
+      {/* Dark left gradient for high-contrast crisp text legibility */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, #040810 0%, #040810 38%, rgba(4, 8, 16, 0.75) 60%, rgba(4, 8, 16, 0.25) 100%)',
+          background: 'linear-gradient(90deg, #040810 0%, #040810 42%, rgba(4, 8, 16, 0.8) 60%, rgba(4, 8, 16, 0.15) 100%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
       />
       
-      {/* Subtle top & bottom vignette */}
+      {/* Top sky darkening & bottom floor integration vignette */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(180deg, rgba(4, 8, 16, 0.6) 0%, transparent 20%, transparent 80%, #040810 100%)',
+          background: 'linear-gradient(180deg, rgba(4, 8, 16, 0.75) 0%, rgba(4, 8, 16, 0.05) 30%, rgba(4, 8, 16, 0.2) 70%, #040810 100%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
@@ -64,10 +64,10 @@ export default function Hero({ onOpenConsultation }) {
             <div
               className="gold-badge animate-fade-in"
               style={{
-                letterSpacing: '0.22em',
-                marginBottom: '1.25rem',
-                fontSize: '0.8rem',
-                fontWeight: 700,
+                letterSpacing: '0.2em',
+                marginBottom: '1rem',
+                fontSize: '0.74rem',
+                fontWeight: 600,
               }}
             >
               POLITICAL PR & STRATEGIC ADVISORY
@@ -77,28 +77,28 @@ export default function Hero({ onOpenConsultation }) {
             <h1
               className="animate-fade-in"
               style={{
-                fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
-                lineHeight: 1.15,
-                fontWeight: 800,
-                letterSpacing: '-0.02em',
-                color: '#FFFFFF',
-                marginBottom: '1.5rem',
-                maxWidth: '680px',
+                fontSize: 'clamp(1.9rem, 3.3vw, 2.75rem)',
+                lineHeight: 1.2,
+                fontWeight: 700,
+                letterSpacing: '-0.015em',
+                color: '#F8FAFC',
+                marginBottom: '1.25rem',
+                maxWidth: '580px',
               }}
             >
               Shaping Political Narratives,<br />
-              <span style={{ color: '#FFFFFF' }}>Driving Electoral Success.</span>
+              <span>Driving Electoral Success.</span>
             </h1>
 
             {/* Subtitle / Paragraph */}
             <p
               className="animate-fade-in"
               style={{
-                fontSize: 'clamp(1rem, 1.2vw, 1.15rem)',
-                lineHeight: 1.65,
-                color: '#CBD5E1',
-                maxWidth: '560px',
-                marginBottom: '2.5rem',
+                fontSize: '0.94rem',
+                lineHeight: 1.68,
+                color: '#94A3B8',
+                maxWidth: '500px',
+                marginBottom: '2rem',
                 fontWeight: 400,
               }}
             >
@@ -106,56 +106,19 @@ export default function Hero({ onOpenConsultation }) {
             </p>
 
             {/* Hero CTA Button */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+            <div>
               <button
                 onClick={onOpenConsultation}
                 className="btn-gold"
                 style={{
-                  padding: '1rem 2.2rem',
-                  fontSize: '0.98rem',
-                  fontWeight: 700,
+                  padding: '0.85rem 1.85rem',
+                  fontSize: '0.9rem',
+                  fontWeight: 600,
                 }}
               >
                 Book a Consultation
-                <ArrowRight size={18} />
+                <ArrowRight size={16} />
               </button>
-
-              <a
-                href="#services"
-                className="btn-gold-outline"
-                style={{
-                  padding: '0.95rem 1.8rem',
-                  fontSize: '0.95rem',
-                }}
-              >
-                Explore Capabilities
-              </a>
-            </div>
-
-            {/* Micro Trust Indicators */}
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '1.8rem',
-                marginTop: '3.5rem',
-                paddingTop: '1.5rem',
-                borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-                maxWidth: '540px',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Shield size={16} color="#E5A93C" />
-                <span style={{ fontSize: '0.8rem', color: '#94A3B8', fontWeight: 500 }}>High-Stakes Confidentiality</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <TrendingUp size={16} color="#E5A93C" />
-                <span style={{ fontSize: '0.8rem', color: '#94A3B8', fontWeight: 500 }}>Real-Time Intelligence</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Award size={16} color="#E5A93C" />
-                <span style={{ fontSize: '0.8rem', color: '#94A3B8', fontWeight: 500 }}>Pan-India Reach</span>
-              </div>
             </div>
 
           </div>
@@ -166,17 +129,16 @@ export default function Hero({ onOpenConsultation }) {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '0.85rem',
+                gap: '0.65rem',
                 textAlign: 'right',
-                letterSpacing: '0.24em',
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                color: 'rgba(255, 255, 255, 0.65)',
+                letterSpacing: '0.22em',
+                fontSize: '0.68rem',
+                fontWeight: 600,
+                color: 'rgba(255, 255, 255, 0.4)',
                 textTransform: 'uppercase',
-                textShadow: '0 2px 10px rgba(0, 0, 0, 0.8)',
               }}
             >
-              <span style={{ color: 'var(--gold-light)' }}>STRATEGY</span>
+              <span style={{ color: 'rgba(243, 192, 104, 0.75)' }}>STRATEGY</span>
               <span>COMMUNICATION</span>
               <span>INFLUENCE</span>
               <span>IMPACT</span>

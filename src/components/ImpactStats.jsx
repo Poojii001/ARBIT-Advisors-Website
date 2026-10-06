@@ -65,17 +65,16 @@ export default function ImpactStats() {
         borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
       }}
     >
-      {/* Background Graphic with rally crowd texture */}
+      {/* Background Graphic with rally crowd and flags texture */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'url(/assets/impact_bg.jpg)',
+          backgroundImage: 'url(/assets/flags_crowd.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center 40%',
-          opacity: 0.18,
+          opacity: 0.22,
           zIndex: 0,
-          filter: 'grayscale(30%)',
         }}
       />
 
@@ -100,18 +99,20 @@ export default function ImpactStats() {
         >
           {/* Left Column: Heading (4 cols) */}
           <div style={{ gridColumn: 'span 12' }} className="impact-left-col">
-            <div className="gold-badge">OUR IMPACT</div>
+            <div className="gold-badge" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', fontWeight: 600 }}>
+              OUR IMPACT
+            </div>
             <h2
               style={{
-                fontSize: 'clamp(2rem, 3.2vw, 2.6rem)',
-                fontWeight: 800,
-                color: '#FFFFFF',
-                lineHeight: 1.2,
+                fontSize: 'clamp(1.75rem, 2.8vw, 2.35rem)',
+                fontWeight: 700,
+                color: '#F8FAFC',
+                lineHeight: 1.22,
                 letterSpacing: '-0.01em',
               }}
             >
               Real Strategies.<br />
-              <span style={{ color: '#FFFFFF' }}>Measurable Results.</span>
+              <span>Measurable Results.</span>
             </h2>
           </div>
 
@@ -141,23 +142,23 @@ export default function ImpactStats() {
                     {/* Top Icon */}
                     <div
                       style={{
-                        marginBottom: '0.85rem',
+                        marginBottom: '0.75rem',
                         color: 'var(--gold-primary)',
                       }}
                     >
-                      <IconComponent size={28} strokeWidth={1.8} />
+                      <IconComponent size={24} strokeWidth={1.8} />
                     </div>
 
                     {/* Stat Number */}
                     <div
                       style={{
-                        fontSize: 'clamp(2.4rem, 3.2vw, 3rem)',
-                        fontWeight: 800,
-                        color: '#FFFFFF',
+                        fontSize: 'clamp(2.1rem, 2.8vw, 2.6rem)',
+                        fontWeight: 700,
+                        color: '#F8FAFC',
                         fontFamily: 'var(--font-mono)',
                         lineHeight: 1.1,
-                        marginBottom: '0.5rem',
-                        letterSpacing: '-0.03em',
+                        marginBottom: '0.4rem',
+                        letterSpacing: '-0.02em',
                       }}
                     >
                       {item.value}
@@ -166,12 +167,12 @@ export default function ImpactStats() {
                     {/* Label */}
                     <div
                       style={{
-                        fontSize: '0.78rem',
-                        fontWeight: 700,
-                        letterSpacing: '0.14em',
-                        color: 'var(--text-secondary)',
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                        letterSpacing: '0.12em',
+                        color: '#CBD5E1',
                         textTransform: 'uppercase',
-                        marginBottom: '0.25rem',
+                        marginBottom: '0.2rem',
                       }}
                     >
                       {item.title}
@@ -180,8 +181,8 @@ export default function ImpactStats() {
                     {/* Subtitle */}
                     <div
                       style={{
-                        fontSize: '0.85rem',
-                        color: 'var(--text-muted)',
+                        fontSize: '0.82rem',
+                        color: '#8B9BB4',
                         fontWeight: 400,
                       }}
                     >

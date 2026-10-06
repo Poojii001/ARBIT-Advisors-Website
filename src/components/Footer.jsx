@@ -78,13 +78,19 @@ export default function Footer({ onOpenConsultation }) {
         >
           {/* Col 1: Brand & Identity (3.5 cols) */}
           <div style={{ gridColumn: 'span 12' }} className="footer-brand-col">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1.25rem' }}>
-              <div style={{ width: '36px', height: '36px' }}>
-                <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
-                  <path d="M 50 12 L 88 88 L 68 88 L 50 48 L 32 88 L 12 88 Z" fill="#E5A93C" />
-                  <path d="M 37 66 L 63 66 L 50 36 Z" fill="#B87D20" />
-                </svg>
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.9rem', marginBottom: '1.25rem' }}>
+              <img
+                src="/assets/arbit_logo.png"
+                alt="Arbit Advisors"
+                style={{
+                  height: '44px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  borderRadius: '4px',
+                  filter: 'drop-shadow(0 2px 8px rgba(0, 162, 255, 0.3))',
+                }}
+              />
+
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
                   <span style={{ fontSize: '1.2rem', fontWeight: 800, letterSpacing: '0.08em', color: '#FFF' }}>

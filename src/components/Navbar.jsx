@@ -35,35 +35,19 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '84px' }}>
         {/* Brand Logo */}
-        <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-          {/* Stylized Gold 'A' Emblem */}
-          <div
+        <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '0.9rem' }}>
+          <img
+            src="/assets/arbit_logo.png"
+            alt="Arbit Advisors"
             style={{
-              position: 'relative',
-              width: '38px',
-              height: '38px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              height: '46px',
+              width: 'auto',
+              objectFit: 'contain',
+              borderRadius: '4px',
+              filter: 'drop-shadow(0 2px 10px rgba(0, 162, 255, 0.3))',
             }}
-          >
-            <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%', filter: 'drop-shadow(0 2px 8px rgba(229, 169, 60, 0.3))' }}>
-              <path
-                d="M 50 12 L 88 88 L 68 88 L 50 48 L 32 88 L 12 88 Z"
-                fill="#E5A93C"
-              />
-              <path
-                d="M 37 66 L 63 66 L 50 36 Z"
-                fill="#B87D20"
-              />
-              <polygon
-                points="50,22 55,34 67,34 57,41 61,53 50,45 39,53 43,41 33,34 45,34"
-                fill="#FFF3D6"
-                opacity="0.8"
-                transform="scale(0.35) translate(92, 50)"
-              />
-            </svg>
-          </div>
+          />
+
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
