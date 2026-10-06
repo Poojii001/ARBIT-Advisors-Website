@@ -88,7 +88,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                       flexDirection: 'column',
                       justifyContent: 'space-between',
                       position: 'relative',
-                      borderTop: '2px solid rgba(56, 189, 248, 0.4)',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.12)',
                     }}
                   >
                     {/* Top Row: Index number */}
@@ -105,14 +105,14 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                         {cap.number}
                       </div>
 
-                      {/* Icon with Subtle Warm & Azure Background */}
+                      {/* Icon with Subtle Background */}
                       <div
                         style={{
                           width: '46px',
                           height: '46px',
                           borderRadius: '8px',
-                          border: '1px solid rgba(56, 189, 248, 0.25)',
-                          backgroundColor: 'rgba(0, 163, 255, 0.08)',
+                          border: '1px solid rgba(255, 255, 255, 0.12)',
+                          backgroundColor: 'rgba(255, 255, 255, 0.05)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',

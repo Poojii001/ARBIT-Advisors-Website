@@ -228,7 +228,6 @@ export default function Footer({ onOpenConsultation }) {
                   width: 'auto',
                   objectFit: 'contain',
                   borderRadius: '4px',
-                  filter: 'drop-shadow(0 2px 8px rgba(0, 163, 255, 0.3))',
                 }}
               />
 

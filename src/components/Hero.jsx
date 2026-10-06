@@ -44,7 +44,7 @@ export default function Hero({ onOpenConsultation }) {
         }}
       />
       
-      {/* Subtle Warm Golden & Azure Ambient Illumination for Positive Atmosphere */}
+      {/* Clean Ambient Illumination */}
       <div
         style={{
           position: 'absolute',
@@ -52,7 +52,7 @@ export default function Hero({ onOpenConsultation }) {
           right: '15%',
           width: '500px',
           height: '500px',
-          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, rgba(0, 163, 255, 0.08) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}

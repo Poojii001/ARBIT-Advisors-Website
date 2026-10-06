@@ -31,7 +31,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
         zIndex: 100,
         backgroundColor: isScrolled ? 'rgba(19, 34, 68, 0.95)' : 'transparent',
         backdropFilter: isScrolled ? 'blur(12px)' : 'none',
-        borderBottom: isScrolled ? '1px solid rgba(0, 163, 255, 0.25)' : '1px solid rgba(255, 255, 255, 0.08)',
+        borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid rgba(255, 255, 255, 0.08)',
         transition: 'all 0.3s ease',
       }}
     >
@@ -46,7 +46,6 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               width: 'auto',
               objectFit: 'contain',
               borderRadius: '4px',
-              filter: 'drop-shadow(0 2px 10px rgba(0, 162, 255, 0.3))',
             }}
           />
 
