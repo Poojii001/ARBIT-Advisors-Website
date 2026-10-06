@@ -411,6 +411,39 @@ export default function Footer({ onOpenConsultation }) {
           </div>
         </div>
 
+        {/* Security & Confidentiality Trust Badges */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '1.5rem',
+            padding: '1.25rem',
+            backgroundColor: 'rgba(255, 255, 255, 0.03)',
+            borderRadius: '6px',
+            border: '1px solid rgba(255, 255, 255, 0.06)',
+            marginBottom: '2rem',
+            fontSize: '0.78rem',
+            color: '#94A3B8',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+            <span style={{ color: '#10B981' }}>✓</span>
+            <span>Strict Attorney-Client Non-Disclosure Protocols</span>
+          </div>
+          <span>&bull;</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+            <span style={{ color: '#0084D6' }}>✓</span>
+            <span>Certified Data Confidentiality Standards</span>
+          </div>
+          <span>&bull;</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+            <span style={{ color: '#F59E0B' }}>✓</span>
+            <span>Independent Strategic & Electoral Counsel</span>
+          </div>
+        </div>
+
         {/* Bottom Copyright & Legal */}
         <div
           style={{

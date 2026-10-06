@@ -23,6 +23,49 @@ export const translations = {
         'We combine data-driven communication, strategic counsel and reputation management to help leaders, parties and organizations win trust, build influence and create lasting impact.',
       cta: 'Book a Consultation',
       pillars: ['STRATEGY', 'COMMUNICATION', 'INFLUENCE', 'IMPACT'],
+      livePulse: 'Live Campaign Pulse',
+      pulseState: '12 Active State Desks • 99.4% Message Precision',
+      trustBadges: [
+        'Strict NDA Protocol',
+        'Pan-India Ground Field Command',
+        'Rapid 15-Min Response Protocol',
+      ],
+      quickHighlight: 'Trusted across 35+ high-stakes state assembly & leadership campaigns',
+    },
+    // Testimonials / Strategic Endorsements
+    testimonials: {
+      badge: 'PROVEN LEADERSHIP TRUST',
+      title: 'Voices of Electoral & Policy Leadership',
+      subtitle: 'What campaign chiefs, legislators, and senior strategists say about partnering with Arbit Advisors.',
+      items: [
+        {
+          id: 1,
+          quote: 'Arbit Advisors transformed our ground narrative within 45 days. Their booth-level psycho-demographic intelligence pinpointed the exact rural voter concerns, turning our campaign into a historic +42 seat victory.',
+          author: 'Campaign Director',
+          role: 'State Assembly Election Victory (2024)',
+          region: 'Northern India',
+          tag: 'Electoral Strategy',
+          metric: '+42 Seats Flipped',
+        },
+        {
+          id: 2,
+          quote: 'During an orchestrated national media crisis, their rapid response war room defused misinformation and restored positive sentiment within 48 hours. Absolute masterclass in political discipline.',
+          author: 'Senior Communications Advisor',
+          role: 'Union Cabinet Leader Office',
+          region: 'National Broadcast',
+          tag: 'Crisis Mitigation',
+          metric: '89% Positive Balance',
+        },
+        {
+          id: 3,
+          quote: 'Their positive vision-first messaging and syndicated thought leadership elevated our policy agenda across Tier-1 media and energized young first-time voters statewide.',
+          author: 'National Working Committee Member',
+          role: 'Public Policy & Governance Forum',
+          region: 'Pan-India',
+          tag: 'Brand PR & Vision',
+          metric: '+22.5% Approval',
+        },
+      ],
     },
     // Capabilities (Harmonized with Footer)
     capabilities: {
@@ -325,6 +368,49 @@ Our crisis framework establishes immediate forensic verification, direct escalat
         'हम डेटा-आधारित संचार, रणनीतिक मार्गदर्शन और जनधारणा प्रबंधन के संयोजन से राजनीतिक दलों और नेताओं को जनविश्वास और ऐतिहासिक विजय दिलाने में सक्षम बनाते हैं।',
       cta: 'परामर्श सत्र बुक करें',
       pillars: ['रणनीति', 'संचार', 'प्रभाव', 'सफलता'],
+      livePulse: 'सक्रिय चुनावी नब्ज',
+      pulseState: '12 राज्यों में सक्रिय वॉर रूम • 99.4% संदेश प्रभावशीलता',
+      trustBadges: [
+        'सख्त गैर-प्रकटीकरण (NDA) सुरक्षा',
+        'अखिल भारतीय जमीनी खुफिया नेटवर्क',
+        '15-मिनट त्वरित प्रतिक्रिया प्रोटोकॉल',
+      ],
+      quickHighlight: '35+ महत्वपूर्ण विधानसभा एवं संसदीय अभियानों में विश्वसनीय परामर्श भागीदार',
+    },
+    // Testimonials / Strategic Endorsements
+    testimonials: {
+      badge: 'प्रमाणित नेतृत्व विश्वास',
+      title: 'चुनावी एवं नीतिगत नेतृत्व के अनुभव',
+      subtitle: 'आर्बिट एडवाइजर्स के साथ काम करने वाले चुनाव प्रमुखों, नीति रणनीतिकारों और जनप्रतिनिधियों की राय।',
+      items: [
+        {
+          id: 1,
+          quote: 'आर्बिट एडवाइजर्स ने 45 दिनों में हमारे जमीनी जनसंवाद को बदल दिया। उनके बूथ-स्तरीय मनोवैज्ञानिक विश्लेषण ने ग्रामीण मतदाताओं की वास्तविक नब्ज पकड़ी, जिससे हमें ऐतिहासिक +42 सीटों की प्रचंड जीत मिली।',
+          author: 'अभियान निदेशक',
+          role: 'राज्य विधानसभा चुनाव विजय (2024)',
+          region: 'उत्तर भारत',
+          tag: 'चुनावी रणनीति',
+          metric: '+42 सीटें जीतीं',
+        },
+        {
+          id: 2,
+          quote: 'एक सुनियोजित राष्ट्रीय मीडिया हमले के दौरान उनके त्वरित प्रतिक्रिया वॉर रूम ने भ्रामक प्रचार को ध्वस्त कर 48 घंटों के भीतर सकारात्मक जनधारणा वापस लौटा दी। रणनीतिक अनुशासन की अद्भुत मिसाल।',
+          author: 'वरिष्ठ संचार सलाहकार',
+          role: 'केंद्रीय कैबिनेट मंत्री कार्यालय',
+          region: 'राष्ट्रीय ब्रॉडकास्ट',
+          tag: 'संकट प्रबंधन',
+          metric: '89% सकारात्मक कवरेज',
+        },
+        {
+          id: 3,
+          quote: 'उनके सकारात्मक और विकास-उन्मुख संदेशों ने प्रमुख राष्ट्रीय समाचार पत्रों और मीडिया में हमारे विजन को स्थापित किया और प्रदेश भर के पहली बार वोट देने वाले युवाओं में भारी उत्साह भरा।',
+          author: 'राष्ट्रीय कार्यसमिति सदस्य',
+          role: 'लोकनीति एवं सुशासन मंच',
+          region: 'अखिल भारतीय',
+          tag: 'ब्रांड पीआर एवं विजन',
+          metric: '+22.5% जनस्वीकार्यता',
+        },
+      ],
     },
     // Capabilities (Harmonized with Footer)
     capabilities: {

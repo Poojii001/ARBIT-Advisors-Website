@@ -5,6 +5,7 @@ import CoreCapabilities from './components/CoreCapabilities';
 import ImpactStats from './components/ImpactStats';
 import About from './components/About';
 import CaseStudies from './components/CaseStudies';
+import Testimonials from './components/Testimonials';
 import Insights from './components/Insights';
 import Footer from './components/Footer';
 import ConsultationModal from './components/ConsultationModal';
@@ -15,7 +16,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const sectionIds = ['home', 'services', 'impact', 'about', 'case-studies', 'insights', 'contact'];
+    const sectionIds = ['home', 'services', 'impact', 'about', 'case-studies', 'testimonials', 'insights', 'contact'];
     const observers = [];
 
     const handleIntersect = (entries) => {
@@ -24,6 +25,8 @@ export default function App() {
           const id = entry.target.id;
           if (id === 'impact') {
             setActiveSection('services');
+          } else if (id === 'testimonials') {
+            setActiveSection('case-studies');
           } else {
             setActiveSection(id);
           }
@@ -71,6 +74,9 @@ export default function App() {
           {/* Case Studies Section */}
           <CaseStudies />
 
+          {/* Strategic Leadership Testimonials */}
+          <Testimonials />
+
           {/* Insights & Analysis Section */}
           <Insights />
         </main>
@@ -87,3 +93,4 @@ export default function App() {
     </LanguageProvider>
   );
 }
+
