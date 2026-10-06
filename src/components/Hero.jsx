@@ -17,41 +17,55 @@ export default function Hero({ onOpenConsultation }) {
         overflow: 'hidden',
       }}
     >
-      {/* Background Graphic Blend */}
+      {/* Background Graphic Blend with Luminous Transparency */}
       <div
         style={{
           position: 'absolute',
           top: 0,
           right: 0,
-          width: '68%',
+          width: '70%',
           height: '100%',
           backgroundImage: 'url(/assets/hero_parliament.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center 35%',
-          opacity: 0.95,
+          opacity: 0.92,
           zIndex: 0,
-          maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 15%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,1) 100%)',
-          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 15%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,1) 100%)',
+          maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 12%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,1) 100%)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 12%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,1) 100%)',
         }}
       />
 
-      {/* Dark overlay gradients for contrast */}
+      {/* Luminous Navy overlay gradients */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, #030712 0%, #030712 38%, rgba(3, 7, 18, 0.75) 60%, rgba(3, 7, 18, 0.25) 100%)',
+          background: 'linear-gradient(90deg, #091124 0%, #091124 35%, rgba(9, 17, 36, 0.72) 58%, rgba(9, 17, 36, 0.15) 100%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
       />
       
-      {/* Subtle top & bottom vignette */}
+      {/* Subtle top & bottom integration glow */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(180deg, rgba(3, 7, 18, 0.6) 0%, transparent 20%, transparent 80%, #030712 100%)',
+          background: 'linear-gradient(180deg, rgba(9, 17, 36, 0.45) 0%, transparent 25%, transparent 75%, #091124 100%)',
+          zIndex: 1,
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* Soft Ambient Cyan Lighting in Hero */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '20%',
+          left: '10%',
+          width: '450px',
+          height: '450px',
+          background: 'radial-gradient(circle, rgba(0, 163, 255, 0.12) 0%, transparent 70%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
@@ -135,16 +149,23 @@ export default function Hero({ onOpenConsultation }) {
                 gap: '0.65rem',
                 textAlign: 'right',
                 letterSpacing: '0.22em',
-                fontSize: '0.68rem',
-                fontWeight: 600,
-                color: 'rgba(255, 255, 255, 0.4)',
+                fontSize: '0.72rem',
+                fontWeight: 700,
                 textTransform: 'uppercase',
               }}
             >
-              <span style={{ color: 'var(--theme-cyan)' }}>{t.hero.pillars[0]}</span>
-              <span>{t.hero.pillars[1]}</span>
-              <span>{t.hero.pillars[2]}</span>
-              <span>{t.hero.pillars[3]}</span>
+              {t.hero.pillars.map((pillar, index) => (
+                <span
+                  key={index}
+                  style={{
+                    color: 'var(--theme-cyan)',
+                    textShadow: '0 0 12px rgba(0, 210, 255, 0.35)',
+                    opacity: 0.95,
+                  }}
+                >
+                  {pillar}
+                </span>
+              ))}
             </div>
           </div>
 

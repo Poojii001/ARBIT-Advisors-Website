@@ -18,8 +18,8 @@ export default function CaseStudies() {
       id="case-studies"
       style={{
         padding: '6rem 0',
-        backgroundColor: '#040916',
-        borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+        backgroundColor: '#0B1632',
+        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
       }}
     >
       <div className="container">

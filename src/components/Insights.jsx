@@ -11,7 +11,7 @@ export default function Insights() {
       id="insights"
       style={{
         padding: '6rem 0',
-        backgroundColor: '#030712',
+        backgroundColor: '#091124',
         position: 'relative',
       }}
     >

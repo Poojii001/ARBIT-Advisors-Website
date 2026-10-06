@@ -12,7 +12,7 @@ export default function About({ onOpenConsultation }) {
       id="about"
       style={{
         padding: '6rem 0',
-        backgroundColor: '#030712',
+        backgroundColor: '#091124',
         position: 'relative',
       }}
     >
