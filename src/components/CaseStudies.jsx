@@ -1,62 +1,24 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, CheckCircle, BarChart3, TrendingUp, Users } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function CaseStudies() {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const { t } = useLanguage();
+  const [activeFilterIndex, setActiveFilterIndex] = useState(0);
 
-  const studies = [
-    {
-      id: 1,
-      category: 'Electoral Strategy',
-      title: 'State Assembly Victory: Multi-Phased Perception Overhaul',
-      client: 'Major State Regional Party',
-      metrics: [
-        { label: 'Seat Swing', val: '+42 Seats' },
-        { label: 'Youth Vote Share', val: '+18.4%' },
-        { label: 'Digital Engagement', val: '120M+' },
-      ],
-      summary:
-        'Engineered an aggressive, grassroots-focused narrative countering anti-incumbency sentiment through localized development townhalls and viral digital micro-campaigns.',
-    },
-    {
-      id: 2,
-      category: 'Crisis Mitigation',
-      title: 'Neutralizing Coordinated Disinformation in 48 Hours',
-      client: 'Union Cabinet Minister',
-      metrics: [
-        { label: 'Response Velocity', val: '< 18 Mins' },
-        { label: 'Media Neutrality Ratio', val: '89%' },
-        { label: 'Positive Sentiment Recovery', val: '76%' },
-      ],
-      summary:
-        'Deployed our Rapid Response Command Center to deconstruct opposition allegations with verifiable audit proofs and primed prime-time debates across 14 broadcast networks.',
-    },
-    {
-      id: 3,
-      category: 'Brand PR & Positioning',
-      title: 'National Leadership Positioning & Policy Vision Rollout',
-      client: 'National Political Figure',
-      metrics: [
-        { label: 'Op-Ed Syndications', val: '45+ Papers' },
-        { label: 'Public Approval Shift', val: '+22.5%' },
-        { label: 'Prime Time Footprint', val: '320+ Hours' },
-      ],
-      summary:
-        'Curated a 12-month national intellectual outreach tour, high-profile podcast appearances, and flagship policy whitepapers establishing domain authority in economic policy.',
-    },
-  ];
-
-  const categories = ['All', 'Electoral Strategy', 'Crisis Mitigation', 'Brand PR & Positioning'];
+  const categories = t.caseStudies.categories;
+  const activeCategory = categories[activeFilterIndex] || categories[0];
 
   const filteredStudies =
-    activeFilter === 'All' ? studies : studies.filter((s) => s.category === activeFilter);
+    activeFilterIndex === 0
+      ? t.caseStudies.items
+      : t.caseStudies.items.filter((s, idx) => idx + 1 === activeFilterIndex);
 
   return (
     <section
       id="case-studies"
       style={{
         padding: '6rem 0',
-        backgroundColor: '#060B16',
+        backgroundColor: '#040916',
         borderTop: '1px solid rgba(255, 255, 255, 0.05)',
       }}
     >
@@ -64,26 +26,28 @@ export default function CaseStudies() {
         {/* Section Header & Category Filter */}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: '1.5rem', marginBottom: '3.5rem' }}>
           <div>
-            <div className="gold-badge">PROVEN TRACK RECORD</div>
-            <h2 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.6rem)', fontWeight: 800, color: '#FFF' }}>
-              Strategic Case Studies
+            <div className="gold-badge" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', fontWeight: 600 }}>
+              {t.caseStudies.badge}
+            </div>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 2.8vw, 2.35rem)', fontWeight: 700, color: '#F8FAFC' }}>
+              {t.caseStudies.title}
             </h2>
           </div>
 
           {/* Filter Pills */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
-            {categories.map((cat) => (
+            {categories.map((cat, idx) => (
               <button
-                key={cat}
-                onClick={() => setActiveFilter(cat)}
+                key={idx}
+                onClick={() => setActiveFilterIndex(idx)}
                 style={{
                   padding: '0.5rem 1rem',
                   fontSize: '0.82rem',
                   fontWeight: 600,
                   borderRadius: '20px',
-                  border: activeFilter === cat ? '1px solid var(--gold-primary)' : '1px solid rgba(255, 255, 255, 0.1)',
-                  backgroundColor: activeFilter === cat ? 'rgba(229, 169, 60, 0.15)' : 'transparent',
-                  color: activeFilter === cat ? 'var(--gold-primary)' : '#94A3B8',
+                  border: activeFilterIndex === idx ? '1px solid var(--theme-cyan)' : '1px solid rgba(255, 255, 255, 0.1)',
+                  backgroundColor: activeFilterIndex === idx ? 'rgba(0, 163, 255, 0.18)' : 'transparent',
+                  color: activeFilterIndex === idx ? 'var(--theme-cyan)' : '#94A3B8',
                   transition: 'all 0.2s ease',
                 }}
               >
@@ -112,7 +76,7 @@ export default function CaseStudies() {
                     fontSize: '0.75rem',
                     fontWeight: 700,
                     letterSpacing: '0.12em',
-                    color: 'var(--gold-primary)',
+                    color: 'var(--theme-cyan)',
                     textTransform: 'uppercase',
                     display: 'block',
                     marginBottom: '0.75rem',
@@ -120,13 +84,13 @@ export default function CaseStudies() {
                 >
                   {study.category}
                 </span>
-                <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#FFF', lineHeight: 1.35, marginBottom: '0.85rem' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF', lineHeight: 1.35, marginBottom: '0.85rem' }}>
                   {study.title}
                 </h3>
                 <div style={{ fontSize: '0.82rem', color: '#64748B', marginBottom: '1.25rem', fontStyle: 'italic' }}>
-                  Client Profile: {study.client}
+                  {t.caseStudies.clientProfile}: {study.client}
                 </div>
-                <p style={{ fontSize: '0.9rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '2rem' }}>
+                <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.62, marginBottom: '2rem' }}>
                   {study.summary}
                 </p>
               </div>
@@ -138,14 +102,14 @@ export default function CaseStudies() {
                   gridTemplateColumns: 'repeat(3, 1fr)',
                   gap: '0.75rem',
                   padding: '1rem',
-                  backgroundColor: 'rgba(4, 8, 16, 0.6)',
+                  backgroundColor: 'rgba(3, 7, 18, 0.7)',
                   borderRadius: '6px',
                   border: '1px solid rgba(255, 255, 255, 0.05)',
                 }}
               >
                 {study.metrics.map((m, idx) => (
                   <div key={idx} style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--gold-light)', fontFamily: 'var(--font-mono)' }}>
+                    <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--theme-light)', fontFamily: 'var(--font-mono)' }}>
                       {m.val}
                     </div>
                     <div style={{ fontSize: '0.68rem', color: '#64748B', fontWeight: 600, textTransform: 'uppercase', marginTop: '2px' }}>

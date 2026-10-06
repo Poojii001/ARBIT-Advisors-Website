@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer({ onOpenConsultation }) {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const { t } = useLanguage();
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -59,7 +61,7 @@ export default function Footer({ onOpenConsultation }) {
     <footer
       id="contact"
       style={{
-        backgroundColor: '#03070E',
+        backgroundColor: '#02050D',
         color: '#94A3B8',
         padding: '5rem 0 2rem 0',
         borderTop: '1px solid rgba(255, 255, 255, 0.06)',
@@ -96,46 +98,46 @@ export default function Footer({ onOpenConsultation }) {
                   <span style={{ fontSize: '1.2rem', fontWeight: 800, letterSpacing: '0.08em', color: '#FFF' }}>
                     ARBIT
                   </span>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.14em', color: 'var(--gold-primary)' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.14em', color: 'var(--theme-primary)' }}>
                     ADVISORS
                   </span>
                 </div>
                 <span style={{ fontSize: '0.55rem', letterSpacing: '0.22em', color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: '-2px' }}>
-                  STRATEGY &bull; IMPACT
+                  {t.nav.tagline}
                 </span>
               </div>
             </div>
 
             <p style={{ fontSize: '0.88rem', lineHeight: 1.6, color: '#64748B', maxWidth: '300px' }}>
-              Architecting transformative political strategy, high-velocity narrative control, and sustained public mandate.
+              {t.footer.brandDesc}
             </p>
           </div>
 
           {/* Col 2: Quick Links (2 cols) */}
           <div style={{ gridColumn: 'span 6' }} className="footer-links-col">
             <h4 style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
-              Quick Links
+              {t.footer.quickLinks}
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.88rem' }}>
-              <li><a href="#home" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Home</a></li>
-              <li><a href="#about" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>About Us</a></li>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Services</a></li>
-              <li><a href="#case-studies" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Case Studies</a></li>
-              <li><a href="#insights" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Insights</a></li>
-              <li><a href="#contact" onClick={(e) => { e.preventDefault(); onOpenConsultation(); }} style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Contact</a></li>
+              <li><a href="#home" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.nav.home}</a></li>
+              <li><a href="#about" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.nav.about}</a></li>
+              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.nav.services}</a></li>
+              <li><a href="#case-studies" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.nav.caseStudies}</a></li>
+              <li><a href="#insights" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.nav.insights}</a></li>
+              <li><a href="#contact" onClick={(e) => { e.preventDefault(); onOpenConsultation(); }} style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.nav.getInTouch}</a></li>
             </ul>
           </div>
 
           {/* Col 3: Our Services (2.5 cols) */}
           <div style={{ gridColumn: 'span 6' }} className="footer-services-col">
             <h4 style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
-              Our Services
+              {t.footer.ourServices}
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.88rem' }}>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Media Relations</a></li>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Strategic Advisory</a></li>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Crisis Management</a></li>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Digital Strategy</a></li>
+              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.capabilities.items[1].title}</a></li>
+              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.capabilities.items[2].title}</a></li>
+              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>24/7 Crisis Response</a></li>
+              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Digital Strategy & Ops</a></li>
             </ul>
           </div>
 
@@ -144,7 +146,7 @@ export default function Footer({ onOpenConsultation }) {
             {/* Social Icons */}
             <div style={{ marginBottom: '2rem' }}>
               <h4 style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '1rem' }}>
-                Connect With Us
+                {t.footer.connectWithUs}
               </h4>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
                 {socialLinks.map((social, i) => (
@@ -167,8 +169,8 @@ export default function Footer({ onOpenConsultation }) {
                       transition: 'all 0.2s ease',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = 'var(--gold-primary)';
-                      e.currentTarget.style.color = 'var(--gold-primary)';
+                      e.currentTarget.style.borderColor = 'var(--theme-primary)';
+                      e.currentTarget.style.color = 'var(--theme-cyan)';
                       e.currentTarget.style.transform = 'translateY(-2px)';
                     }}
                     onMouseLeave={(e) => {
@@ -186,23 +188,23 @@ export default function Footer({ onOpenConsultation }) {
             {/* Stay Updated Newsletter Box */}
             <div>
               <h4 style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
-                Stay Updated
+                {t.footer.stayUpdated}
               </h4>
               <p style={{ fontSize: '0.82rem', color: '#64748B', marginBottom: '0.85rem' }}>
-                Get the latest insights and updates.
+                {t.footer.stayUpdatedSub}
               </p>
 
               <form onSubmit={handleSubscribe} style={{ display: 'flex', maxWidth: '340px' }}>
                 <input
                   type="email"
                   required
-                  placeholder="Your email address"
+                  placeholder={t.footer.emailPlaceholder}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   style={{
                     flex: 1,
                     padding: '0.75rem 1rem',
-                    backgroundColor: 'rgba(11, 20, 38, 0.8)',
+                    backgroundColor: 'rgba(10, 18, 36, 0.8)',
                     border: '1px solid rgba(255, 255, 255, 0.15)',
                     borderRight: 'none',
                     borderRadius: '4px 0 0 4px',
@@ -210,7 +212,7 @@ export default function Footer({ onOpenConsultation }) {
                     color: '#FFF',
                     outline: 'none',
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = 'var(--gold-primary)')}
+                  onFocus={(e) => (e.target.style.borderColor = 'var(--theme-primary)')}
                   onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.15)')}
                 />
                 <button
@@ -218,8 +220,8 @@ export default function Footer({ onOpenConsultation }) {
                   aria-label="Subscribe to newsletter"
                   style={{
                     padding: '0.75rem 1.1rem',
-                    backgroundColor: 'var(--gold-primary)',
-                    color: '#040810',
+                    backgroundColor: 'var(--theme-primary)',
+                    color: '#FFFFFF',
                     borderRadius: '0 4px 4px 0',
                     display: 'flex',
                     alignItems: 'center',
@@ -227,12 +229,12 @@ export default function Footer({ onOpenConsultation }) {
                     fontWeight: 700,
                   }}
                 >
-                  {subscribed ? <Check size={18} color="#040810" /> : <ArrowRight size={18} />}
+                  {subscribed ? <Check size={18} color="#FFFFFF" /> : <ArrowRight size={18} />}
                 </button>
               </form>
               {subscribed && (
-                <span style={{ fontSize: '0.75rem', color: 'var(--gold-light)', display: 'block', marginTop: '0.4rem' }}>
-                  ✓ You have been subscribed to our briefing.
+                <span style={{ fontSize: '0.75rem', color: 'var(--theme-cyan)', display: 'block', marginTop: '0.4rem' }}>
+                  {t.footer.subscribedMsg}
                 </span>
               )}
             </div>
@@ -253,10 +255,10 @@ export default function Footer({ onOpenConsultation }) {
             color: '#64748B',
           }}
         >
-          <div>&copy; 2025 Arbit Advisors. All rights reserved.</div>
+          <div>&copy; 2026 Arbit Advisors. {t.footer.rights}</div>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <a href="#privacy" style={{ color: '#64748B' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#64748B')}>Privacy Policy</a>
-            <a href="#terms" style={{ color: '#64748B' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#64748B')}>Terms & Conditions</a>
+            <a href="#privacy" style={{ color: '#64748B' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#64748B')}>{t.footer.privacyPolicy}</a>
+            <a href="#terms" style={{ color: '#64748B' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#64748B')}>{t.footer.termsConditions}</a>
           </div>
         </div>
       </div>

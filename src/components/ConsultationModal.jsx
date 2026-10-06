@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Shield, Lock, Send, ArrowRight } from 'lucide-react';
+import { X, CheckCircle2, Lock, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ConsultationModal({ isOpen, onClose }) {
+  const { t } = useLanguage();
+
   const [formData, setFormData] = useState({
     name: '',
     title: '',
@@ -23,7 +26,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-    }, 1000);
+    }, 900);
   };
 
   const handleReset = () => {
@@ -68,86 +71,86 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 width: '64px',
                 height: '64px',
                 borderRadius: '50%',
-                backgroundColor: 'rgba(229, 169, 60, 0.15)',
-                border: '2px solid var(--gold-primary)',
+                backgroundColor: 'rgba(0, 163, 255, 0.15)',
+                border: '2px solid var(--theme-primary)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 margin: '0 auto 1.5rem auto',
-                color: 'var(--gold-primary)',
+                color: 'var(--theme-primary)',
               }}
             >
               <CheckCircle2 size={36} />
             </div>
-            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#FFF', marginBottom: '0.8rem' }}>
-              Briefing Request Received
+            <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#FFF', marginBottom: '0.8rem' }}>
+              {t.modal.successTitle}
             </h3>
             <p style={{ color: '#94A3B8', fontSize: '0.95rem', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto 2rem auto' }}>
-              Our Senior Managing Partner will review your inquiry with strict non-disclosure compliance and contact your office within 2 hours.
+              {t.modal.successDesc}
             </p>
             <button onClick={handleReset} className="btn-gold" style={{ padding: '0.85rem 2rem' }}>
-              Done
+              {t.modal.doneBtn}
             </button>
           </div>
         ) : (
           <div>
-            <div className="gold-badge" style={{ marginBottom: '0.4rem' }}>
-              <Lock size={14} style={{ marginRight: '4px' }} /> STRICTLY CONFIDENTIAL
+            <div className="gold-badge" style={{ marginBottom: '0.4rem', fontSize: '0.74rem' }}>
+              <Lock size={14} style={{ marginRight: '4px' }} /> {t.modal.badge}
             </div>
-            <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#FFF', marginBottom: '0.4rem' }}>
-              Book a Strategic Consultation
+            <h3 style={{ fontSize: '1.65rem', fontWeight: 800, color: '#FFF', marginBottom: '0.4rem' }}>
+              {t.modal.title}
             </h3>
             <p style={{ color: '#94A3B8', fontSize: '0.88rem', marginBottom: '1.8rem' }}>
-              Engage our senior advisory council for discreet campaign strategy, narrative positioning, or rapid crisis mitigation.
+              {t.modal.subtitle}
             </p>
 
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }} className="form-two-cols">
                 <div>
                   <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#CBD5E1', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Full Name *
+                    {t.modal.nameLabel}
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Dr. Rajesh Sharma"
+                    placeholder={t.modal.namePlaceholder}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     style={{
                       width: '100%',
                       padding: '0.75rem 0.9rem',
-                      backgroundColor: 'rgba(5, 10, 20, 0.8)',
+                      backgroundColor: 'rgba(3, 8, 20, 0.8)',
                       border: '1px solid rgba(255, 255, 255, 0.12)',
                       borderRadius: '4px',
                       color: '#FFF',
                       fontSize: '0.9rem',
                       outline: 'none',
                     }}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--gold-primary)')}
+                    onFocus={(e) => (e.target.style.borderColor = 'var(--theme-primary)')}
                     onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)')}
                   />
                 </div>
 
                 <div>
                   <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#CBD5E1', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Title / Political Office
+                    {t.modal.titleLabel}
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. MLA / MP Office / Campaign Chief"
+                    placeholder={t.modal.titlePlaceholder}
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                     style={{
                       width: '100%',
                       padding: '0.75rem 0.9rem',
-                      backgroundColor: 'rgba(5, 10, 20, 0.8)',
+                      backgroundColor: 'rgba(3, 8, 20, 0.8)',
                       border: '1px solid rgba(255, 255, 255, 0.12)',
                       borderRadius: '4px',
                       color: '#FFF',
                       fontSize: '0.9rem',
                       outline: 'none',
                     }}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--gold-primary)')}
+                    onFocus={(e) => (e.target.style.borderColor = 'var(--theme-primary)')}
                     onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)')}
                   />
                 </div>
@@ -156,50 +159,50 @@ export default function ConsultationModal({ isOpen, onClose }) {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }} className="form-two-cols">
                 <div>
                   <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#CBD5E1', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Confidential Email *
+                    {t.modal.emailLabel}
                   </label>
                   <input
                     type="email"
                     required
-                    placeholder="official@office.in"
+                    placeholder={t.modal.emailPlaceholder}
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     style={{
                       width: '100%',
                       padding: '0.75rem 0.9rem',
-                      backgroundColor: 'rgba(5, 10, 20, 0.8)',
+                      backgroundColor: 'rgba(3, 8, 20, 0.8)',
                       border: '1px solid rgba(255, 255, 255, 0.12)',
                       borderRadius: '4px',
                       color: '#FFF',
                       fontSize: '0.9rem',
                       outline: 'none',
                     }}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--gold-primary)')}
+                    onFocus={(e) => (e.target.style.borderColor = 'var(--theme-primary)')}
                     onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)')}
                   />
                 </div>
 
                 <div>
                   <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#CBD5E1', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Phone / Direct Line *
+                    {t.modal.phoneLabel}
                   </label>
                   <input
                     type="tel"
                     required
-                    placeholder="+91 98765 43210"
+                    placeholder={t.modal.phonePlaceholder}
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     style={{
                       width: '100%',
                       padding: '0.75rem 0.9rem',
-                      backgroundColor: 'rgba(5, 10, 20, 0.8)',
+                      backgroundColor: 'rgba(3, 8, 20, 0.8)',
                       border: '1px solid rgba(255, 255, 255, 0.12)',
                       borderRadius: '4px',
                       color: '#FFF',
                       fontSize: '0.9rem',
                       outline: 'none',
                     }}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--gold-primary)')}
+                    onFocus={(e) => (e.target.style.borderColor = 'var(--theme-primary)')}
                     onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)')}
                   />
                 </div>
@@ -207,7 +210,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
 
               <div>
                 <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#CBD5E1', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  Primary Advisory Requirement
+                  {t.modal.serviceLabel}
                 </label>
                 <select
                   value={formData.service}
@@ -215,7 +218,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   style={{
                     width: '100%',
                     padding: '0.75rem 0.9rem',
-                    backgroundColor: '#050A14',
+                    backgroundColor: '#030814',
                     border: '1px solid rgba(255, 255, 255, 0.12)',
                     borderRadius: '4px',
                     color: '#FFF',
@@ -223,27 +226,27 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     outline: 'none',
                   }}
                 >
-                  <option value="Brand PR">Brand PR & Leadership Positioning</option>
-                  <option value="Media Relations">Media Relations & Prime-Time Strategy</option>
-                  <option value="Strategic Advisory">Strategic Advisory & War Room Setup</option>
-                  <option value="Crisis Management">24/7 Rapid Crisis Management</option>
-                  <option value="Full Campaign">End-to-End Electoral Campaign Management</option>
+                  {t.modal.serviceOptions.map((opt, i) => (
+                    <option key={i} value={opt.val}>
+                      {opt.label}
+                    </option>
+                  ))}
                 </select>
               </div>
 
               <div>
                 <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#CBD5E1', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  Brief Strategic Objective (Optional)
+                  {t.modal.messageLabel}
                 </label>
                 <textarea
                   rows={3}
-                  placeholder="Share details regarding constituency, upcoming election timeline, or key objectives..."
+                  placeholder={t.modal.messagePlaceholder}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   style={{
                     width: '100%',
                     padding: '0.75rem 0.9rem',
-                    backgroundColor: 'rgba(5, 10, 20, 0.8)',
+                    backgroundColor: 'rgba(3, 8, 20, 0.8)',
                     border: '1px solid rgba(255, 255, 255, 0.12)',
                     borderRadius: '4px',
                     color: '#FFF',
@@ -251,25 +254,25 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     outline: 'none',
                     resize: 'vertical',
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = 'var(--gold-primary)')}
+                  onFocus={(e) => (e.target.style.borderColor = 'var(--theme-primary)')}
                   onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)')}
                 />
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#64748B', fontSize: '0.75rem', marginTop: '0.2rem' }}>
-                <Shield size={14} color="var(--gold-primary)" />
-                <span>Protected by non-disclosure legal protocols. Data is never shared.</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#64748B', fontSize: '0.75rem' }}>
+                <Lock size={13} color="var(--theme-primary)" />
+                <span>{t.modal.privacyNote}</span>
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
                 className="btn-gold"
-                style={{ width: '100%', marginTop: '0.5rem', padding: '0.95rem' }}
+                style={{ width: '100%', marginTop: '0.4rem', padding: '0.9rem' }}
               >
-                {loading ? 'Transmitting Secure Request...' : (
+                {loading ? t.modal.submitting : (
                   <>
-                    Submit Confidential Briefing Request
+                    {t.modal.submitBtn}
                     <ArrowRight size={16} />
                   </>
                 )}

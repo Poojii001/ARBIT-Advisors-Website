@@ -1,7 +1,10 @@
 import React from 'react';
-import { ArrowRight, Shield, Award, Users, TrendingUp } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero({ onOpenConsultation }) {
+  const { t } = useLanguage();
+
   return (
     <section
       id="home"
@@ -32,23 +35,23 @@ export default function Hero({ onOpenConsultation }) {
         }}
       />
 
-      {/* Dark left gradient for high-contrast crisp text legibility */}
+      {/* Dark overlay gradients for contrast */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, #040810 0%, #040810 42%, rgba(4, 8, 16, 0.8) 60%, rgba(4, 8, 16, 0.15) 100%)',
+          background: 'linear-gradient(90deg, #030712 0%, #030712 38%, rgba(3, 7, 18, 0.75) 60%, rgba(3, 7, 18, 0.25) 100%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
       />
       
-      {/* Top sky darkening & bottom floor integration vignette */}
+      {/* Subtle top & bottom vignette */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(180deg, rgba(4, 8, 16, 0.75) 0%, rgba(4, 8, 16, 0.05) 30%, rgba(4, 8, 16, 0.2) 70%, #040810 100%)',
+          background: 'linear-gradient(180deg, rgba(3, 7, 18, 0.6) 0%, transparent 20%, transparent 80%, #030712 100%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
@@ -70,7 +73,7 @@ export default function Hero({ onOpenConsultation }) {
                 fontWeight: 600,
               }}
             >
-              POLITICAL PR & STRATEGIC ADVISORY
+              {t.hero.badge}
             </div>
 
             {/* Main Headline */}
@@ -78,16 +81,16 @@ export default function Hero({ onOpenConsultation }) {
               className="animate-fade-in"
               style={{
                 fontSize: 'clamp(1.9rem, 3.3vw, 2.75rem)',
-                lineHeight: 1.2,
+                lineHeight: 1.25,
                 fontWeight: 700,
                 letterSpacing: '-0.015em',
                 color: '#F8FAFC',
                 marginBottom: '1.25rem',
-                maxWidth: '580px',
+                maxWidth: '620px',
               }}
             >
-              Shaping Political Narratives,<br />
-              <span>Driving Electoral Success.</span>
+              {t.hero.title1}<br />
+              <span>{t.hero.title2}</span>
             </h1>
 
             {/* Subtitle / Paragraph */}
@@ -97,12 +100,12 @@ export default function Hero({ onOpenConsultation }) {
                 fontSize: '0.94rem',
                 lineHeight: 1.68,
                 color: '#94A3B8',
-                maxWidth: '500px',
+                maxWidth: '520px',
                 marginBottom: '2rem',
                 fontWeight: 400,
               }}
             >
-              We combine data-driven communication, strategic counsel and reputation management to help leaders, parties and organizations win trust, build influence and create lasting impact.
+              {t.hero.subtitle}
             </p>
 
             {/* Hero CTA Button */}
@@ -116,14 +119,14 @@ export default function Hero({ onOpenConsultation }) {
                   fontWeight: 600,
                 }}
               >
-                Book a Consultation
+                {t.hero.cta}
                 <ArrowRight size={16} />
               </button>
             </div>
 
           </div>
 
-          {/* Right Floating Strategic Pillar Badges (Mockup Right Side Watermark) */}
+          {/* Right Floating Strategic Pillar Badges */}
           <div className="hero-pillars-watermark">
             <div
               style={{
@@ -138,10 +141,10 @@ export default function Hero({ onOpenConsultation }) {
                 textTransform: 'uppercase',
               }}
             >
-              <span style={{ color: 'var(--theme-cyan)' }}>STRATEGY</span>
-              <span>COMMUNICATION</span>
-              <span>INFLUENCE</span>
-              <span>IMPACT</span>
+              <span style={{ color: 'var(--theme-cyan)' }}>{t.hero.pillars[0]}</span>
+              <span>{t.hero.pillars[1]}</span>
+              <span>{t.hero.pillars[2]}</span>
+              <span>{t.hero.pillars[3]}</span>
             </div>
           </div>
 

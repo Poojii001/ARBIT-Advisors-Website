@@ -1,60 +1,22 @@
 import React, { useState } from 'react';
 import { ArrowRight, Megaphone, Newspaper, Compass, ChevronRight, X, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function CoreCapabilities({ onOpenConsultation }) {
-  const [selectedService, setSelectedService] = useState(null);
+  const [selectedServiceIndex, setSelectedServiceIndex] = useState(null);
+  const { t } = useLanguage();
 
-  const capabilities = [
-    {
-      number: '01',
-      icon: Megaphone,
-      title: 'Brand PR',
-      description:
-        'Build a strong, credible and positive public image with targeted campaigns, thought leadership and reputation management.',
-      details: [
-        'Candidate Personality & Narrative Sculpting',
-        'High-Impact Digital & Broadcast Campaigns',
-        'Reputation Fortification & Crisis Pre-emption',
-        'Constituency Perception Tracking & Poll Analysis',
-        'Strategic Speechwriting & Keynote Positioning',
-      ],
-    },
-    {
-      number: '02',
-      icon: Newspaper,
-      title: 'Media Relations',
-      description:
-        'Get the right stories, in the right media, at the right time. We help you build lasting relationships with key journalists and media outlets.',
-      details: [
-        'National & Regional Tier-1 Media Placement',
-        'Press Conference Management & Media Briefings',
-        'Editorial Opinion-Pieces (Op-Ed) Placement',
-        '24/7 Rapid Response Media War Room',
-        'Journalist & Political Editor Engagement Networks',
-      ],
-    },
-    {
-      number: '03',
-      icon: Compass,
-      title: 'Strategic Advisory',
-      description:
-        'Actionable insights, political intelligence and strategy support to help you make informed decisions and stay ahead of the curve.',
-      details: [
-        'Electoral War Room Setup & Oversight',
-        'Opposition Intelligence & Vulnerability Audits',
-        'Coalition & Stakeholder Strategic Alignment',
-        'Micro-Targeted Demographic Voter Messaging',
-        'Post-Election Policy & Governance Positioning',
-      ],
-    },
-  ];
+  const iconMap = [Megaphone, Newspaper, Compass];
+
+  const selectedService =
+    selectedServiceIndex !== null ? t.capabilities.items[selectedServiceIndex] : null;
 
   return (
     <section
       id="services"
       style={{
         padding: '6rem 0',
-        backgroundColor: '#060C18',
+        backgroundColor: '#040916',
         borderTop: '1px solid rgba(255, 255, 255, 0.05)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
         position: 'relative',
@@ -66,7 +28,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
           {/* Left Column: Heading & Introduction (4 cols) */}
           <div style={{ gridColumn: 'span 12' }} className="capabilities-left-col">
             <div className="gold-badge" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', fontWeight: 600 }}>
-              OUR CORE CAPABILITIES
+              {t.capabilities.badge}
             </div>
             
             <h2
@@ -74,12 +36,12 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                 fontSize: 'clamp(1.75rem, 2.8vw, 2.35rem)',
                 fontWeight: 700,
                 color: '#F8FAFC',
-                lineHeight: 1.22,
+                lineHeight: 1.25,
                 marginBottom: '1rem',
                 letterSpacing: '-0.01em',
               }}
             >
-              Strategy. Media. Advisory.
+              {t.capabilities.title}
             </h2>
 
             <p
@@ -91,15 +53,15 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                 maxWidth: '360px',
               }}
             >
-              We craft powerful narratives, build media relationships and provide strategic guidance to help political leaders, parties and organizations achieve their goals.
+              {t.capabilities.description}
             </p>
 
             <button
-              onClick={() => setSelectedService(capabilities[0])}
+              onClick={() => setSelectedServiceIndex(0)}
               className="btn-gold-outline"
               style={{ padding: '0.78rem 1.5rem', fontSize: '0.86rem' }}
             >
-              Explore Our Services
+              {t.capabilities.exploreBtn}
               <ArrowRight size={15} />
             </button>
           </div>
@@ -114,8 +76,8 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                 height: '100%',
               }}
             >
-              {capabilities.map((cap) => {
-                const IconComponent = cap.icon;
+              {t.capabilities.items.map((cap, idx) => {
+                const IconComponent = iconMap[idx] || Compass;
                 return (
                   <div
                     key={cap.number}
@@ -127,7 +89,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                       justifyContent: 'space-between',
                       position: 'relative',
                       border: '1px solid rgba(255, 255, 255, 0.08)',
-                      backgroundColor: 'rgba(10, 18, 34, 0.65)',
+                      backgroundColor: 'rgba(10, 18, 36, 0.7)',
                     }}
                   >
                     {/* Top Row: Index number */}
@@ -144,19 +106,19 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                         {cap.number}
                       </div>
 
-                      {/* Icon with Gold Circle Background */}
+                      {/* Icon with Blue Circle Background */}
                       <div
                         style={{
                           width: '48px',
                           height: '48px',
                           borderRadius: '50%',
-                          border: '1px solid rgba(229, 169, 60, 0.3)',
-                          backgroundColor: 'rgba(229, 169, 60, 0.05)',
+                          border: '1px solid rgba(0, 163, 255, 0.35)',
+                          backgroundColor: 'rgba(0, 163, 255, 0.06)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           marginBottom: '1.25rem',
-                          color: 'var(--gold-primary)',
+                          color: 'var(--theme-primary)',
                         }}
                       >
                         <IconComponent size={22} strokeWidth={1.8} />
@@ -190,7 +152,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                     {/* Card Footer Link */}
                     <div>
                       <button
-                        onClick={() => setSelectedService(cap)}
+                        onClick={() => setSelectedServiceIndex(idx)}
                         style={{
                           display: 'inline-flex',
                           alignItems: 'center',
@@ -203,7 +165,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                           padding: '4px 0',
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.color = 'var(--gold-primary)';
+                          e.currentTarget.style.color = 'var(--theme-cyan)';
                           e.currentTarget.style.transform = 'translateX(4px)';
                         }}
                         onMouseLeave={(e) => {
@@ -211,8 +173,8 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                           e.currentTarget.style.transform = 'translateX(0)';
                         }}
                       >
-                        Learn More
-                        <ArrowRight size={14} color="var(--gold-primary)" />
+                        {t.capabilities.learnMore}
+                        <ArrowRight size={14} color="var(--theme-primary)" />
                       </button>
                     </div>
                   </div>
@@ -226,14 +188,14 @@ export default function CoreCapabilities({ onOpenConsultation }) {
 
       {/* Service Details Modal */}
       {selectedService && (
-        <div className="modal-overlay" onClick={() => setSelectedService(null)}>
+        <div className="modal-overlay" onClick={() => setSelectedServiceIndex(null)}>
           <div
             className="modal-content"
             onClick={(e) => e.stopPropagation()}
             style={{ padding: '2.5rem' }}
           >
             <button
-              onClick={() => setSelectedService(null)}
+              onClick={() => setSelectedServiceIndex(null)}
               style={{
                 position: 'absolute',
                 top: '1.5rem',
@@ -246,7 +208,9 @@ export default function CoreCapabilities({ onOpenConsultation }) {
               <X size={20} />
             </button>
 
-            <div className="gold-badge" style={{ marginBottom: '0.5rem' }}>CAPABILITY BRIEF &bull; {selectedService.number}</div>
+            <div className="gold-badge" style={{ marginBottom: '0.5rem' }}>
+              {t.capabilities.modalBadge} &bull; {selectedService.number}
+            </div>
             <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#FFF', marginBottom: '1rem' }}>
               {selectedService.title}
             </h3>
@@ -255,13 +219,13 @@ export default function CoreCapabilities({ onOpenConsultation }) {
             </p>
 
             <div style={{ marginBottom: '2rem' }}>
-              <h4 style={{ fontSize: '0.88rem', letterSpacing: '0.08em', color: 'var(--gold-primary)', textTransform: 'uppercase', marginBottom: '1rem', fontWeight: 700 }}>
-                Core Strategic Deliverables
+              <h4 style={{ fontSize: '0.88rem', letterSpacing: '0.08em', color: 'var(--theme-light)', textTransform: 'uppercase', marginBottom: '1rem', fontWeight: 700 }}>
+                {t.capabilities.deliverablesTitle}
               </h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 {selectedService.details.map((item, idx) => (
                   <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                    <CheckCircle2 size={18} color="var(--gold-primary)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    <CheckCircle2 size={18} color="var(--theme-cyan)" style={{ flexShrink: 0, marginTop: '2px' }} />
                     <span style={{ fontSize: '0.92rem', color: '#E2E8F0', lineHeight: 1.5 }}>{item}</span>
                   </div>
                 ))}
@@ -269,18 +233,18 @@ export default function CoreCapabilities({ onOpenConsultation }) {
             </div>
 
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-              <button onClick={() => setSelectedService(null)} className="btn-gold-outline" style={{ padding: '0.75rem 1.4rem' }}>
-                Close
+              <button onClick={() => setSelectedServiceIndex(null)} className="btn-gold-outline" style={{ padding: '0.75rem 1.4rem' }}>
+                {t.capabilities.closeBtn}
               </button>
               <button
                 onClick={() => {
-                  setSelectedService(null);
+                  setSelectedServiceIndex(null);
                   onOpenConsultation();
                 }}
                 className="btn-gold"
                 style={{ padding: '0.75rem 1.5rem' }}
               >
-                Inquire for Campaign
+                {t.capabilities.inquireBtn}
                 <ArrowRight size={16} />
               </button>
             </div>

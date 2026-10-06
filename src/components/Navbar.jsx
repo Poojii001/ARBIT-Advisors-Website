@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { ArrowRight, Menu, X, Globe } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar({ onOpenConsultation, activeSection }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,11 +16,11 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Case Studies', href: '#case-studies' },
-    { name: 'Insights', href: '#insights' },
+    { name: t.nav.home, href: '#home', id: 'home' },
+    { name: t.nav.about, href: '#about', id: 'about' },
+    { name: t.nav.services, href: '#services', id: 'services' },
+    { name: t.nav.caseStudies, href: '#case-studies', id: 'case-studies' },
+    { name: t.nav.insights, href: '#insights', id: 'insights' },
   ];
 
   return (
@@ -27,9 +29,9 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        backgroundColor: isScrolled ? 'rgba(4, 8, 16, 0.95)' : 'transparent',
+        backgroundColor: isScrolled ? 'rgba(3, 7, 18, 0.95)' : 'transparent',
         backdropFilter: isScrolled ? 'blur(12px)' : 'none',
-        borderBottom: isScrolled ? '1px solid rgba(229, 169, 60, 0.15)' : '1px solid rgba(255, 255, 255, 0.04)',
+        borderBottom: isScrolled ? '1px solid rgba(0, 163, 255, 0.2)' : '1px solid rgba(255, 255, 255, 0.04)',
         transition: 'all 0.3s ease',
       }}
     >
@@ -48,29 +50,28 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
             }}
           />
 
-
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
               <span style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '0.08em', color: '#FFF' }}>
                 ARBIT
               </span>
-              <span style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.14em', color: 'var(--gold-primary)' }}>
+              <span style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.14em', color: 'var(--theme-primary)' }}>
                 ADVISORS
               </span>
             </div>
             <span style={{ fontSize: '0.58rem', letterSpacing: '0.22em', color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: '-2px' }}>
-              STRATEGY &bull; IMPACT
+              {t.nav.tagline}
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
         <nav style={{ display: 'none' }} className="desktop-nav">
-          <ul style={{ display: 'flex', alignItems: 'center', gap: '2.2rem', listStyle: 'none' }}>
+          <ul style={{ display: 'flex', alignItems: 'center', gap: '2rem', listStyle: 'none' }}>
             {navLinks.map((link) => {
-              const isActive = activeSection === link.name.toLowerCase().replace(' ', '-');
+              const isActive = activeSection === link.id;
               return (
-                <li key={link.name} style={{ position: 'relative' }}>
+                <li key={link.id} style={{ position: 'relative' }}>
                   <a
                     href={link.href}
                     style={{
@@ -107,14 +108,47 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
           </ul>
         </nav>
 
-        {/* Right CTA Button */}
+        {/* Right CTA Button & Language Switcher */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          {/* Language Switcher Pill */}
+          <button
+            onClick={toggleLanguage}
+            title={language === 'en' ? 'Switch to Hindi (हिंदी)' : 'Switch to English'}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              padding: '0.45rem 0.85rem',
+              borderRadius: '20px',
+              border: '1px solid rgba(0, 163, 255, 0.35)',
+              backgroundColor: 'rgba(0, 163, 255, 0.08)',
+              color: '#FFF',
+              fontSize: '0.82rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(0, 163, 255, 0.18)';
+              e.currentTarget.style.borderColor = 'var(--theme-cyan)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(0, 163, 255, 0.08)';
+              e.currentTarget.style.borderColor = 'rgba(0, 163, 255, 0.35)';
+            }}
+          >
+            <Globe size={14} color="var(--theme-cyan)" />
+            <span style={{ color: language === 'en' ? 'var(--theme-cyan)' : '#94A3B8' }}>EN</span>
+            <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>|</span>
+            <span style={{ color: language === 'hi' ? 'var(--theme-cyan)' : '#94A3B8' }}>हिंदी</span>
+          </button>
+
           <button
             onClick={onOpenConsultation}
             className="btn-gold-outline desktop-btn"
             style={{ padding: '0.65rem 1.35rem', fontSize: '0.85rem' }}
           >
-            Get in Touch
+            {t.nav.getInTouch}
             <ArrowRight size={15} />
           </button>
 
@@ -143,7 +177,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
         <div
           style={{
             backgroundColor: '#070D1A',
-            borderBottom: '1px solid var(--border-gold)',
+            borderBottom: '1px solid var(--border-theme)',
             padding: '1.5rem',
             display: 'flex',
             flexDirection: 'column',
@@ -152,7 +186,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
         >
           {navLinks.map((link) => (
             <a
-              key={link.name}
+              key={link.id}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
               style={{
@@ -166,6 +200,41 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               {link.name}
             </a>
           ))}
+
+          {/* Language Toggle in Mobile Drawer */}
+          <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+            <button
+              onClick={() => setLanguage('en')}
+              style={{
+                flex: 1,
+                padding: '0.6rem',
+                borderRadius: '4px',
+                border: language === 'en' ? '1px solid var(--theme-cyan)' : '1px solid rgba(255, 255, 255, 0.1)',
+                backgroundColor: language === 'en' ? 'rgba(0, 163, 255, 0.2)' : 'transparent',
+                color: language === 'en' ? 'var(--theme-cyan)' : '#94A3B8',
+                fontWeight: 600,
+                fontSize: '0.9rem',
+              }}
+            >
+              English
+            </button>
+            <button
+              onClick={() => setLanguage('hi')}
+              style={{
+                flex: 1,
+                padding: '0.6rem',
+                borderRadius: '4px',
+                border: language === 'hi' ? '1px solid var(--theme-cyan)' : '1px solid rgba(255, 255, 255, 0.1)',
+                backgroundColor: language === 'hi' ? 'rgba(0, 163, 255, 0.2)' : 'transparent',
+                color: language === 'hi' ? 'var(--theme-cyan)' : '#94A3B8',
+                fontWeight: 600,
+                fontSize: '0.9rem',
+              }}
+            >
+              हिंदी
+            </button>
+          </div>
+
           <button
             onClick={() => {
               setMobileMenuOpen(false);
@@ -174,7 +243,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
             className="btn-gold"
             style={{ width: '100%', marginTop: '0.5rem' }}
           >
-            Get in Touch
+            {t.nav.getInTouch}
             <ArrowRight size={16} />
           </button>
         </div>

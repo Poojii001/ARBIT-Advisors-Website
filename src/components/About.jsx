@@ -1,56 +1,40 @@
 import React from 'react';
-import { Target, Cpu, Eye, ShieldAlert, CheckCircle } from 'lucide-react';
+import { Target, Cpu, Eye, ShieldAlert } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function About({ onOpenConsultation }) {
-  const pillars = [
-    {
-      icon: Target,
-      title: 'Precision Narrative Architecture',
-      desc: 'We construct defensible, resonant political messaging based on granular district-level psycho-demographic data.',
-    },
-    {
-      icon: Cpu,
-      title: 'AI & Sentiment Intelligence',
-      desc: 'Our real-time social listening and predictive swing-voter analytics track sentiment shifts before mainstream polls catch on.',
-    },
-    {
-      icon: Eye,
-      title: 'Dominant Media Positioning',
-      desc: 'Deep networks with key national anchors, chief political correspondents, and vernacular print powerhouses.',
-    },
-    {
-      icon: ShieldAlert,
-      title: 'Rapid Response Crisis Shield',
-      desc: 'Sub-15 minute protocol deployment to neutralize opposition narratives, smear campaigns, and viral misinformation.',
-    },
-  ];
+  const { t } = useLanguage();
+
+  const iconMap = [Target, Cpu, Eye, ShieldAlert];
 
   return (
     <section
       id="about"
       style={{
         padding: '6rem 0',
-        backgroundColor: '#040810',
+        backgroundColor: '#030712',
         position: 'relative',
       }}
     >
       <div className="container">
         {/* Section Header */}
         <div style={{ maxWidth: '720px', marginBottom: '3.5rem' }}>
-          <div className="gold-badge">WHO WE ARE</div>
+          <div className="gold-badge" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', fontWeight: 600 }}>
+            {t.about.badge}
+          </div>
           <h2
             style={{
-              fontSize: 'clamp(2.1rem, 3.5vw, 2.9rem)',
-              fontWeight: 800,
-              color: '#FFFFFF',
-              lineHeight: 1.2,
+              fontSize: 'clamp(1.9rem, 3.2vw, 2.7rem)',
+              fontWeight: 700,
+              color: '#F8FAFC',
+              lineHeight: 1.25,
               marginBottom: '1.25rem',
             }}
           >
-            Pioneering Strategic Political Communications in India.
+            {t.about.title}
           </h2>
-          <p style={{ fontSize: '1.05rem', color: '#94A3B8', lineHeight: 1.7 }}>
-            Arbit Advisors is a premier political consulting and strategic communications firm. We advise party high-commands, union ministers, chief ministers, and emerging political leaders on navigating modern multi-channel electoral warfare.
+          <p style={{ fontSize: '1.02rem', color: '#94A3B8', lineHeight: 1.7 }}>
+            {t.about.desc}
           </p>
         </div>
 
@@ -63,8 +47,8 @@ export default function About({ onOpenConsultation }) {
             marginBottom: '4rem',
           }}
         >
-          {pillars.map((item, idx) => {
-            const Icon = item.icon;
+          {t.about.pillars.map((item, idx) => {
+            const Icon = iconMap[idx] || Target;
             return (
               <div
                 key={idx}
@@ -79,12 +63,12 @@ export default function About({ onOpenConsultation }) {
                     width: '46px',
                     height: '46px',
                     borderRadius: '4px',
-                    backgroundColor: 'rgba(229, 169, 60, 0.1)',
-                    border: '1px solid rgba(229, 169, 60, 0.3)',
+                    backgroundColor: 'rgba(0, 163, 255, 0.1)',
+                    border: '1px solid rgba(0, 163, 255, 0.3)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: 'var(--gold-primary)',
+                    color: 'var(--theme-primary)',
                     marginBottom: '1.25rem',
                   }}
                 >
@@ -107,7 +91,7 @@ export default function About({ onOpenConsultation }) {
             position: 'relative',
             borderRadius: '10px',
             overflow: 'hidden',
-            border: '1px solid rgba(229, 169, 60, 0.25)',
+            border: '1px solid rgba(0, 163, 255, 0.25)',
             marginBottom: '4rem',
             boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)',
           }}
@@ -128,19 +112,21 @@ export default function About({ onOpenConsultation }) {
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(180deg, rgba(4, 8, 16, 0.2) 0%, rgba(4, 8, 16, 0.85) 90%, #040810 100%)',
+              background: 'linear-gradient(180deg, rgba(3, 7, 18, 0.2) 0%, rgba(3, 7, 18, 0.85) 90%, #030712 100%)',
               display: 'flex',
               alignItems: 'flex-end',
               padding: '2.5rem',
             }}
           >
             <div>
-              <div className="gold-badge" style={{ marginBottom: '0.4rem' }}>INTEGRATED CAMPAIGN COMMAND</div>
+              <div className="gold-badge" style={{ marginBottom: '0.4rem' }}>
+                {t.about.showcaseBadge}
+              </div>
               <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#FFF', marginBottom: '0.5rem' }}>
-                Precision-Engineered Electoral War Rooms
+                {t.about.showcaseTitle}
               </h3>
               <p style={{ color: '#CBD5E1', fontSize: '0.95rem', maxWidth: '650px', lineHeight: 1.6 }}>
-                Combining ground voter pulse, high-frequency media monitoring, and synchronized digital communication for decisive electoral breakthroughs.
+                {t.about.showcaseDesc}
               </p>
             </div>
           </div>
@@ -149,8 +135,8 @@ export default function About({ onOpenConsultation }) {
         {/* Mission Statement Box */}
         <div
           style={{
-            background: 'linear-gradient(135deg, rgba(14, 23, 42, 0.9) 0%, rgba(6, 12, 24, 0.95) 100%)',
-            border: '1px solid var(--border-gold)',
+            background: 'linear-gradient(135deg, rgba(10, 18, 36, 0.9) 0%, rgba(5, 11, 24, 0.95) 100%)',
+            border: '1px solid var(--border-theme)',
             borderRadius: '8px',
             padding: '2.5rem',
             display: 'flex',
@@ -161,18 +147,18 @@ export default function About({ onOpenConsultation }) {
           }}
         >
           <div style={{ maxWidth: '640px' }}>
-            <span style={{ color: 'var(--gold-light)', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              OUR PHILOSOPHY
+            <span style={{ color: 'var(--theme-cyan)', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              {t.about.philosophyBadge}
             </span>
-            <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#FFF', marginTop: '0.4rem', marginBottom: '0.75rem' }}>
-              Winning campaigns are built on discipline, data, and relentless storytelling.
+            <h3 style={{ fontSize: '1.45rem', fontWeight: 700, color: '#FFF', marginTop: '0.4rem', marginBottom: '0.75rem' }}>
+              {t.about.philosophyTitle}
             </h3>
             <p style={{ color: '#94A3B8', fontSize: '0.95rem', lineHeight: 1.6 }}>
-              We do not rely on guesswork or cookie-cutter templates. Every campaign strategy is forged in real-world ground intelligence and executed with military precision.
+              {t.about.philosophyDesc}
             </p>
           </div>
           <button onClick={onOpenConsultation} className="btn-gold" style={{ padding: '0.9rem 1.8rem' }}>
-            Schedule a Confidential Briefing
+            {t.about.briefingBtn}
           </button>
         </div>
       </div>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Users2, Radio, ShieldCheck, Award } from 'lucide-react';
+import { Users2, Radio, ShieldCheck } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ImpactStats() {
   const [counts, setCounts] = useState({ campaigns: 0, reach: 0, trust: 0 });
+  const { t } = useLanguage();
 
   useEffect(() => {
-    // Smooth number animation
     let start = 0;
     const duration = 1600;
     const startTime = performance.now();
@@ -13,7 +14,6 @@ export default function ImpactStats() {
     const updateCounter = (currentTime) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
       const ease = 1 - Math.pow(1 - progress, 3);
 
       setCounts({
@@ -37,20 +37,20 @@ export default function ImpactStats() {
     {
       icon: Users2,
       value: `${counts.campaigns}+`,
-      title: 'CAMPAIGNS MANAGED',
-      subtitle: 'From local to national',
+      title: t.impact.campaignsTitle,
+      subtitle: t.impact.campaignsSub,
     },
     {
       icon: Radio,
       value: `${counts.reach}M+`,
-      title: 'TOTAL REACH',
-      subtitle: 'Across traditional & digital media',
+      title: t.impact.reachTitle,
+      subtitle: t.impact.reachSub,
     },
     {
       icon: ShieldCheck,
       value: `${counts.trust}%`,
-      title: 'CLIENT TRUST FACTOR',
-      subtitle: 'Built on results, not promises',
+      title: t.impact.trustTitle,
+      subtitle: t.impact.trustSub,
     },
   ];
 
@@ -60,7 +60,7 @@ export default function ImpactStats() {
       style={{
         position: 'relative',
         padding: '5rem 0',
-        backgroundColor: '#050A14',
+        backgroundColor: '#030814',
         overflow: 'hidden',
         borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
       }}
@@ -83,7 +83,7 @@ export default function ImpactStats() {
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, #050A14 0%, rgba(5, 10, 20, 0.88) 40%, rgba(5, 10, 20, 0.92) 100%)',
+          background: 'linear-gradient(90deg, #030814 0%, rgba(3, 8, 20, 0.88) 40%, rgba(3, 8, 20, 0.92) 100%)',
           zIndex: 1,
         }}
       />
@@ -100,19 +100,19 @@ export default function ImpactStats() {
           {/* Left Column: Heading (4 cols) */}
           <div style={{ gridColumn: 'span 12' }} className="impact-left-col">
             <div className="gold-badge" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', fontWeight: 600 }}>
-              OUR IMPACT
+              {t.impact.badge}
             </div>
             <h2
               style={{
                 fontSize: 'clamp(1.75rem, 2.8vw, 2.35rem)',
                 fontWeight: 700,
                 color: '#F8FAFC',
-                lineHeight: 1.22,
+                lineHeight: 1.25,
                 letterSpacing: '-0.01em',
               }}
             >
-              Real Strategies.<br />
-              <span>Measurable Results.</span>
+              {t.impact.title1}<br />
+              <span>{t.impact.title2}</span>
             </h2>
           </div>
 
@@ -143,7 +143,7 @@ export default function ImpactStats() {
                     <div
                       style={{
                         marginBottom: '0.75rem',
-                        color: 'var(--gold-primary)',
+                        color: 'var(--theme-primary)',
                       }}
                     >
                       <IconComponent size={24} strokeWidth={1.8} />

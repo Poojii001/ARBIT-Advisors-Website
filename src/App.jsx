@@ -8,6 +8,7 @@ import CaseStudies from './components/CaseStudies';
 import Insights from './components/Insights';
 import Footer from './components/Footer';
 import ConsultationModal from './components/ConsultationModal';
+import { LanguageProvider } from './context/LanguageContext';
 
 export default function App() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
@@ -36,42 +37,44 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg-primary)' }}>
-      {/* Top Navbar */}
-      <Navbar
-        activeSection={activeSection}
-        onOpenConsultation={() => setIsConsultationOpen(true)}
-      />
+    <LanguageProvider>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg-primary)' }}>
+        {/* Top Navbar */}
+        <Navbar
+          activeSection={activeSection}
+          onOpenConsultation={() => setIsConsultationOpen(true)}
+        />
 
-      {/* Main Content Flow */}
-      <main style={{ flex: 1 }}>
-        {/* Hero Section */}
-        <Hero onOpenConsultation={() => setIsConsultationOpen(true)} />
+        {/* Main Content Flow */}
+        <main style={{ flex: 1 }}>
+          {/* Hero Section */}
+          <Hero onOpenConsultation={() => setIsConsultationOpen(true)} />
 
-        {/* Core Capabilities (01 Brand PR, 02 Media Relations, 03 Strategic Advisory) */}
-        <CoreCapabilities onOpenConsultation={() => setIsConsultationOpen(true)} />
+          {/* Core Capabilities (01 Brand PR, 02 Media Relations, 03 Strategic Advisory) */}
+          <CoreCapabilities onOpenConsultation={() => setIsConsultationOpen(true)} />
 
-        {/* Impact Section (150+ Campaigns, 500M+ Reach, 95% Trust) */}
-        <ImpactStats />
+          {/* Impact Section (150+ Campaigns, 500M+ Reach, 95% Trust) */}
+          <ImpactStats />
 
-        {/* About Section */}
-        <About onOpenConsultation={() => setIsConsultationOpen(true)} />
+          {/* About Section */}
+          <About onOpenConsultation={() => setIsConsultationOpen(true)} />
 
-        {/* Case Studies Section */}
-        <CaseStudies />
+          {/* Case Studies Section */}
+          <CaseStudies />
 
-        {/* Insights & Analysis Section */}
-        <Insights />
-      </main>
+          {/* Insights & Analysis Section */}
+          <Insights />
+        </main>
 
-      {/* Footer Section */}
-      <Footer onOpenConsultation={() => setIsConsultationOpen(true)} />
+        {/* Footer Section */}
+        <Footer onOpenConsultation={() => setIsConsultationOpen(true)} />
 
-      {/* Interactive Consultation Modal */}
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-      />
-    </div>
+        {/* Interactive Consultation Modal */}
+        <ConsultationModal
+          isOpen={isConsultationOpen}
+          onClose={() => setIsConsultationOpen(false)}
+        />
+      </div>
+    </LanguageProvider>
   );
 }
