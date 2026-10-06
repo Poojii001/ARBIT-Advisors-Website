@@ -16,9 +16,8 @@ export default function CoreCapabilities({ onOpenConsultation }) {
       id="services"
       style={{
         padding: '5.5rem 0',
-        backgroundColor: '#16274E',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+        backgroundColor: '#FFFFFF',
+        borderBottom: '1px solid #E2E8F0',
         position: 'relative',
       }}
     >
@@ -27,7 +26,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
           
           {/* Left Column: Heading & Introduction (4 cols) */}
           <div style={{ gridColumn: 'span 12' }} className="capabilities-left-col">
-            <div className="gold-badge" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', fontWeight: 700 }}>
+            <div className="gold-badge" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', fontWeight: 700, color: '#D97706' }}>
               {t.capabilities.badge}
             </div>
             
@@ -35,7 +34,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
               style={{
                 fontSize: 'clamp(1.8rem, 2.9vw, 2.45rem)',
                 fontWeight: 800,
-                color: '#FFFFFF',
+                color: '#0A1931',
                 lineHeight: 1.25,
                 marginBottom: '1rem',
                 letterSpacing: '-0.015em',
@@ -46,8 +45,8 @@ export default function CoreCapabilities({ onOpenConsultation }) {
 
             <p
               style={{
-                fontSize: '0.96rem',
-                color: '#F1F5F9',
+                fontSize: '0.98rem',
+                color: '#475569',
                 lineHeight: 1.68,
                 marginBottom: '1.8rem',
                 maxWidth: '380px',
@@ -66,7 +65,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
             </button>
           </div>
 
-          {/* Right Column: 3 Capability Cards (8 cols) */}
+          {/* Right Column: Capability Cards (8 cols) */}
           <div style={{ gridColumn: 'span 12' }} className="capabilities-right-col">
             <div
               style={{
@@ -88,47 +87,46 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                       flexDirection: 'column',
                       justifyContent: 'space-between',
                       position: 'relative',
-                      borderTop: '1px solid rgba(255, 255, 255, 0.12)',
                     }}
                   >
                     {/* Top Row: Index number */}
                     <div>
                       <div
                         style={{
-                          fontSize: '0.8rem',
+                          fontSize: '0.82rem',
                           fontFamily: 'var(--font-mono)',
                           fontWeight: 700,
-                          color: 'var(--theme-light)',
+                          color: '#0084D6',
                           marginBottom: '1.25rem',
                         }}
                       >
                         {cap.number}
                       </div>
 
-                      {/* Icon with Subtle Background */}
+                      {/* Icon with Electric Azure Background */}
                       <div
                         style={{
                           width: '46px',
                           height: '46px',
                           borderRadius: '8px',
-                          border: '1px solid rgba(255, 255, 255, 0.12)',
-                          backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                          border: '1px solid #DBEAFE',
+                          backgroundColor: '#EFF6FF',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           marginBottom: '1.25rem',
-                          color: 'var(--theme-light)',
+                          color: '#0084D6',
                         }}
                       >
-                        <IconComponent size={22} strokeWidth={1.8} />
+                        <IconComponent size={22} strokeWidth={2} />
                       </div>
 
                       {/* Title */}
                       <h3
                         style={{
-                          fontSize: '1.2rem',
+                          fontSize: '1.25rem',
                           fontWeight: 700,
-                          color: '#FFFFFF',
+                          color: '#0A1931',
                           marginBottom: '0.75rem',
                           lineHeight: 1.35,
                         }}
@@ -139,9 +137,9 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                       {/* Description */}
                       <p
                         style={{
-                          fontSize: '0.88rem',
+                          fontSize: '0.9rem',
                           lineHeight: 1.62,
-                          color: '#E2E8F0',
+                          color: '#475569',
                           marginBottom: '1.5rem',
                         }}
                       >
@@ -157,24 +155,22 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                           display: 'inline-flex',
                           alignItems: 'center',
                           gap: '0.45rem',
-                          fontSize: '0.86rem',
-                          fontWeight: 600,
-                          color: '#E2E8F0',
+                          fontSize: '0.88rem',
+                          fontWeight: 700,
+                          color: '#0084D6',
                           letterSpacing: '0.01em',
-                          transition: 'color 0.2s ease, transform 0.2s ease',
+                          transition: 'all 0.2s ease',
                           padding: '4px 0',
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.color = 'var(--theme-light)';
-                          e.currentTarget.style.transform = 'translateX(3px)';
+                          e.currentTarget.style.transform = 'translateX(4px)';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.color = '#E2E8F0';
                           e.currentTarget.style.transform = 'translateX(0)';
                         }}
                       >
                         {t.capabilities.learnMore}
-                        <ArrowRight size={14} color="var(--theme-light)" />
+                        <ArrowRight size={14} color="#0084D6" />
                       </button>
                     </div>
                   </div>
@@ -200,7 +196,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                 position: 'absolute',
                 top: '1.5rem',
                 right: '1.5rem',
-                color: '#94A3B8',
+                color: '#64748B',
                 padding: '0.3rem',
                 borderRadius: '50%',
               }}
@@ -208,31 +204,31 @@ export default function CoreCapabilities({ onOpenConsultation }) {
               <X size={20} />
             </button>
 
-            <div className="gold-badge" style={{ marginBottom: '0.5rem' }}>
+            <div className="gold-badge" style={{ marginBottom: '0.5rem', color: '#D97706' }}>
               {t.capabilities.modalBadge} &bull; {selectedService.number}
             </div>
-            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#FFF', marginBottom: '1rem' }}>
+            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0A1931', marginBottom: '1rem' }}>
               {selectedService.title}
             </h3>
-            <p style={{ color: '#CBD5E1', fontSize: '0.98rem', lineHeight: 1.6, marginBottom: '1.8rem' }}>
+            <p style={{ color: '#475569', fontSize: '0.98rem', lineHeight: 1.6, marginBottom: '1.8rem' }}>
               {selectedService.description}
             </p>
 
             <div style={{ marginBottom: '2rem' }}>
-              <h4 style={{ fontSize: '0.88rem', letterSpacing: '0.08em', color: 'var(--theme-light)', textTransform: 'uppercase', marginBottom: '1rem', fontWeight: 700 }}>
+              <h4 style={{ fontSize: '0.88rem', letterSpacing: '0.08em', color: '#0084D6', textTransform: 'uppercase', marginBottom: '1rem', fontWeight: 700 }}>
                 {t.capabilities.deliverablesTitle}
               </h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 {selectedService.details.map((item, idx) => (
                   <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                    <CheckCircle2 size={18} color="var(--theme-cyan)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                    <span style={{ fontSize: '0.92rem', color: '#E2E8F0', lineHeight: 1.5 }}>{item}</span>
+                    <CheckCircle2 size={18} color="#0084D6" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    <span style={{ fontSize: '0.92rem', color: '#334155', lineHeight: 1.5 }}>{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end', paddingTop: '1rem', borderTop: '1px solid #E2E8F0' }}>
               <button onClick={() => setSelectedServiceIndex(null)} className="btn-gold-outline" style={{ padding: '0.75rem 1.4rem' }}>
                 {t.capabilities.closeBtn}
               </button>

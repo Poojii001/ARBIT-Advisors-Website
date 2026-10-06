@@ -18,18 +18,18 @@ export default function CaseStudies() {
       id="case-studies"
       style={{
         padding: '5.5rem 0',
-        backgroundColor: '#132244',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+        backgroundColor: '#FFFFFF',
+        borderBottom: '1px solid #E2E8F0',
       }}
     >
       <div className="container">
         {/* Section Header & Category Filter */}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: '1.5rem', marginBottom: '3.5rem' }}>
           <div>
-            <div className="gold-badge" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', fontWeight: 700 }}>
+            <div className="gold-badge" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', fontWeight: 700, color: '#D97706' }}>
               {t.caseStudies.badge}
             </div>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 2.9vw, 2.45rem)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.015em' }}>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 2.9vw, 2.45rem)', fontWeight: 800, color: '#0A1931', letterSpacing: '-0.015em' }}>
               {t.caseStudies.title}
             </h2>
           </div>
@@ -43,13 +43,13 @@ export default function CaseStudies() {
                   key={idx}
                   onClick={() => setActiveFilterIndex(idx)}
                   style={{
-                    padding: '0.45rem 1rem',
-                    fontSize: '0.82rem',
+                    padding: '0.5rem 1.1rem',
+                    fontSize: '0.84rem',
                     fontWeight: 600,
                     borderRadius: '20px',
-                    border: isActive ? '1px solid rgba(56, 189, 248, 0.6)' : '1px solid rgba(255, 255, 255, 0.12)',
-                    backgroundColor: isActive ? 'rgba(0, 163, 255, 0.22)' : 'rgba(255, 255, 255, 0.04)',
-                    color: isActive ? '#FFFFFF' : '#CBD5E1',
+                    border: isActive ? '1px solid #0084D6' : '1px solid #E2E8F0',
+                    backgroundColor: isActive ? '#0084D6' : '#F8FAFC',
+                    color: isActive ? '#FFFFFF' : '#475569',
                     transition: 'all 0.2s ease',
                   }}
                 >
@@ -78,67 +78,67 @@ export default function CaseStudies() {
                 <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', marginBottom: '1rem' }}>
                   <span
                     style={{
-                      fontSize: '0.72rem',
+                      fontSize: '0.74rem',
                       fontWeight: 700,
                       letterSpacing: '0.08em',
-                      color: 'var(--theme-light)',
+                      color: '#0084D6',
                       textTransform: 'uppercase',
                     }}
                   >
                     {study.category}
                   </span>
                   
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', fontSize: '0.75rem', color: '#94A3B8' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', fontSize: '0.78rem', color: '#64748B' }}>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                      <Calendar size={13} color="var(--theme-light)" /> {study.year}
+                      <Calendar size={14} color="#0084D6" /> {study.year}
                     </span>
                     <span>&bull;</span>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                      <MapPin size={13} color="var(--theme-light)" /> {study.region}
+                      <MapPin size={14} color="#0084D6" /> {study.region}
                     </span>
                   </div>
                 </div>
 
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.35, marginBottom: '0.75rem' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0A1931', lineHeight: 1.35, marginBottom: '0.75rem' }}>
                   {study.title}
                 </h3>
                 
-                <div style={{ fontSize: '0.82rem', color: '#94A3B8', marginBottom: '1.2rem', fontStyle: 'italic' }}>
+                <div style={{ fontSize: '0.84rem', color: '#64748B', marginBottom: '1.2rem', fontStyle: 'italic' }}>
                   {t.caseStudies.clientProfile}: {study.client}
                 </div>
 
-                <p style={{ fontSize: '0.9rem', color: '#CBD5E1', lineHeight: 1.62, marginBottom: '1.5rem' }}>
+                <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: 1.62, marginBottom: '1.5rem' }}>
                   {study.summary}
                 </p>
 
                 {/* Baseline vs Result Comparison Card */}
                 <div
                   style={{
-                    backgroundColor: 'rgba(20, 35, 68, 0.75)',
-                    borderRadius: '6px',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    backgroundColor: '#F8FAFC',
+                    borderRadius: '8px',
+                    border: '1px solid #E2E8F0',
                     padding: '1.1rem',
                     marginBottom: '1.5rem',
-                    fontSize: '0.84rem',
+                    fontSize: '0.86rem',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '0.65rem',
                   }}
                 >
                   <div>
-                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '3px' }}>
+                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '3px' }}>
                       {t.caseStudies.baselineLabel}
                     </div>
-                    <div style={{ color: '#E2E8F0', lineHeight: 1.45 }}>
+                    <div style={{ color: '#334155', lineHeight: 1.45 }}>
                       {study.baseline}
                     </div>
                   </div>
 
-                  <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '0.55rem' }}>
-                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--theme-light)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '3px', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                      <CheckCircle2 size={13} /> {t.caseStudies.resultLabel}
+                  <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '0.55rem' }}>
+                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#0084D6', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '3px', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                      <CheckCircle2 size={14} /> {t.caseStudies.resultLabel}
                     </div>
-                    <div style={{ color: '#FFFFFF', fontWeight: 600, lineHeight: 1.45 }}>
+                    <div style={{ color: '#0A1931', fontWeight: 700, lineHeight: 1.45 }}>
                       {study.result}
                     </div>
                   </div>
@@ -152,19 +152,19 @@ export default function CaseStudies() {
                     display: 'grid',
                     gridTemplateColumns: 'repeat(3, 1fr)',
                     gap: '0.75rem',
-                    padding: '0.85rem',
-                    backgroundColor: 'rgba(20, 35, 68, 0.75)',
-                    borderRadius: '6px',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    padding: '0.9rem',
+                    backgroundColor: '#F8FAFC',
+                    borderRadius: '8px',
+                    border: '1px solid #E2E8F0',
                     marginBottom: '1rem',
                   }}
                 >
                   {study.metrics.map((m, idx) => (
                     <div key={idx} style={{ textAlign: 'center' }}>
-                      <div style={{ fontSize: '1.08rem', fontWeight: 800, color: '#FFFFFF', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0A1931', fontFamily: 'var(--font-mono)' }}>
                         {m.val}
                       </div>
-                      <div style={{ fontSize: '0.65rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', marginTop: '2px' }}>
+                      <div style={{ fontSize: '0.68rem', color: '#64748B', fontWeight: 600, textTransform: 'uppercase', marginTop: '2px' }}>
                         {m.label}
                       </div>
                     </div>
@@ -172,8 +172,8 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Consent & Permission Disclaimer */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.72rem', color: '#94A3B8' }}>
-                  <ShieldCheck size={13} color="var(--theme-light)" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.74rem', color: '#64748B' }}>
+                  <ShieldCheck size={14} color="#0084D6" />
                   <span>{t.caseStudies.permissionBadge}</span>
                 </div>
               </div>

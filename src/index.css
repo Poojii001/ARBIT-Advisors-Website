@@ -1,40 +1,46 @@
 /* ==========================================================================
-   ARBIT ADVISORS - MODERN LUMINOUS NAVY & ELECTRIC CYAN THEME
+   ARBIT ADVISORS - CLEAN LIGHT THEME WITH ELECTRIC AZURE SWOOSH & GOLD ACCENTS
    ========================================================================== */
 
 :root {
-  /* Color System - Lighter, Luminous Royal Navy with Vibrant Azure & Warm Gold */
-  --bg-primary: #132244;
-  --bg-secondary: #182B54;
-  --bg-card: rgba(26, 44, 82, 0.78);
-  --bg-card-hover: rgba(36, 58, 106, 0.92);
-  --bg-glass: rgba(20, 35, 68, 0.88);
+  /* Clean White & Light Sky Backgrounds */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-surface: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.95);
   
-  --theme-primary: #00A3FF;
-  --theme-light: #38BDF8;
+  /* Deep Navy & Charcoal Typography */
+  --theme-navy: #0A1931;
+  --theme-navy-deep: #071026;
+  --text-main: #0A1931;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  
+  /* Brand Swoosh Electric Azure & Cyan Colors */
+  --theme-azure: #0084D6;
+  --theme-azure-bright: #00A3FF;
   --theme-cyan: #00D2FF;
-  --theme-gold: #F59E0B;
-  --theme-gold-light: #FBBF24;
-  --theme-glow: rgba(0, 163, 255, 0.25);
-  --theme-gradient: linear-gradient(135deg, #00A3FF 0%, #0077E6 100%);
-  --theme-gradient-gold: linear-gradient(135deg, #38BDF8 0%, #00A3FF 60%, #F59E0B 100%);
+  --theme-primary: #0084D6;
+  --theme-gradient-azure: linear-gradient(135deg, #0084D6 0%, #0066CC 100%);
+  
+  /* Warm Gold & Amber Highlights */
+  --theme-gold: #D97706;
+  --theme-gold-light: #F59E0B;
+  --theme-gold-bg: #FEF3C7;
+  --theme-gradient-gold: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
 
   /* Backward Compatibility Aliases */
-  --gold-primary: #00A3FF;
-  --gold-light: #38BDF8;
-  --gold-dark: #0284C7;
-  --gold-glow: rgba(0, 163, 255, 0.25);
-  --gold-gradient: linear-gradient(135deg, #00A3FF 0%, #0077E6 100%);
+  --gold-primary: #0084D6;
+  --gold-light: #00A3FF;
+  --gold-dark: #0066CC;
+  --gold-glow: rgba(0, 132, 214, 0.2);
+  --gold-gradient: linear-gradient(135deg, #0084D6 0%, #0066CC 100%);
 
-  --text-main: #FFFFFF;
-  --text-secondary: #E2E8F0;
-  --text-muted: #A0AEC0;
-  --text-theme: #38BDF8;
-
-  --border-subtle: rgba(255, 255, 255, 0.12);
-  --border-theme: rgba(0, 163, 255, 0.35);
-  --border-theme-bright: rgba(56, 189, 248, 0.6);
-  --border-gold: rgba(245, 158, 11, 0.4);
+  --border-subtle: #E2E8F0;
+  --border-card: #E2E8F0;
+  --border-theme: rgba(0, 132, 214, 0.35);
 
   /* Typography */
   --font-body: 'Plus Jakarta Sans', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -56,7 +62,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
   color: var(--text-main);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
@@ -65,7 +71,7 @@ html {
 
 body {
   min-height: 100vh;
-  background: linear-gradient(180deg, #14244B 0%, #111E3E 50%, #0E1832 100%);
+  background: #FFFFFF;
   color: var(--text-main);
   overflow-x: hidden;
   position: relative;
@@ -78,16 +84,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #111E3E;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #233660;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #324B82;
+  background: #94A3B8;
 }
 
 /* Base Link & Button Resets */
@@ -132,17 +138,20 @@ input, textarea, select {
 }
 
 /* Typography Utilities */
-.theme-text, .gold-text {
-  background: linear-gradient(135deg, #38BDF8 0%, #00D2FF 50%, #FBBF24 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.theme-text, .azure-text {
+  color: #0084D6;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.gold-text {
+  color: #D97706;
+  font-weight: 700;
   display: inline-block;
 }
 
 .gradient-highlight {
-  background: linear-gradient(135deg, #00D2FF 0%, #38BDF8 40%, #FBBF24 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0084D6;
   display: inline;
 }
 
@@ -154,7 +163,7 @@ input, textarea, select {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--theme-gold-light);
+  color: #D97706;
   margin-bottom: 0.85rem;
 }
 
@@ -162,78 +171,74 @@ input, textarea, select {
   content: '✦';
   display: inline-block;
   font-size: 0.75rem;
-  color: var(--theme-gold);
+  color: #D97706;
 }
 
-/* Buttons - Prestigious & High Energy */
+/* Primary Button - Exact Electric Azure Blue from Image */
 .btn-gold, .btn-theme {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
   padding: 0.84rem 1.85rem;
-  background: linear-gradient(135deg, #0284C7 0%, #0066CC 60%, #0284C7 100%);
+  background: #0084D6;
   color: #FFFFFF;
   font-weight: 700;
   font-size: 0.92rem;
   letter-spacing: 0.02em;
   border-radius: 6px;
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  box-shadow: 0 4px 14px rgba(0, 132, 214, 0.3);
   transition: all var(--transition-smooth);
 }
 
 .btn-gold:hover, .btn-theme:hover {
-  background: linear-gradient(135deg, #0EA5E9 0%, #0077EE 50%, #F59E0B 100%);
-  border-color: rgba(251, 191, 36, 0.6);
+  background: #006EB3;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 132, 214, 0.4);
 }
 
 .btn-gold:active, .btn-theme:active {
   transform: translateY(0);
 }
 
+/* Secondary / Outline Button */
 .btn-gold-outline, .btn-theme-outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
   padding: 0.78rem 1.5rem;
-  background: rgba(255, 255, 255, 0.04);
-  color: #F1F5F9;
-  font-weight: 600;
+  background: rgba(0, 132, 214, 0.06);
+  color: #0084D6;
+  font-weight: 700;
   font-size: 0.86rem;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1.5px solid #0084D6;
   border-radius: 6px;
   transition: all var(--transition-smooth);
-  backdrop-filter: blur(4px);
 }
 
 .btn-gold-outline:hover, .btn-theme-outline:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: #0084D6;
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 132, 214, 0.25);
 }
 
-/* Glass Card - Clean Slate & High Content Contrast */
+/* Clean White Cards */
 .glass-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
   transition: all var(--transition-smooth);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .glass-card:hover {
-  background: var(--bg-card-hover);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #FFFFFF;
+  border-color: #CBD5E1;
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
 }
 
 /* Animations */
@@ -259,8 +264,8 @@ input, textarea, select {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(10, 18, 38, 0.85);
-  backdrop-filter: blur(10px);
+  background: rgba(10, 25, 49, 0.65);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,13 +275,14 @@ input, textarea, select {
 }
 
 .modal-content {
-  background: #16274E;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  border-radius: 10px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
   max-width: 580px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 25px 50px -12px rgba(5, 10, 24, 0.85);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   position: relative;
+  color: #0A1931;
 }

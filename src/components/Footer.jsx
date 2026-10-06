@@ -61,7 +61,7 @@ export default function Footer({ onOpenConsultation }) {
     <footer
       id="contact"
       style={{
-        backgroundColor: '#101B36',
+        backgroundColor: '#071026',
         color: '#94A3B8',
         padding: '5rem 0 2rem 0',
         borderTop: '1px solid rgba(255, 255, 255, 0.08)',
@@ -77,9 +77,9 @@ export default function Footer({ onOpenConsultation }) {
             gap: '1.25rem',
             marginBottom: '4rem',
             padding: '1.6rem 1.8rem',
-            backgroundColor: 'rgba(24, 43, 84, 0.85)',
-            borderRadius: '8px',
-            border: '1px solid rgba(56, 189, 248, 0.2)',
+            backgroundColor: '#0A1931',
+            borderRadius: '10px',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
           }}
         >
           {/* Phone */}
@@ -102,12 +102,12 @@ export default function Footer({ onOpenConsultation }) {
                 width: '42px',
                 height: '42px',
                 borderRadius: '8px',
-                backgroundColor: 'rgba(255, 255, 255, 0.04)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
+                backgroundColor: 'rgba(0, 132, 214, 0.15)',
+                border: '1px solid rgba(0, 132, 214, 0.3)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'var(--theme-light)',
+                color: '#0084D6',
                 flexShrink: 0,
               }}
             >
