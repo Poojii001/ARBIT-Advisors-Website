@@ -109,49 +109,11 @@ export default function About({ onOpenConsultation }) {
               display: 'block',
             }}
           />
-
-          {/* Realistic Live Telemetry HUD Overlays */}
-          <div
-            className="hud-badge war-room-hud-top-right"
-            style={{
-              position: 'absolute',
-              top: '1.5rem',
-              right: '1.5rem',
-              padding: '0.65rem 1rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.6rem',
-              fontSize: '0.78rem',
-              fontWeight: 700,
-            }}
-          >
-            <span className="live-pulse-dot" />
-            <span>42,000+ Ground Booths Monitored (Live)</span>
-          </div>
-
-          <div
-            className="hud-badge war-room-hud-top-left"
-            style={{
-              position: 'absolute',
-              top: '1.5rem',
-              left: '1.5rem',
-              padding: '0.65rem 1rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.6rem',
-              fontSize: '0.78rem',
-              fontWeight: 700,
-            }}
-          >
-            <span className="live-pulse-amber" />
-            <span>Real-time Sentiment Shift: <span style={{ color: '#10B981' }}>+18.4% Positive</span></span>
-          </div>
-
           <div
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(180deg, rgba(10, 25, 49, 0.15) 0%, rgba(10, 25, 49, 0.88) 80%, #0A1931 100%)',
+              background: 'linear-gradient(180deg, rgba(10, 25, 49, 0.1) 0%, rgba(10, 25, 49, 0.85) 85%, #0A1931 100%)',
               display: 'flex',
               alignItems: 'flex-end',
               padding: '2.5rem',

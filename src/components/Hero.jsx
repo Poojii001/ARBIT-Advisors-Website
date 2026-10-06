@@ -112,8 +112,8 @@ export default function Hero({ onOpenConsultation }) {
               {t.hero.subtitle}
             </p>
 
-            {/* Hero CTA Button & Response Guarantee */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1.25rem', marginBottom: '2.5rem' }}>
+            {/* Hero CTA Button - Electric Azure Blue from Logo */}
+            <div>
               <button
                 onClick={onOpenConsultation}
                 className="btn-gold"
@@ -130,61 +130,6 @@ export default function Hero({ onOpenConsultation }) {
                 {t.hero.cta}
                 <ArrowRight size={16} />
               </button>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.82rem', color: '#475569', fontWeight: 600 }}>
-                <span className="live-pulse-dot" />
-                <span>2-Hour Confidential Response Guarantee</span>
-              </div>
-            </div>
-
-            {/* Live Campaign Intelligence Status Bar */}
-            <div
-              style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                border: '1px solid #E2E8F0',
-                borderRadius: '10px',
-                padding: '1rem 1.25rem',
-                maxWidth: '620px',
-                boxShadow: '0 6px 20px rgba(0, 0, 0, 0.04)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.65rem',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.78rem', fontWeight: 700, color: '#0A1931' }}>
-                  <span className="live-pulse-dot" />
-                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.06em', color: '#0084D6' }}>
-                    {t.hero.livePulse || 'Live Campaign Pulse'}
-                  </span>
-                </div>
-                <span style={{ fontSize: '0.76rem', color: '#64748B', fontWeight: 500 }}>
-                  {t.hero.pulseState || '12 Active Desks • 99.4% Message Precision'}
-                </span>
-              </div>
-
-              {/* Verified Trust Badges */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', borderTop: '1px solid #F1F5F9', paddingTop: '0.65rem' }}>
-                {(t.hero.trustBadges || ['Strict NDA Protocol', 'Pan-India Field Command', '15-Min Response']).map((badge, idx) => (
-                  <span
-                    key={idx}
-                    style={{
-                      fontSize: '0.72rem',
-                      padding: '0.25rem 0.6rem',
-                      backgroundColor: '#F8FAFC',
-                      border: '1px solid #E2E8F0',
-                      borderRadius: '4px',
-                      color: '#334155',
-                      fontWeight: 600,
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.35rem',
-                    }}
-                  >
-                    <span style={{ color: '#0084D6' }}>✓</span> {badge}
-                  </span>
-                ))}
-              </div>
             </div>
 
           </div>
