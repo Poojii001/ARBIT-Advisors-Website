@@ -65,26 +65,38 @@ export default function ImpactStats() {
         borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
       }}
     >
-      {/* Background Graphic with rally crowd and flags texture */}
+      {/* Background Graphic with rally crowd and flags texture - High Visibility */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
           backgroundImage: 'url(/assets/flags_crowd.png)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-          opacity: 0.28,
+          backgroundPosition: 'center 35%',
+          opacity: 0.85,
+          filter: 'contrast(1.15) saturate(1.1) brightness(0.72)',
           zIndex: 0,
         }}
       />
 
-      {/* Luminous overlay gradients */}
+      {/* Luminous Soft overlay gradient for high contrast readability */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, #091228 0%, rgba(9, 18, 40, 0.85) 40%, rgba(9, 18, 40, 0.88) 100%)',
+          background: 'linear-gradient(90deg, rgba(9, 18, 40, 0.82) 0%, rgba(9, 18, 40, 0.55) 40%, rgba(9, 18, 40, 0.5) 70%, rgba(9, 18, 40, 0.75) 100%)',
           zIndex: 1,
+        }}
+      />
+      
+      {/* Top and Bottom soft blend */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(180deg, rgba(9, 18, 40, 0.6) 0%, transparent 20%, transparent 80%, rgba(9, 18, 40, 0.8) 100%)',
+          zIndex: 1,
+          pointerEvents: 'none',
         }}
       />
 

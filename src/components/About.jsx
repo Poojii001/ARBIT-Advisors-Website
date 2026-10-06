@@ -112,7 +112,7 @@ export default function About({ onOpenConsultation }) {
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(180deg, rgba(3, 7, 18, 0.2) 0%, rgba(3, 7, 18, 0.85) 90%, #030712 100%)',
+              background: 'linear-gradient(180deg, rgba(9, 17, 36, 0.15) 0%, rgba(9, 17, 36, 0.8) 85%, #091124 100%)',
               display: 'flex',
               alignItems: 'flex-end',
               padding: '2.5rem',
