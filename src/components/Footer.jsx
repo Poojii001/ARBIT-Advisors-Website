@@ -214,7 +214,7 @@ export default function Footer({ onOpenConsultation }) {
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
             gap: '2.5rem',
-            marginBottom: '3.5rem',
+            marginBottom: '2.25rem',
           }}
         >
           {/* Col 1: Brand & Identity (3.5 cols) */}
@@ -290,7 +290,7 @@ export default function Footer({ onOpenConsultation }) {
           {/* Col 4: Connect & Newsletter (4 cols) */}
           <div style={{ gridColumn: 'span 12' }} className="footer-stay-updated-col">
             {/* Social Icons */}
-            <div style={{ marginBottom: '2rem' }}>
+            <div style={{ marginBottom: '1.25rem' }}>
               <h4 style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '1rem' }}>
                 {t.footer.connectWithUs}
               </h4>
