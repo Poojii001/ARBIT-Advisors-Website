@@ -63,19 +63,6 @@ export const translations = {
             'Journalist & Political Editor Engagement Networks',
           ],
         },
-        {
-          number: '03',
-          title: 'Strategic Advisory & Electoral Intelligence',
-          description:
-            'Actionable insights, political intelligence and strategy support to help you make informed decisions and stay ahead of the curve.',
-          details: [
-            'Electoral War Room Setup & Oversight',
-            'Opposition Intelligence & Vulnerability Audits',
-            'Coalition & Stakeholder Strategic Alignment',
-            'Micro-Targeted Demographic Voter Messaging',
-            'Post-Election Policy & Governance Positioning',
-          ],
-        },
       ],
     },
     // Impact Stats (Credibly Defined & Audited)
@@ -376,19 +363,6 @@ Our crisis framework establishes immediate forensic verification, direct escalat
             'संपादकीय आलेख (Op-Ed) प्रकाशन',
             '24/7 त्वरित प्रतिक्रिया मीडिया वॉर रूम',
             'वरिष्ठ राजनीतिक पत्रकारों से प्रत्यक्ष संवाद नेटवर्क',
-          ],
-        },
-        {
-          number: '03',
-          title: 'रणनीतिक सलाहकार एवं खुफिया डेटा',
-          description:
-            'सटीक राजनीतिक खुफिया जानकारी, बूथ-स्तरीय डेटा और रणनीतिक सहयोग से आपको विरोधियों से हमेशा आगे रखना।',
-          details: [
-            'चुनावी वॉर रूम की स्थापना एवं संचालन',
-            'विपक्षी रणनीति विश्लेषण एवं कमियों का ऑडिट',
-            'गठबंधन एवं हितधारक रणनीतिक सामंजस्य',
-            'वर्ग-विशिष्ट एवं जनसांख्यिकीय मतदाता संदेश',
-            'चुनाव-उपरांत नीतिगत व शासन स्थिति निर्धारण',
           ],
         },
       ],
