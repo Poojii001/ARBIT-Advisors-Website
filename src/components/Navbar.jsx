@@ -82,7 +82,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
                       display: 'inline-block',
                       transition: 'color 0.2s ease',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#E5A93C')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? '#FFF' : '#A0AEC0')}
                   >
                     {link.name}
@@ -95,9 +95,9 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
                         left: 0,
                         right: 0,
                         height: '2px',
-                        backgroundColor: 'var(--gold-primary)',
+                        backgroundColor: 'var(--theme-primary)',
                         borderRadius: '2px',
-                        boxShadow: '0 0 8px rgba(229, 169, 60, 0.6)',
+                        boxShadow: '0 0 10px rgba(0, 163, 255, 0.8)',
                       }}
                     />
                   )}
@@ -127,10 +127,10 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#E5A93C',
+              color: 'var(--theme-primary)',
               padding: '0.5rem',
               borderRadius: '4px',
-              border: '1px solid rgba(229, 169, 60, 0.2)',
+              border: '1px solid rgba(0, 163, 255, 0.3)',
             }}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

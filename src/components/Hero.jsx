@@ -138,7 +138,7 @@ export default function Hero({ onOpenConsultation }) {
                 textTransform: 'uppercase',
               }}
             >
-              <span style={{ color: 'rgba(243, 192, 104, 0.75)' }}>STRATEGY</span>
+              <span style={{ color: 'var(--theme-cyan)' }}>STRATEGY</span>
               <span>COMMUNICATION</span>
               <span>INFLUENCE</span>
               <span>IMPACT</span>

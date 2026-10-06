@@ -117,12 +117,12 @@ export default function Footer({ onOpenConsultation }) {
               Quick Links
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.88rem' }}>
-              <li><a href="#home" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#E5A93C')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Home</a></li>
-              <li><a href="#about" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#E5A93C')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>About Us</a></li>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#E5A93C')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Services</a></li>
-              <li><a href="#case-studies" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#E5A93C')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Case Studies</a></li>
-              <li><a href="#insights" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#E5A93C')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Insights</a></li>
-              <li><a href="#contact" onClick={(e) => { e.preventDefault(); onOpenConsultation(); }} style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#E5A93C')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Contact</a></li>
+              <li><a href="#home" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Home</a></li>
+              <li><a href="#about" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>About Us</a></li>
+              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Services</a></li>
+              <li><a href="#case-studies" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Case Studies</a></li>
+              <li><a href="#insights" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Insights</a></li>
+              <li><a href="#contact" onClick={(e) => { e.preventDefault(); onOpenConsultation(); }} style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Contact</a></li>
             </ul>
           </div>
 
@@ -132,10 +132,10 @@ export default function Footer({ onOpenConsultation }) {
               Our Services
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.88rem' }}>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#E5A93C')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Media Relations</a></li>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#E5A93C')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Strategic Advisory</a></li>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#E5A93C')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Crisis Management</a></li>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#E5A93C')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Digital Strategy</a></li>
+              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Media Relations</a></li>
+              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Strategic Advisory</a></li>
+              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Crisis Management</a></li>
+              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Digital Strategy</a></li>
             </ul>
           </div>
 
