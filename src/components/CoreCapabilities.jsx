@@ -47,7 +47,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
             <p
               style={{
                 fontSize: '0.96rem',
-                color: '#94A3B8',
+                color: '#F1F5F9',
                 lineHeight: 1.68,
                 marginBottom: '1.8rem',
                 maxWidth: '380px',
@@ -141,7 +141,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                         style={{
                           fontSize: '0.88rem',
                           lineHeight: 1.62,
-                          color: '#94A3B8',
+                          color: '#E2E8F0',
                           marginBottom: '1.5rem',
                         }}
                       >

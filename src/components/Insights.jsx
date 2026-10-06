@@ -25,7 +25,7 @@ export default function Insights() {
           <h2 style={{ fontSize: 'clamp(1.8rem, 2.9vw, 2.45rem)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.015em' }}>
             {t.insights.title}
           </h2>
-          <p style={{ fontSize: '0.96rem', color: '#94A3B8', marginTop: '0.5rem' }}>
+          <p style={{ fontSize: '0.96rem', color: '#F1F5F9', marginTop: '0.5rem' }}>
             {t.insights.subtitle}
           </p>
         </div>
@@ -44,7 +44,7 @@ export default function Insights() {
               }}
             >
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', fontSize: '0.78rem', color: '#64748B' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', fontSize: '0.78rem', color: '#CBD5E1' }}>
                   <span style={{ color: 'var(--theme-light)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                     {article.category}
                   </span>
@@ -59,7 +59,7 @@ export default function Insights() {
                   {article.title}
                 </h3>
 
-                <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.65, marginBottom: '1.5rem' }}>
+                <p style={{ fontSize: '0.9rem', color: '#E2E8F0', lineHeight: 1.65, marginBottom: '1.5rem' }}>
                   {article.excerpt}
                 </p>
 

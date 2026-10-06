@@ -35,7 +35,7 @@ export default function About({ onOpenConsultation }) {
           >
             {t.about.title}
           </h2>
-          <p style={{ fontSize: '1.02rem', color: '#94A3B8', lineHeight: 1.7 }}>
+          <p style={{ fontSize: '1.02rem', color: '#F1F5F9', lineHeight: 1.75 }}>
             {t.about.desc}
           </p>
         </div>
@@ -64,8 +64,8 @@ export default function About({ onOpenConsultation }) {
                     width: '44px',
                     height: '44px',
                     borderRadius: '6px',
-                    backgroundColor: 'rgba(56, 189, 248, 0.1)',
-                    border: '1px solid rgba(56, 189, 248, 0.25)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -78,7 +78,7 @@ export default function About({ onOpenConsultation }) {
                 <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '0.75rem' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.9rem', color: '#CBD5E1', lineHeight: 1.6 }}>
+                <p style={{ fontSize: '0.92rem', color: '#F1F5F9', lineHeight: 1.65 }}>
                   {item.desc}
                 </p>
               </div>
@@ -94,7 +94,7 @@ export default function About({ onOpenConsultation }) {
             overflow: 'hidden',
             border: '1px solid rgba(255, 255, 255, 0.12)',
             marginBottom: '4rem',
-            boxShadow: '0 20px 50px rgba(10, 18, 38, 0.5)',
+            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)',
           }}
         >
           <img
@@ -126,7 +126,7 @@ export default function About({ onOpenConsultation }) {
               <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.5rem' }}>
                 {t.about.showcaseTitle}
               </h3>
-              <p style={{ color: '#E2E8F0', fontSize: '0.95rem', maxWidth: '650px', lineHeight: 1.6 }}>
+              <p style={{ color: '#FFFFFF', fontSize: '0.96rem', maxWidth: '650px', lineHeight: 1.65 }}>
                 {t.about.showcaseDesc}
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function About({ onOpenConsultation }) {
         <div
           style={{
             background: 'rgba(26, 44, 82, 0.85)',
-            border: '1px solid rgba(56, 189, 248, 0.25)',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
             borderRadius: '8px',
             padding: '2.5rem',
             display: 'flex',
@@ -145,7 +145,7 @@ export default function About({ onOpenConsultation }) {
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: '2rem',
-            boxShadow: '0 8px 30px rgba(10, 18, 38, 0.35)',
+            boxShadow: '0 8px 30px rgba(0, 0, 0, 0.25)',
           }}
         >
           <div style={{ maxWidth: '640px' }}>
@@ -155,7 +155,7 @@ export default function About({ onOpenConsultation }) {
             <h3 style={{ fontSize: '1.45rem', fontWeight: 700, color: '#FFFFFF', marginTop: '0.4rem', marginBottom: '0.75rem' }}>
               {t.about.philosophyTitle}
             </h3>
-            <p style={{ color: '#CBD5E1', fontSize: '0.95rem', lineHeight: 1.6 }}>
+            <p style={{ color: '#F1F5F9', fontSize: '0.96rem', lineHeight: 1.65 }}>
               {t.about.philosophyDesc}
             </p>
           </div>

@@ -100,7 +100,7 @@ export default function Hero({ onOpenConsultation }) {
               style={{
                 fontSize: '1rem',
                 lineHeight: 1.72,
-                color: '#CBD5E1',
+                color: '#F8FAFC',
                 maxWidth: '560px',
                 marginBottom: '2rem',
                 fontWeight: 400,
