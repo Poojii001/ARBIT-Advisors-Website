@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check, Phone, Mail, MessageSquare, ShieldAlert } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer({ onOpenConsultation }) {
@@ -69,13 +69,152 @@ export default function Footer({ onOpenConsultation }) {
       }}
     >
       <div className="container">
+        {/* Direct Contact Cards Bar */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '1.25rem',
+            marginBottom: '4rem',
+            padding: '1.8rem',
+            backgroundColor: 'rgba(16, 30, 62, 0.65)',
+            borderRadius: '8px',
+            border: '1px solid rgba(0, 163, 255, 0.25)',
+          }}
+        >
+          {/* Phone */}
+          <a
+            href={`tel:${t.contact.phone}`}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
+              color: '#FFF',
+              padding: '0.5rem',
+              borderRadius: '6px',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(0, 163, 255, 0.1)')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+          >
+            <div
+              style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '50%',
+                backgroundColor: 'rgba(0, 163, 255, 0.15)',
+                border: '1px solid var(--theme-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--theme-cyan)',
+                flexShrink: 0,
+              }}
+            >
+              <Phone size={18} />
+            </div>
+            <div>
+              <div style={{ fontSize: '0.75rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+                {t.contact.phoneLabel}
+              </div>
+              <div style={{ fontSize: '0.98rem', fontWeight: 700, color: '#FFF' }}>
+                {t.contact.phone}
+              </div>
+            </div>
+          </a>
+
+          {/* Email */}
+          <a
+            href={`mailto:${t.contact.email}`}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
+              color: '#FFF',
+              padding: '0.5rem',
+              borderRadius: '6px',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(0, 163, 255, 0.1)')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+          >
+            <div
+              style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '50%',
+                backgroundColor: 'rgba(0, 163, 255, 0.15)',
+                border: '1px solid var(--theme-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--theme-cyan)',
+                flexShrink: 0,
+              }}
+            >
+              <Mail size={18} />
+            </div>
+            <div>
+              <div style={{ fontSize: '0.75rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+                {t.contact.emailLabel}
+              </div>
+              <div style={{ fontSize: '0.98rem', fontWeight: 700, color: '#FFF' }}>
+                {t.contact.email}
+              </div>
+            </div>
+          </a>
+
+          {/* WhatsApp Direct */}
+          <a
+            href={t.contact.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
+              color: '#FFF',
+              padding: '0.5rem',
+              borderRadius: '6px',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(37, 211, 102, 0.15)')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+          >
+            <div
+              style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '50%',
+                backgroundColor: 'rgba(37, 211, 102, 0.15)',
+                border: '1px solid #25D366',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#25D366',
+                flexShrink: 0,
+              }}
+            >
+              <MessageSquare size={18} />
+            </div>
+            <div>
+              <div style={{ fontSize: '0.75rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+                {t.contact.whatsappLabel}
+              </div>
+              <div style={{ fontSize: '0.98rem', fontWeight: 700, color: '#25D366' }}>
+                {t.contact.chatOnWhatsapp} &rarr;
+              </div>
+            </div>
+          </a>
+        </div>
+
         {/* Main Footer Grid */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
             gap: '2.5rem',
-            marginBottom: '4rem',
+            marginBottom: '3.5rem',
           }}
         >
           {/* Col 1: Brand & Identity (3.5 cols) */}
@@ -89,7 +228,7 @@ export default function Footer({ onOpenConsultation }) {
                   width: 'auto',
                   objectFit: 'contain',
                   borderRadius: '4px',
-                  filter: 'drop-shadow(0 2px 8px rgba(0, 162, 255, 0.3))',
+                  filter: 'drop-shadow(0 2px 8px rgba(0, 163, 255, 0.3))',
                 }}
               />
 
@@ -108,7 +247,7 @@ export default function Footer({ onOpenConsultation }) {
               </div>
             </div>
 
-            <p style={{ fontSize: '0.88rem', lineHeight: 1.6, color: '#64748B', maxWidth: '300px' }}>
+            <p style={{ fontSize: '0.88rem', lineHeight: 1.6, color: '#94A3B8', maxWidth: '300px' }}>
               {t.footer.brandDesc}
             </p>
           </div>
@@ -128,16 +267,24 @@ export default function Footer({ onOpenConsultation }) {
             </ul>
           </div>
 
-          {/* Col 3: Our Services (2.5 cols) */}
+          {/* Col 3: Our Services (Harmonized with Homepage Cards) (2.5 cols) */}
           <div style={{ gridColumn: 'span 6' }} className="footer-services-col">
             <h4 style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
               {t.footer.ourServices}
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.88rem' }}>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.capabilities.items[1].title}</a></li>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.capabilities.items[2].title}</a></li>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>24/7 Crisis Response</a></li>
-              <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>Digital Strategy & Ops</a></li>
+              {t.capabilities.items.map((item, i) => (
+                <li key={i}>
+                  <a
+                    href="#services"
+                    style={{ color: '#94A3B8' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -190,7 +337,7 @@ export default function Footer({ onOpenConsultation }) {
               <h4 style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
                 {t.footer.stayUpdated}
               </h4>
-              <p style={{ fontSize: '0.82rem', color: '#64748B', marginBottom: '0.85rem' }}>
+              <p style={{ fontSize: '0.82rem', color: '#94A3B8', marginBottom: '0.85rem' }}>
                 {t.footer.stayUpdatedSub}
               </p>
 
@@ -241,10 +388,34 @@ export default function Footer({ onOpenConsultation }) {
           </div>
         </div>
 
+        {/* Regulatory & No Government Affiliation Disclaimer */}
+        <div
+          style={{
+            padding: '1.25rem 1.5rem',
+            backgroundColor: 'rgba(14, 26, 56, 0.75)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            borderRadius: '6px',
+            marginBottom: '2rem',
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '1rem',
+          }}
+        >
+          <ShieldAlert size={20} color="var(--theme-cyan)" style={{ flexShrink: 0, marginTop: '2px' }} />
+          <div>
+            <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--theme-light)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.25rem' }}>
+              {t.disclaimer.title}
+            </div>
+            <p style={{ fontSize: '0.78rem', lineHeight: 1.55, color: '#94A3B8' }}>
+              {t.disclaimer.text}
+            </p>
+          </div>
+        </div>
+
         {/* Bottom Copyright & Legal */}
         <div
           style={{
-            paddingTop: '2rem',
+            paddingTop: '1.5rem',
             borderTop: '1px solid rgba(255, 255, 255, 0.06)',
             display: 'flex',
             flexWrap: 'wrap',

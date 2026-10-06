@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Users2, Radio, ShieldCheck } from 'lucide-react';
+import { Users2, Radio, ShieldCheck, Info } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ImpactStats() {
@@ -59,7 +59,7 @@ export default function ImpactStats() {
       id="impact"
       style={{
         position: 'relative',
-        padding: '5rem 0',
+        padding: '5.5rem 0',
         backgroundColor: '#091228',
         overflow: 'hidden',
         borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
@@ -84,7 +84,7 @@ export default function ImpactStats() {
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, rgba(9, 18, 40, 0.82) 0%, rgba(9, 18, 40, 0.55) 40%, rgba(9, 18, 40, 0.5) 70%, rgba(9, 18, 40, 0.75) 100%)',
+          background: 'linear-gradient(90deg, rgba(9, 18, 40, 0.84) 0%, rgba(9, 18, 40, 0.6) 40%, rgba(9, 18, 40, 0.55) 70%, rgba(9, 18, 40, 0.78) 100%)',
           zIndex: 1,
         }}
       />
@@ -107,6 +107,7 @@ export default function ImpactStats() {
             gridTemplateColumns: 'repeat(12, 1fr)',
             gap: '2.5rem',
             alignItems: 'center',
+            marginBottom: '2.5rem',
           }}
         >
           {/* Left Column: Heading (4 cols) */}
@@ -135,7 +136,7 @@ export default function ImpactStats() {
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                 gap: '2rem',
-                borderLeft: '1px solid rgba(255, 255, 255, 0.08)',
+                borderLeft: '1px solid rgba(0, 163, 255, 0.25)',
                 paddingLeft: '2rem',
               }}
               className="impact-stats-grid"
@@ -190,12 +191,13 @@ export default function ImpactStats() {
                       {item.title}
                     </div>
 
-                    {/* Subtitle */}
+                    {/* Subtitle / Definition */}
                     <div
                       style={{
                         fontSize: '0.82rem',
-                        color: '#8B9BB4',
+                        color: '#CBD5E1',
                         fontWeight: 400,
+                        lineHeight: 1.45,
                       }}
                     >
                       {item.subtitle}
@@ -205,6 +207,22 @@ export default function ImpactStats() {
               })}
             </div>
           </div>
+        </div>
+
+        {/* Audit Footnote for Credibility */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.6rem',
+            paddingTop: '1.2rem',
+            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+            color: '#94A3B8',
+            fontSize: '0.76rem',
+          }}
+        >
+          <Info size={14} color="var(--theme-cyan)" style={{ flexShrink: 0 }} />
+          <span>{t.impact.auditFootnote}</span>
         </div>
       </div>
 
@@ -221,7 +239,7 @@ export default function ImpactStats() {
           .impact-stats-grid {
             border-left: none !important;
             padding-left: 0 !important;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(0, 163, 255, 0.25);
             padding-top: 1.5rem;
           }
         }

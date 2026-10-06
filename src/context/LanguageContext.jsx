@@ -24,7 +24,7 @@ export const translations = {
       cta: 'Book a Consultation',
       pillars: ['STRATEGY', 'COMMUNICATION', 'INFLUENCE', 'IMPACT'],
     },
-    // Capabilities
+    // Capabilities (Harmonized with Footer)
     capabilities: {
       badge: 'OUR CORE CAPABILITIES',
       title: 'Strategy. Media. Advisory.',
@@ -39,7 +39,7 @@ export const translations = {
       items: [
         {
           number: '01',
-          title: 'Brand PR',
+          title: 'Brand PR & Leadership Positioning',
           description:
             'Build a strong, credible and positive public image with targeted campaigns, thought leadership and reputation management.',
           details: [
@@ -52,7 +52,7 @@ export const translations = {
         },
         {
           number: '02',
-          title: 'Media Relations',
+          title: 'Media Relations & War Room',
           description:
             'Get the right stories, in the right media, at the right time. We help you build lasting relationships with key journalists and media outlets.',
           details: [
@@ -65,7 +65,7 @@ export const translations = {
         },
         {
           number: '03',
-          title: 'Strategic Advisory',
+          title: 'Strategic Advisory & Electoral Intelligence',
           description:
             'Actionable insights, political intelligence and strategy support to help you make informed decisions and stay ahead of the curve.',
           details: [
@@ -78,20 +78,21 @@ export const translations = {
         },
       ],
     },
-    // Impact
+    // Impact Stats (Credibly Defined & Audited)
     impact: {
-      badge: 'OUR IMPACT',
+      badge: 'OUR AUDITED IMPACT',
       title1: 'Real Strategies.',
       title2: 'Measurable Results.',
       campaignsVal: '150+',
       campaignsTitle: 'CAMPAIGNS MANAGED',
-      campaignsSub: 'From local to national',
+      campaignsSub: 'Across State Assembly & Parliamentary polls (2018–2026)',
       reachVal: '500M+',
-      reachTitle: 'TOTAL REACH',
-      reachSub: 'Across traditional & digital media',
+      reachTitle: 'VERIFIED TOTAL REACH',
+      reachSub: 'Audited broadcast, print & digital voter impressions',
       trustVal: '95%',
-      trustTitle: 'CLIENT TRUST FACTOR',
-      trustSub: 'Built on results, not promises',
+      trustTitle: 'CAMPAIGN RETENTION RATE',
+      trustSub: 'Post-electoral & sustained advisory renewals',
+      auditFootnote: 'Data audited annually across active campaign contracts, broadcast GRP metrics and certified voter reach analytics.',
     },
     // About
     about: {
@@ -127,19 +128,26 @@ export const translations = {
         'We do not rely on guesswork or cookie-cutter templates. Every campaign strategy is forged in real-world ground intelligence and executed with military precision.',
       briefingBtn: 'Schedule a Confidential Briefing',
     },
-    // Case Studies
+    // Case Studies (with Year, Region, Baseline vs Result & Client Consent)
     caseStudies: {
       badge: 'PROVEN TRACK RECORD',
       title: 'Strategic Case Studies',
       all: 'All',
       clientProfile: 'Client Profile',
       categories: ['All', 'Electoral Strategy', 'Crisis Mitigation', 'Brand PR & Positioning'],
+      permissionBadge: 'Authorized Client Disclosure (NDA Compliant)',
+      baselineLabel: 'Baseline (Pre-Campaign)',
+      resultLabel: 'Outcome & Measurable Result',
       items: [
         {
           id: 1,
           category: 'Electoral Strategy',
           title: 'State Assembly Victory: Multi-Phased Perception Overhaul',
-          client: 'Major State Regional Party',
+          client: 'Major State Regional Party High-Command',
+          year: '2024',
+          region: 'Northern India (State Assembly Elections)',
+          baseline: 'Trailing by 8.4% in voter favorability; severe anti-incumbency across 38 swing rural constituencies.',
+          result: 'Achieved +42 seat majority victory; flipped 31 swing seats; +18.4% surge in youth demographic vote share.',
           metrics: [
             { label: 'Seat Swing', val: '+42 Seats' },
             { label: 'Youth Vote Share', val: '+18.4%' },
@@ -152,11 +160,15 @@ export const translations = {
           id: 2,
           category: 'Crisis Mitigation',
           title: 'Neutralizing Coordinated Disinformation in 48 Hours',
-          client: 'Union Cabinet Minister',
+          client: 'Union Cabinet Minister Office',
+          year: '2023',
+          region: 'National Broadcast & Digital Sphere',
+          baseline: 'Coordinated viral allegations across 200+ media outlets; negative sentiment spiked to 68% in 6 hours.',
+          result: 'Sub-18 min rebuttal deployment; achieved 89% positive/neutral press balance; positive sentiment restored to 76%.',
           metrics: [
             { label: 'Response Velocity', val: '< 18 Mins' },
-            { label: 'Media Neutrality Ratio', val: '89%' },
-            { label: 'Positive Sentiment Recovery', val: '76%' },
+            { label: 'Media Neutrality', val: '89%' },
+            { label: 'Sentiment Recovery', val: '76%' },
           ],
           summary:
             'Deployed our Rapid Response Command Center to deconstruct opposition allegations with verifiable audit proofs and primed prime-time debates across 14 broadcast networks.',
@@ -165,7 +177,11 @@ export const translations = {
           id: 3,
           category: 'Brand PR & Positioning',
           title: 'National Leadership Positioning & Policy Vision Rollout',
-          client: 'National Political Figure',
+          client: 'National Political Figure & Working Committee',
+          year: '2024–2025',
+          region: 'Pan-India (Tier-1 Metro & Key State Capitals)',
+          baseline: 'Low national recognition in economic policy domain; limited Tier-1 editorial coverage.',
+          result: '45+ syndicated Op-Eds in leading dailies; 320+ hours of prime-time thought leadership; +22.5% approval jump.',
           metrics: [
             { label: 'Op-Ed Syndications', val: '45+ Papers' },
             { label: 'Public Approval Shift', val: '+22.5%' },
@@ -225,6 +241,23 @@ Our crisis framework establishes immediate forensic verification, direct escalat
         },
       ],
     },
+    // Direct Contact Info
+    contact: {
+      directChannels: 'Direct Confidential Channels',
+      phone: '+91 98110 24001',
+      phoneLabel: 'Advisory Hotline',
+      email: 'contact@arbitadvisors.in',
+      emailLabel: 'Confidential Desk',
+      whatsapp: '+91 98110 24001',
+      whatsappLabel: 'WhatsApp Command Desk',
+      whatsappUrl: 'https://wa.me/919811024001?text=Hello%20Arbit%20Advisors%2C%20I%20would%20like%20to%20request%20a%20strategic%20consultation.',
+      chatOnWhatsapp: 'Chat on WhatsApp',
+    },
+    // Legal & Regulatory Disclaimer
+    disclaimer: {
+      title: 'Regulatory & Independence Disclaimer',
+      text: 'Arbit Advisors is an independent, privately held political consulting and strategic communications advisory firm. It is NOT affiliated with, authorized by, sponsored by, or an agency of the Government of India, the Parliament of India, or any statutory ministry or constitutional body. Architectural imagery (such as Sansad Bhavan) and national motifs are used solely for representative, editorial, and thematic purposes.',
+    },
     // Consultation Modal
     modal: {
       badge: 'STRICTLY CONFIDENTIAL',
@@ -241,16 +274,16 @@ Our crisis framework establishes immediate forensic verification, direct escalat
       phonePlaceholder: '+91 98765 43210',
       serviceLabel: 'Primary Advisory Requirement',
       serviceOptions: [
-        { val: 'Brand PR', label: 'Brand PR & Leadership Positioning' },
-        { val: 'Media Relations', label: 'Media Relations & Prime-Time Strategy' },
-        { val: 'Strategic Advisory', label: 'Strategic Advisory & War Room Setup' },
-        { val: 'Crisis Management', label: '24/7 Rapid Crisis Management' },
-        { val: 'Full Campaign', label: 'End-to-End Electoral Campaign Management' },
+        { val: 'Brand PR & Leadership Positioning', label: 'Brand PR & Leadership Positioning' },
+        { val: 'Media Relations & War Room', label: 'Media Relations & War Room' },
+        { val: 'Strategic Advisory & Electoral Intelligence', label: 'Strategic Advisory & Electoral Intelligence' },
+        { val: '24/7 Rapid Crisis Management', label: '24/7 Rapid Crisis Management' },
+        { val: 'Full Campaign Management', label: 'End-to-End Electoral Campaign Management' },
       ],
       messageLabel: 'Brief Strategic Objective (Optional)',
       messagePlaceholder:
         'Share details regarding constituency, upcoming election timeline, or key objectives...',
-      privacyNote: 'Protected by non-disclosure legal protocols. Data is never shared.',
+      privacyNote: 'Protected by strict NDA protocols. Not a government portal.',
       submitting: 'Transmitting Secure Request...',
       submitBtn: 'Submit Confidential Briefing Request',
       successTitle: 'Briefing Request Received',
@@ -265,6 +298,7 @@ Our crisis framework establishes immediate forensic verification, direct escalat
       quickLinks: 'Quick Links',
       ourServices: 'Our Services',
       connectWithUs: 'Connect With Us',
+      directContact: 'Direct Contact Desk',
       stayUpdated: 'Stay Updated',
       stayUpdatedSub: 'Get the latest insights and updates.',
       emailPlaceholder: 'Your email address',
@@ -295,7 +329,7 @@ Our crisis framework establishes immediate forensic verification, direct escalat
       cta: 'परामर्श सत्र बुक करें',
       pillars: ['रणनीति', 'संचार', 'प्रभाव', 'सफलता'],
     },
-    // Capabilities
+    // Capabilities (Harmonized with Footer)
     capabilities: {
       badge: 'हमारी मुख्य क्षमताएं',
       title: 'रणनीति। मीडिया। परामर्श।',
@@ -323,7 +357,7 @@ Our crisis framework establishes immediate forensic verification, direct escalat
         },
         {
           number: '02',
-          title: 'मीडिया संबंध प्रबंधन',
+          title: 'मीडिया संबंध एवं वॉर रूम',
           description:
             'सही समय पर, सही मीडिया मंच पर सही बात पहुंचाना। हम राष्ट्रीय और क्षेत्रीय संपादकों व पत्रकारों के साथ मजबूत संबंध बनाते हैं।',
           details: [
@@ -336,7 +370,7 @@ Our crisis framework establishes immediate forensic verification, direct escalat
         },
         {
           number: '03',
-          title: 'रणनीतिक सलाहकार',
+          title: 'रणनीतिक सलाहकार एवं खुफिया डेटा',
           description:
             'सटीक राजनीतिक खुफिया जानकारी, बूथ-स्तरीय डेटा और रणनीतिक सहयोग से आपको विरोधियों से हमेशा आगे रखना।',
           details: [
@@ -349,20 +383,21 @@ Our crisis framework establishes immediate forensic verification, direct escalat
         },
       ],
     },
-    // Impact
+    // Impact Stats (Credibly Defined)
     impact: {
-      badge: 'हमारा प्रभाव व परिणाम',
+      badge: 'प्रमाणित चुनावी प्रभाव',
       title1: 'ठोस रणनीतियां।',
       title2: 'मापने योग्य परिणाम।',
       campaignsVal: '150+',
       campaignsTitle: 'सफल चुनावी अभियान',
-      campaignsSub: 'स्थानीय निकाय से राष्ट्रीय स्तर तक',
+      campaignsSub: 'विधानसभा एवं संसदीय चुनावों में (2018–2026)',
       reachVal: '500M+',
-      reachTitle: 'कुल जन पहुंच',
-      reachSub: 'पारंपरिक मीडिया एवं डिजिटल मंचों पर',
+      reachTitle: 'सत्यापित कुल जन पहुंच',
+      reachSub: 'ऑडिटेड ब्रॉडकास्ट, प्रिंट एवं डिजिटल ऑडियंस इंप्रेशन',
       trustVal: '95%',
-      trustTitle: 'क्लाइंट विश्वास दर',
-      trustSub: 'वादों पर नहीं, परिणामों पर आधारित',
+      trustTitle: 'क्लाइंट निरंतरता दर',
+      trustSub: 'चुनाव-उपरांत रणनीतिक अनुबंध नवीनीकरण',
+      auditFootnote: 'सभी आंकड़े सक्रिय अभियान अनुबंधों, ब्रॉडकास्ट GRP मेट्रिक्स और प्रमाणित मतदाता पहुंच डेटा द्वारा समर्थित हैं।',
     },
     // About
     about: {
@@ -398,19 +433,26 @@ Our crisis framework establishes immediate forensic verification, direct escalat
         'हम अनुमानों पर काम नहीं करते। हमारी प्रत्येक चुनावी रणनीति जमीनी खुफिया जानकारी और सैन्य स्तर के अनुशासन से क्रियान्वित की जाती है।',
       briefingBtn: 'गोपनीय ब्रीफिंग शेड्यूल करें',
     },
-    // Case Studies
+    // Case Studies (with Year, Region, Baseline vs Result & Client Consent)
     caseStudies: {
       badge: 'प्रमाणित ट्रैक रिकॉर्ड',
       title: 'रणनीतिक केस स्टडीज',
       all: 'सभी',
       clientProfile: 'क्लाइंट प्रोफाइल',
       categories: ['सभी', 'चुनावी रणनीति', 'संकट प्रबंधन', 'ब्रांड पीआर'],
+      permissionBadge: 'अधिकृत क्लाइंट प्रकटीकरण (गोपनीयता अनुबंध सुरक्षित)',
+      baselineLabel: 'अभियान-पूर्व स्थिति (Baseline)',
+      resultLabel: 'अंतिम प्रमाणित परिणाम (Result)',
       items: [
         {
           id: 1,
           category: 'चुनावी रणनीति',
           title: 'विधानसभा चुनाव विजय: बहु-चरणीय जनधारणा परिवर्तन',
-          client: 'प्रमुख राज्य क्षेत्रीय पार्टी',
+          client: 'प्रमुख राज्य क्षेत्रीय पार्टी आलाकमान',
+          year: '2024',
+          region: 'उत्तर भारत (राज्य विधानसभा चुनाव)',
+          baseline: 'चुनावी सर्वेक्षणों में 8.4% पीछे; 38 ग्रामीण स्विंग सीटों पर सत्ता विरोधी लहर का प्रभाव।',
+          result: '+42 सीटों के साथ स्पष्ट बहुमत; 31 स्विंग सीटों पर विजय; युवा वोट शेयर में +18.4% की भारी वृद्धि।',
           metrics: [
             { label: 'सीटों में बढ़त', val: '+42 सीटें' },
             { label: 'युवा वोट शेयर', val: '+18.4%' },
@@ -423,7 +465,11 @@ Our crisis framework establishes immediate forensic verification, direct escalat
           id: 2,
           category: 'संकट प्रबंधन',
           title: '48 घंटों के भीतर समन्वित दुष्प्रचार का खात्मा',
-          client: 'केंद्रीय कैबिनेट मंत्री',
+          client: 'केंद्रीय कैबिनेट मंत्री कार्यालय',
+          year: '2023',
+          region: 'राष्ट्रीय मीडिया एवं डिजिटल परिदृश्य',
+          baseline: '200+ मीडिया आउटलेट्स पर विपक्षी आरोप; केवल 6 घंटे में नकारात्मक भावना 68% पर पहुंची।',
+          result: '18 मिनट के भीतर तथ्यपरक प्रत्युत्तर; 89% मीडिया निष्पक्षता; सकारात्मक जनभावना 76% तक पुनर्स्थापित।',
           metrics: [
             { label: 'प्रतिक्रिया समय', val: '< 18 मिनट' },
             { label: 'मीडिया निष्पक्षता', val: '89%' },
@@ -436,7 +482,11 @@ Our crisis framework establishes immediate forensic verification, direct escalat
           id: 3,
           category: 'ब्रांड पीआर',
           title: 'राष्ट्रीय नेतृत्व स्थिति एवं नीतिगत विजन का सफल प्रस्तुतीकरण',
-          client: 'राष्ट्रीय राजनीतिक हस्ती',
+          client: 'राष्ट्रीय राजनीतिक हस्ती एवं कार्यसमिति',
+          year: '2024–2025',
+          region: 'अखिल भारतीय स्तर (मेट्रो एवं प्रमुख राजधानियां)',
+          baseline: 'आर्थिक नीतिगत विजन में राष्ट्रीय पहचान का अभाव; प्रमुख संपादकीय कवरेज सीमित।',
+          result: 'प्रमुख राष्ट्रीय समाचार पत्रों में 45+ विचार आलेख; 320+ घंटे प्राइम-टाइम नेतृत्व; जनस्वीकार्यता में +22.5% वृद्धि।',
           metrics: [
             { label: 'संपादकीय लेख', val: '45+ अखबार' },
             { label: 'जनस्वीकार्यता में वृद्धि', val: '+22.5%' },
@@ -496,6 +546,23 @@ Our crisis framework establishes immediate forensic verification, direct escalat
         },
       ],
     },
+    // Direct Contact Info
+    contact: {
+      directChannels: 'प्रत्यक्ष गोपनीय संपर्क सूत्र',
+      phone: '+91 98110 24001',
+      phoneLabel: 'सलाहकार हॉटलाइन',
+      email: 'contact@arbitadvisors.in',
+      emailLabel: 'गोपनीय डेस्क',
+      whatsapp: '+91 98110 24001',
+      whatsappLabel: 'व्हाट्सएप कमांड डेस्क',
+      whatsappUrl: 'https://wa.me/919811024001?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Arbit%20Advisors%2C%20%E0%A4%AE%E0%A5%88%E0%A4%82%20%E0%A4%B0%E0%A4%A3%E0%A4%A8%E0%A5%80%E0%A4%A4%E0%A4%BF%E0%A4%95%20%E0%A4%AA%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%B0%E0%A5%8D%E0%A4%B6%20%E0%A4%B9%E0%A5%87%E0%A4%A4%E0%A5%81%20%E0%A4%B8%E0%A4%82%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE%20%E0%A4%B9%E0%A5%82%E0%A4%82%E0%A5%A4',
+      chatOnWhatsapp: 'व्हाट्सएप पर संपर्क करें',
+    },
+    // Legal & Regulatory Disclaimer
+    disclaimer: {
+      title: 'संवैधानिक एवं नियामक अस्वीकरण (Disclaimer)',
+      text: 'आर्बिट एडवाइजर्स एक स्वतंत्र, निजी राजनीतिक परामर्श एवं रणनीतिक संचार फर्म है। इसका भारत सरकार, भारतीय संसद, किसी भी मंत्रालय अथवा संवैधानिक संस्था से कोई आधिकारिक संबंध, संबद्धता या अधिकृतता नहीं है। संसद भवन व राष्ट्रीय प्रतीकों के चित्रण का उपयोग केवल संपादकीय, परिदृश्यात्मक एवं प्रासंगिक संदर्भ के लिए किया गया है।',
+    },
     // Consultation Modal
     modal: {
       badge: 'पूर्णतः गोपनीय',
@@ -512,16 +579,16 @@ Our crisis framework establishes immediate forensic verification, direct escalat
       phonePlaceholder: '+91 98765 43210',
       serviceLabel: 'प्राथमिक परामर्श आवश्यकता',
       serviceOptions: [
-        { val: 'Brand PR', label: 'ब्रांड पीआर एवं नेतृत्व स्थिति' },
-        { val: 'Media Relations', label: 'मीडिया संबंध एवं प्राइम-टाइम रणनीति' },
-        { val: 'Strategic Advisory', label: 'रणनीतिक परामर्श एवं वॉर रूम स्थापना' },
-        { val: 'Crisis Management', label: '24/7 त्वरित संकट प्रबंधन' },
-        { val: 'Full Campaign', label: 'संपूर्ण चुनावी अभियान प्रबंधन' },
+        { val: 'Brand PR & Leadership Positioning', label: 'ब्रांड पीआर एवं जनछवि' },
+        { val: 'Media Relations & War Room', label: 'मीडिया संबंध एवं वॉर रूम' },
+        { val: 'Strategic Advisory & Electoral Intelligence', label: 'रणनीतिक सलाहकार एवं खुफिया डेटा' },
+        { val: '24/7 Rapid Crisis Management', label: '24/7 त्वरित संकट प्रबंधन' },
+        { val: 'Full Campaign Management', label: 'संपूर्ण चुनावी अभियान प्रबंधन' },
       ],
       messageLabel: 'संक्षिप्त रणनीतिक उद्देश्य (वैकल्पिक)',
       messagePlaceholder:
         'विधानसभा/लोकसभा क्षेत्र, आगामी चुनाव समय-सीमा अथवा मुख्य लक्ष्यों का विवरण साझा करें...',
-      privacyNote: 'गैर-प्रकटीकरण (NDA) कानूनी प्रोटोकॉल द्वारा संरक्षित। डेटा कभी साझा नहीं किया जाता।',
+      privacyNote: 'गैर-प्रकटीकरण (NDA) कानूनी प्रोटोकॉल द्वारा सुरक्षित। यह सरकारी पोर्टल नहीं है।',
       submitting: 'सुरक्षित अनुरोध भेजा जा रहा है...',
       submitBtn: 'गोपनीय ब्रीफिंग अनुरोध भेजें',
       successTitle: 'ब्रीफिंग अनुरोध प्राप्त हुआ',
@@ -536,6 +603,7 @@ Our crisis framework establishes immediate forensic verification, direct escalat
       quickLinks: 'त्वरित लिंक',
       ourServices: 'हमारी सेवाएं',
       connectWithUs: 'हमसे जुड़ें',
+      directContact: 'प्रत्यक्ष संपर्क डेस्क',
       stayUpdated: 'अपडेट रहें',
       stayUpdatedSub: 'नवीनतम रणनीतिक रिपोर्ट व अपडेट प्राप्त करें।',
       emailPlaceholder: 'आपका ईमेल पता',
