@@ -29,20 +29,20 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        backgroundColor: isScrolled ? 'rgba(19, 34, 68, 0.95)' : 'transparent',
-        backdropFilter: isScrolled ? 'blur(12px)' : 'none',
-        borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid rgba(255, 255, 255, 0.08)',
+        backgroundColor: '#071026',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.25)',
         transition: 'all 0.3s ease',
       }}
     >
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '84px' }}>
+      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '80px' }}>
         {/* Brand Logo */}
         <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '0.9rem' }}>
           <img
             src="/assets/arbit_logo.png"
             alt="Arbit Advisors"
             style={{
-              height: '46px',
+              height: '44px',
               width: 'auto',
               objectFit: 'contain',
               borderRadius: '4px',
@@ -51,14 +51,14 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-              <span style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '0.08em', color: '#FFF' }}>
+              <span style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '0.08em', color: '#FFFFFF' }}>
                 ARBIT
               </span>
-              <span style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.14em', color: 'var(--theme-primary)' }}>
+              <span style={{ fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.14em', color: '#0084D6' }}>
                 ADVISORS
               </span>
             </div>
-            <span style={{ fontSize: '0.58rem', letterSpacing: '0.22em', color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: '-2px' }}>
+            <span style={{ fontSize: '0.58rem', letterSpacing: '0.22em', color: '#94A3B8', textTransform: 'uppercase', marginTop: '-2px' }}>
               {t.nav.tagline}
             </span>
           </div>
@@ -66,7 +66,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
 
         {/* Desktop Navigation Links */}
         <nav style={{ display: 'none' }} className="desktop-nav">
-          <ul style={{ display: 'flex', alignItems: 'center', gap: '2rem', listStyle: 'none' }}>
+          <ul style={{ display: 'flex', alignItems: 'center', gap: '2.2rem', listStyle: 'none' }}>
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -75,15 +75,15 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
                     href={link.href}
                     style={{
                       fontSize: '0.92rem',
-                      fontWeight: isActive ? 600 : 500,
-                      color: isActive ? '#FFF' : '#A0AEC0',
+                      fontWeight: isActive ? 700 : 500,
+                      color: isActive ? '#FFFFFF' : '#CBD5E1',
                       letterSpacing: '0.01em',
                       padding: '8px 0',
                       display: 'inline-block',
                       transition: 'color 0.2s ease',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? '#FFF' : '#A0AEC0')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#00A3FF')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? '#FFFFFF' : '#CBD5E1')}
                   >
                     {link.name}
                   </a>
@@ -94,10 +94,9 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
                         bottom: 0,
                         left: 0,
                         right: 0,
-                        height: '2px',
-                        backgroundColor: 'var(--theme-primary)',
+                        height: '2.5px',
+                        backgroundColor: '#0084D6',
                         borderRadius: '2px',
-                        boxShadow: '0 0 10px rgba(0, 163, 255, 0.8)',
                       }}
                     />
                   )}
@@ -119,33 +118,56 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               gap: '0.45rem',
               padding: '0.45rem 0.85rem',
               borderRadius: '20px',
-              border: '1px solid rgba(0, 163, 255, 0.35)',
-              backgroundColor: 'rgba(0, 163, 255, 0.08)',
-              color: '#FFF',
+              border: '1px solid rgba(0, 132, 214, 0.45)',
+              backgroundColor: 'rgba(0, 132, 214, 0.1)',
+              color: '#FFFFFF',
               fontSize: '0.82rem',
               fontWeight: 600,
               cursor: 'pointer',
               transition: 'all 0.2s ease',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(0, 163, 255, 0.18)';
-              e.currentTarget.style.borderColor = 'var(--theme-cyan)';
+              e.currentTarget.style.backgroundColor = 'rgba(0, 132, 214, 0.2)';
+              e.currentTarget.style.borderColor = '#00A3FF';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(0, 163, 255, 0.08)';
-              e.currentTarget.style.borderColor = 'rgba(0, 163, 255, 0.35)';
+              e.currentTarget.style.backgroundColor = 'rgba(0, 132, 214, 0.1)';
+              e.currentTarget.style.borderColor = 'rgba(0, 132, 214, 0.45)';
             }}
           >
-            <Globe size={14} color="var(--theme-cyan)" />
-            <span style={{ color: language === 'en' ? 'var(--theme-cyan)' : '#94A3B8' }}>EN</span>
+            <Globe size={14} color="#00A3FF" />
+            <span style={{ color: language === 'en' ? '#00A3FF' : '#94A3B8' }}>EN</span>
             <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>|</span>
-            <span style={{ color: language === 'hi' ? 'var(--theme-cyan)' : '#94A3B8' }}>हिंदी</span>
+            <span style={{ color: language === 'hi' ? '#00A3FF' : '#94A3B8' }}>हिंदी</span>
           </button>
 
           <button
             onClick={onOpenConsultation}
-            className="btn-gold-outline desktop-btn"
-            style={{ padding: '0.65rem 1.35rem', fontSize: '0.85rem' }}
+            className="desktop-btn"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              padding: '0.65rem 1.4rem',
+              fontSize: '0.88rem',
+              fontWeight: 700,
+              backgroundColor: '#0084D6',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '6px',
+              boxShadow: '0 4px 14px rgba(0, 132, 214, 0.3)',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#006EB3';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#0084D6';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
           >
             {t.nav.getInTouch}
             <ArrowRight size={15} />
@@ -160,10 +182,10 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: 'var(--theme-primary)',
+              color: '#00A3FF',
               padding: '0.5rem',
               borderRadius: '4px',
-              border: '1px solid rgba(0, 163, 255, 0.3)',
+              border: '1px solid rgba(0, 132, 214, 0.4)',
             }}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -175,8 +197,8 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
       {mobileMenuOpen && (
         <div
           style={{
-            backgroundColor: '#132244',
-            borderBottom: '1px solid var(--border-theme)',
+            backgroundColor: '#071026',
+            borderBottom: '1px solid rgba(0, 132, 214, 0.3)',
             padding: '1.5rem',
             display: 'flex',
             flexDirection: 'column',
@@ -208,9 +230,9 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
                 flex: 1,
                 padding: '0.6rem',
                 borderRadius: '4px',
-                border: language === 'en' ? '1px solid var(--theme-cyan)' : '1px solid rgba(255, 255, 255, 0.1)',
-                backgroundColor: language === 'en' ? 'rgba(0, 163, 255, 0.2)' : 'transparent',
-                color: language === 'en' ? 'var(--theme-cyan)' : '#94A3B8',
+                border: language === 'en' ? '1px solid #0084D6' : '1px solid rgba(255, 255, 255, 0.1)',
+                backgroundColor: language === 'en' ? 'rgba(0, 132, 214, 0.2)' : 'transparent',
+                color: language === 'en' ? '#00A3FF' : '#94A3B8',
                 fontWeight: 600,
                 fontSize: '0.9rem',
               }}
@@ -223,9 +245,9 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
                 flex: 1,
                 padding: '0.6rem',
                 borderRadius: '4px',
-                border: language === 'hi' ? '1px solid var(--theme-cyan)' : '1px solid rgba(255, 255, 255, 0.1)',
-                backgroundColor: language === 'hi' ? 'rgba(0, 163, 255, 0.2)' : 'transparent',
-                color: language === 'hi' ? 'var(--theme-cyan)' : '#94A3B8',
+                border: language === 'hi' ? '1px solid #0084D6' : '1px solid rgba(255, 255, 255, 0.1)',
+                backgroundColor: language === 'hi' ? 'rgba(0, 132, 214, 0.2)' : 'transparent',
+                color: language === 'hi' ? '#00A3FF' : '#94A3B8',
                 fontWeight: 600,
                 fontSize: '0.9rem',
               }}
