@@ -33,12 +33,12 @@ export default function Hero({ onOpenConsultation }) {
         }}
       />
 
-      {/* Clean Gradient Overlay: Solid Dark on Left for Text, Clear & Visible on Right */}
+      {/* Clean Gradient Overlay: Lighter Royal Navy on Left, Clear & Visible on Right */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, #0A0E1A 0%, #0A0E1A 30%, rgba(10, 14, 26, 0.72) 52%, rgba(10, 14, 26, 0.25) 85%, rgba(10, 14, 26, 0.15) 100%)',
+          background: 'linear-gradient(90deg, #132244 0%, #132244 28%, rgba(19, 34, 68, 0.72) 50%, rgba(19, 34, 68, 0.22) 85%, rgba(19, 34, 68, 0.1) 100%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
@@ -52,7 +52,7 @@ export default function Hero({ onOpenConsultation }) {
           right: '15%',
           width: '500px',
           height: '500px',
-          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(0, 163, 255, 0.06) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, rgba(0, 163, 255, 0.08) 50%, transparent 70%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}

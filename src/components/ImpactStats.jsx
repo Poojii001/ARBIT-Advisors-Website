@@ -59,9 +59,9 @@ export default function ImpactStats() {
       style={{
         position: 'relative',
         padding: '3.5rem 0',
-        backgroundColor: '#090E1A',
+        backgroundColor: '#132244',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
       }}
     >
       {/* New Subtle Abstract Texture Background */}
@@ -72,18 +72,18 @@ export default function ImpactStats() {
           backgroundImage: 'url(/assets/impact_bg.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center 40%',
-          opacity: 0.55,
-          filter: 'contrast(1.15) brightness(0.6)',
+          opacity: 0.5,
+          filter: 'contrast(1.1) brightness(0.75)',
           zIndex: 0,
         }}
       />
 
-      {/* Dark overlay gradient for maximum clarity */}
+      {/* Luminous overlay gradient for maximum clarity */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, rgba(9, 14, 26, 0.95) 0%, rgba(9, 14, 26, 0.82) 40%, rgba(9, 14, 26, 0.75) 70%, rgba(9, 14, 26, 0.92) 100%)',
+          background: 'linear-gradient(90deg, rgba(19, 34, 68, 0.94) 0%, rgba(19, 34, 68, 0.82) 40%, rgba(19, 34, 68, 0.78) 70%, rgba(19, 34, 68, 0.92) 100%)',
           zIndex: 1,
         }}
       />

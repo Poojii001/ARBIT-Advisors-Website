@@ -29,9 +29,9 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        backgroundColor: isScrolled ? 'rgba(9, 17, 36, 0.95)' : 'transparent',
+        backgroundColor: isScrolled ? 'rgba(19, 34, 68, 0.95)' : 'transparent',
         backdropFilter: isScrolled ? 'blur(12px)' : 'none',
-        borderBottom: isScrolled ? '1px solid rgba(0, 163, 255, 0.25)' : '1px solid rgba(255, 255, 255, 0.06)',
+        borderBottom: isScrolled ? '1px solid rgba(0, 163, 255, 0.25)' : '1px solid rgba(255, 255, 255, 0.08)',
         transition: 'all 0.3s ease',
       }}
     >
@@ -176,7 +176,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
       {mobileMenuOpen && (
         <div
           style={{
-            backgroundColor: '#070D1A',
+            backgroundColor: '#132244',
             borderBottom: '1px solid var(--border-theme)',
             padding: '1.5rem',
             display: 'flex',

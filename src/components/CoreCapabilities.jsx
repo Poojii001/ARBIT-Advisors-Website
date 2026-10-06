@@ -16,9 +16,9 @@ export default function CoreCapabilities({ onOpenConsultation }) {
       id="services"
       style={{
         padding: '5.5rem 0',
-        backgroundColor: '#0F1626',
-        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+        backgroundColor: '#16274E',
+        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
         position: 'relative',
       }}
     >

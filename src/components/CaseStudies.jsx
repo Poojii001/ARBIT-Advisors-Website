@@ -18,8 +18,8 @@ export default function CaseStudies() {
       id="case-studies"
       style={{
         padding: '5.5rem 0',
-        backgroundColor: '#0A0E1A',
-        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+        backgroundColor: '#132244',
+        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
       }}
     >
       <div className="container">
@@ -47,9 +47,9 @@ export default function CaseStudies() {
                     fontSize: '0.82rem',
                     fontWeight: 600,
                     borderRadius: '20px',
-                    border: isActive ? '1px solid rgba(56, 189, 248, 0.5)' : '1px solid rgba(255, 255, 255, 0.09)',
-                    backgroundColor: isActive ? 'rgba(2, 132, 199, 0.18)' : 'rgba(255, 255, 255, 0.03)',
-                    color: isActive ? '#FFFFFF' : '#94A3B8',
+                    border: isActive ? '1px solid rgba(56, 189, 248, 0.6)' : '1px solid rgba(255, 255, 255, 0.12)',
+                    backgroundColor: isActive ? 'rgba(0, 163, 255, 0.22)' : 'rgba(255, 255, 255, 0.04)',
+                    color: isActive ? '#FFFFFF' : '#CBD5E1',
                     transition: 'all 0.2s ease',
                   }}
                 >
@@ -114,9 +114,9 @@ export default function CaseStudies() {
                 {/* Baseline vs Result Comparison Card */}
                 <div
                   style={{
-                    backgroundColor: 'rgba(11, 17, 30, 0.8)',
+                    backgroundColor: 'rgba(20, 35, 68, 0.75)',
                     borderRadius: '6px',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
                     padding: '1.1rem',
                     marginBottom: '1.5rem',
                     fontSize: '0.84rem',
@@ -134,7 +134,7 @@ export default function CaseStudies() {
                     </div>
                   </div>
 
-                  <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.07)', paddingTop: '0.55rem' }}>
+                  <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '0.55rem' }}>
                     <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--theme-light)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '3px', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                       <CheckCircle2 size={13} /> {t.caseStudies.resultLabel}
                     </div>
@@ -153,9 +153,9 @@ export default function CaseStudies() {
                     gridTemplateColumns: 'repeat(3, 1fr)',
                     gap: '0.75rem',
                     padding: '0.85rem',
-                    backgroundColor: 'rgba(11, 17, 30, 0.8)',
+                    backgroundColor: 'rgba(20, 35, 68, 0.75)',
                     borderRadius: '6px',
-                    border: '1px solid rgba(255, 255, 255, 0.06)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
                     marginBottom: '1rem',
                   }}
                 >
@@ -172,7 +172,7 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Consent & Permission Disclaimer */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.72rem', color: '#64748B' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.72rem', color: '#94A3B8' }}>
                   <ShieldCheck size={13} color="var(--theme-light)" />
                   <span>{t.caseStudies.permissionBadge}</span>
                 </div>

@@ -61,10 +61,10 @@ export default function Footer({ onOpenConsultation }) {
     <footer
       id="contact"
       style={{
-        backgroundColor: '#070B14',
+        backgroundColor: '#101B36',
         color: '#94A3B8',
         padding: '5rem 0 2rem 0',
-        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
         position: 'relative',
       }}
     >
@@ -77,9 +77,9 @@ export default function Footer({ onOpenConsultation }) {
             gap: '1.25rem',
             marginBottom: '4rem',
             padding: '1.6rem 1.8rem',
-            backgroundColor: 'rgba(16, 24, 40, 0.75)',
+            backgroundColor: 'rgba(24, 43, 84, 0.85)',
             borderRadius: '8px',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
+            border: '1px solid rgba(56, 189, 248, 0.2)',
           }}
         >
           {/* Phone */}
