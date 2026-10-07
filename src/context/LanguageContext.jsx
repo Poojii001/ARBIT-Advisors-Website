@@ -14,8 +14,44 @@ export const translations = {
       getInTouch: 'Get in Touch',
       tagline: 'STRATEGY • IMPACT',
     },
-    // Hero
+    // Hero Slider
     hero: {
+      slides: [
+        {
+          id: 1,
+          image: '/assets/sansadbhavan1.jpg',
+          badge: 'POLITICAL PR & STRATEGIC ADVISORY',
+          title1: 'Shaping Political Narratives,',
+          title2: 'Driving Electoral Success.',
+          subtitle:
+            'We combine data-driven communication, strategic counsel and reputation management to help leaders, parties and organizations win trust, build influence and create lasting impact.',
+          cta: 'Book a Consultation',
+          pillars: ['STRATEGY', 'COMMUNICATION', 'INFLUENCE', 'IMPACT'],
+        },
+        {
+          id: 2,
+          image: '/assets/sansadbhavan2.jpg',
+          badge: 'DATA-DRIVEN ELECTORAL INTELLIGENCE',
+          title1: 'Empowering Visionary Leaders,',
+          title2: 'Winning Democratic Mandates.',
+          subtitle:
+            'Granular booth-level psycho-demographics, real-time social listening, and predictive swing-voter analytics to anticipate ground trends before traditional polls.',
+          cta: 'Explore Strategic Advisory',
+          pillars: ['INTELLIGENCE', 'PRECISION', 'PERCEPTION', 'MANDATE'],
+        },
+        {
+          id: 3,
+          image: '/assets/sansadbhavan3.jpg',
+          badge: 'MEDIA RELATIONS & CRISIS COMMAND',
+          title1: 'Dominating Media Spheres,',
+          title2: 'Fortifying Public Trust.',
+          subtitle:
+            'Sub-15 minute crisis neutralization, high-impact Tier-1 broadcast positioning, and syndicated thought leadership across national and regional media ecosystems.',
+          cta: 'Schedule Strategic Briefing',
+          pillars: ['MEDIA DOMINANCE', 'CRISIS SHIELD', 'REPUTATION', 'VICTORY'],
+        },
+      ],
+      // Fallback aliases for single-slide usage
       badge: 'POLITICAL PR & STRATEGIC ADVISORY',
       title1: 'Shaping Political Narratives,',
       title2: 'Driving Electoral Success.',
@@ -316,8 +352,44 @@ Our crisis framework establishes immediate forensic verification, direct escalat
       getInTouch: 'संपर्क करें',
       tagline: 'रणनीति • प्रभाव',
     },
-    // Hero
+    // Hero Slider
     hero: {
+      slides: [
+        {
+          id: 1,
+          image: '/assets/sansadbhavan1.jpg',
+          badge: 'राजनीतिक पीआर एवं रणनीतिक परामर्श',
+          title1: 'राजनीतिक आख्यान का निर्माण,',
+          title2: 'चुनावी विजय का मजबूत आधार।',
+          subtitle:
+            'हम डेटा-आधारित संचार, रणनीतिक मार्गदर्शन और जनधारणा प्रबंधन के संयोजन से राजनीतिक दलों और नेताओं को जनविश्वास और ऐतिहासिक विजय दिलाने में सक्षम बनाते हैं।',
+          cta: 'परामर्श सत्र बुक करें',
+          pillars: ['रणनीति', 'संचार', 'प्रभाव', 'सफलता'],
+        },
+        {
+          id: 2,
+          image: '/assets/sansadbhavan2.jpg',
+          badge: 'डेटा-आधारित चुनावी रणनीति एवं बुद्धिमत्ता',
+          title1: 'दूरदर्शी नेतृत्व का सशक्तीकरण,',
+          title2: 'निर्णायक जनादेश की गारंटी।',
+          subtitle:
+            'बूथ-स्तरीय जनसांख्यिकी विश्लेषण, रियल-टाइम सोशल लिसनिंग और मतदाता झुकाव के गहन अध्ययन से मुख्यधारा के सर्वेक्षणों से पहले चुनावी बढ़त हासिल करें।',
+          cta: 'रणनीतिक सेवाएं देखें',
+          pillars: ['डेटा बुद्धिमत्ता', 'सटीकता', 'जनधारणा', 'जनादेश'],
+        },
+        {
+          id: 3,
+          image: '/assets/sansadbhavan3.jpg',
+          badge: 'मीडिया संबंध एवं त्वरित संकट प्रबंधन',
+          title1: 'मीडिया पटल पर सशक्त उपस्थिति,',
+          title2: 'जनविश्वास का अटूट कवच।',
+          subtitle:
+            '15-मिनट के भीतर विपक्षी दुष्प्रचार का खात्मा, राष्ट्रीय मीडिया में सर्वोच्च स्थान और बहुभाषी जनसंचार से जनछवि का स्थायी सुदृढ़ीकरण।',
+          cta: 'गोपनीय ब्रीफिंग शेड्यूल करें',
+          pillars: ['मीडिया प्रभुत्व', 'संकट कवच', 'प्रतिष्ठा', 'विजय'],
+        },
+      ],
+      // Fallback aliases
       badge: 'राजनीतिक पीआर एवं रणनीतिक परामर्श',
       title1: 'राजनीतिक आख्यान का निर्माण,',
       title2: 'चुनावी विजय का मजबूत आधार।',

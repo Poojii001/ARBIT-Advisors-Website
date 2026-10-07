@@ -1,38 +1,131 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero({ onOpenConsultation }) {
   const { t } = useLanguage();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  // Retrieve slides from translation context or fallback to default 3 slides
+  const slides = t.hero?.slides || [
+    {
+      id: 1,
+      image: '/assets/sansadbhavan1.jpg',
+      badge: t.hero?.badge || 'POLITICAL PR & STRATEGIC ADVISORY',
+      title1: t.hero?.title1 || 'Shaping Political Narratives,',
+      title2: t.hero?.title2 || 'Driving Electoral Success.',
+      subtitle: t.hero?.subtitle || 'We combine data-driven communication, strategic counsel and reputation management to help leaders, parties and organizations win trust, build influence and create lasting impact.',
+      cta: t.hero?.cta || 'Book a Consultation',
+      pillars: t.hero?.pillars || ['STRATEGY', 'COMMUNICATION', 'INFLUENCE', 'IMPACT'],
+    },
+    {
+      id: 2,
+      image: '/assets/sansadbhavan2.jpg',
+      badge: 'DATA-DRIVEN ELECTORAL INTELLIGENCE',
+      title1: 'Empowering Visionary Leaders,',
+      title2: 'Winning Democratic Mandates.',
+      subtitle: 'Granular booth-level psycho-demographics, real-time social listening, and predictive swing-voter analytics to anticipate ground trends before traditional polls.',
+      cta: 'Explore Strategic Advisory',
+      pillars: ['INTELLIGENCE', 'PRECISION', 'PERCEPTION', 'MANDATE'],
+    },
+    {
+      id: 3,
+      image: '/assets/sansadbhavan3.jpg',
+      badge: 'MEDIA RELATIONS & CRISIS COMMAND',
+      title1: 'Dominating Media Spheres,',
+      title2: 'Fortifying Public Trust.',
+      subtitle: 'Sub-15 minute crisis neutralization, high-impact Tier-1 broadcast positioning, and syndicated thought leadership across national and regional media ecosystems.',
+      cta: 'Schedule Strategic Briefing',
+      pillars: ['MEDIA DOMINANCE', 'CRISIS SHIELD', 'REPUTATION', 'VICTORY'],
+    },
+  ];
+
+  // Auto-advance slider every 6 seconds unless paused by user interaction
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, [isPaused, slides.length]);
+
+  const handlePrev = () => {
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  // Touch Swipe Handlers for Mobile & Tablet
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    if (distance > 50) {
+      handleNext();
+    } else if (distance < -50) {
+      handlePrev();
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  const activeSlideData = slides[currentSlide] || slides[0];
 
   return (
     <section
       id="home"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
       style={{
         position: 'relative',
-        minHeight: 'clamp(520px, 82vh, 760px)',
+        minHeight: 'clamp(540px, 84vh, 780px)',
         display: 'flex',
         alignItems: 'center',
-        padding: 'clamp(2.5rem, 5vw, 4.5rem) 0',
+        padding: 'clamp(2.5rem, 5vw, 4.5rem) 0 clamp(3.5rem, 6vw, 5rem) 0',
         overflow: 'hidden',
         backgroundColor: '#FFFFFF',
       }}
     >
-      {/* Parliament Background Image (Responsive width & position) */}
-      <div
-        className="hero-bg-graphic"
-        style={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          height: '100%',
-          backgroundImage: 'url(/assets/home.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'right 35%',
-          opacity: 0.95,
-          zIndex: 0,
-        }}
-      />
+      {/* Background Slides with Cross-Fade Transitions */}
+      {slides.map((slide, index) => {
+        const isActive = index === currentSlide;
+        return (
+          <div
+            key={slide.id || index}
+            className="hero-bg-graphic"
+            style={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              height: '100%',
+              backgroundImage: `url(${slide.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'right 30%',
+              opacity: isActive ? 0.95 : 0,
+              zIndex: isActive ? 0 : -1,
+              transition: 'opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 6s ease-out',
+              transform: isActive ? 'scale(1.02)' : 'scale(1)',
+            }}
+          />
+        );
+      })}
 
       {/* Seamless Soft Fade Gradient from Pure White to Transparent Image */}
       <div
@@ -45,7 +138,7 @@ export default function Hero({ onOpenConsultation }) {
         }}
       />
       
-      {/* Subtle Warm Flourish in Top Left Corner */}
+      {/* Subtle Warm Amber Flourish in Top Left Corner */}
       <div
         style={{
           position: 'absolute',
@@ -53,7 +146,7 @@ export default function Hero({ onOpenConsultation }) {
           left: '-5%',
           width: 'clamp(250px, 40vw, 450px)',
           height: 'clamp(250px, 40vw, 450px)',
-          background: 'radial-gradient(circle, rgba(254, 243, 199, 0.5) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(254, 243, 199, 0.45) 0%, transparent 70%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
@@ -62,8 +155,8 @@ export default function Hero({ onOpenConsultation }) {
       <div className="container" style={{ zIndex: 2, position: 'relative', width: '100%' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: 'clamp(1rem, 3vw, 2rem)', alignItems: 'center' }}>
           
-          {/* Left Hero Content Column */}
-          <div style={{ gridColumn: 'span 12' }} className="hero-content-col">
+          {/* Left Hero Content Column with Keyed Transition */}
+          <div style={{ gridColumn: 'span 12' }} className="hero-content-col" key={currentSlide}>
             
             {/* Tag Badge */}
             <div
@@ -75,7 +168,7 @@ export default function Hero({ onOpenConsultation }) {
                 color: '#D97706',
               }}
             >
-              {t.hero.badge}
+              {activeSlideData.badge}
             </div>
 
             {/* Main Headline with Deep Navy, Electric Azure & Amber Gold */}
@@ -91,9 +184,9 @@ export default function Hero({ onOpenConsultation }) {
                 maxWidth: '680px',
               }}
             >
-              {t.hero.title1}<br />
-              <span style={{ color: '#0084D6' }}>{t.hero.title2.split(' ')[0] || t.hero.title2}</span>{' '}
-              <span style={{ color: '#D97706' }}>{t.hero.title2.split(' ').slice(1).join(' ')}</span>
+              {activeSlideData.title1}<br />
+              <span style={{ color: '#0084D6' }}>{activeSlideData.title2.split(' ')[0] || activeSlideData.title2}</span>{' '}
+              <span style={{ color: '#D97706' }}>{activeSlideData.title2.split(' ').slice(1).join(' ')}</span>
             </h1>
 
             {/* Subtitle / Paragraph */}
@@ -108,28 +201,94 @@ export default function Hero({ onOpenConsultation }) {
                 fontWeight: 400,
               }}
             >
-              {t.hero.subtitle}
+              {activeSlideData.subtitle}
             </p>
 
-            {/* Hero CTA Button */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
+            {/* Hero CTA Button & Slider Controls Row */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', alignItems: 'center' }}>
               <button
                 onClick={onOpenConsultation}
-                className="btn-gold"
+                className="btn-gold animate-fade-in"
                 style={{
                   padding: 'clamp(0.78rem, 1.8vw, 0.92rem) clamp(1.4rem, 2.5vw, 2rem)',
                 }}
               >
-                {t.hero.cta}
+                {activeSlideData.cta}
                 <ArrowRight size={16} />
               </button>
+
+              {/* Slider Arrow Controls */}
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                <button
+                  onClick={handlePrev}
+                  aria-label="Previous slide"
+                  style={{
+                    width: '38px',
+                    height: '38px',
+                    borderRadius: '50%',
+                    border: '1px solid #CBD5E1',
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#0A1931',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#0084D6';
+                    e.currentTarget.style.color = '#0084D6';
+                    e.currentTarget.style.transform = 'scale(1.06)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#CBD5E1';
+                    e.currentTarget.style.color = '#0A1931';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                >
+                  <ChevronLeft size={18} />
+                </button>
+
+                <button
+                  onClick={handleNext}
+                  aria-label="Next slide"
+                  style={{
+                    width: '38px',
+                    height: '38px',
+                    borderRadius: '50%',
+                    border: '1px solid #CBD5E1',
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#0A1931',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#0084D6';
+                    e.currentTarget.style.color = '#0084D6';
+                    e.currentTarget.style.transform = 'scale(1.06)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#CBD5E1';
+                    e.currentTarget.style.color = '#0A1931';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                >
+                  <ChevronRight size={18} />
+                </button>
+              </div>
             </div>
 
           </div>
 
           {/* Right Floating Strategic Pillar Typography (Desktop / Laptop Only) */}
-          <div className="hero-pillars-watermark">
+          <div className="hero-pillars-watermark" key={`pillars-${currentSlide}`}>
             <div
+              className="animate-fade-in"
               style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -141,13 +300,13 @@ export default function Hero({ onOpenConsultation }) {
                 textTransform: 'uppercase',
               }}
             >
-              {t.hero.pillars.map((pillar, index) => (
+              {activeSlideData.pillars.map((pillar, index) => (
                 <span
                   key={index}
                   style={{
                     color: '#0A1931',
                     letterSpacing: '0.24em',
-                    opacity: 0.82,
+                    opacity: 0.85,
                   }}
                 >
                   {pillar}
@@ -157,6 +316,62 @@ export default function Hero({ onOpenConsultation }) {
           </div>
 
         </div>
+
+        {/* Bottom Slide Indicators Bar (01 / 02 / 03) */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '-2.5rem',
+            left: '1.25rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.75rem',
+            zIndex: 10,
+          }}
+        >
+          {slides.map((slide, idx) => {
+            const isActive = idx === currentSlide;
+            return (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  padding: '0.35rem 0.65rem',
+                  borderRadius: '20px',
+                  border: isActive ? '1.5px solid #0084D6' : '1px solid #E2E8F0',
+                  backgroundColor: isActive ? 'rgba(0, 132, 214, 0.1)' : 'rgba(255, 255, 255, 0.85)',
+                  cursor: 'pointer',
+                  transition: 'all 0.25s ease',
+                }}
+              >
+                <span
+                  style={{
+                    width: isActive ? '20px' : '6px',
+                    height: '6px',
+                    borderRadius: '3px',
+                    backgroundColor: isActive ? '#0084D6' : '#94A3B8',
+                    transition: 'all 0.3s ease',
+                  }}
+                />
+                <span
+                  style={{
+                    fontSize: '0.74rem',
+                    fontFamily: 'var(--font-mono)',
+                    fontWeight: isActive ? 700 : 500,
+                    color: isActive ? '#0084D6' : '#64748B',
+                  }}
+                >
+                  0{idx + 1}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
       </div>
 
       <style>{`
