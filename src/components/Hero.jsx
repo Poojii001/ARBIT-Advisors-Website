@@ -5,7 +5,6 @@ import { useLanguage } from '../context/LanguageContext';
 export default function Hero({ onOpenConsultation }) {
   const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
 
@@ -43,16 +42,14 @@ export default function Hero({ onOpenConsultation }) {
     },
   ];
 
-  // Auto-advance slider every 6 seconds unless paused by user interaction
+  // Auto-advance slider every 5 seconds continuously
   useEffect(() => {
-    if (isPaused) return;
-
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 5000);
 
     return () => clearInterval(timer);
-  }, [isPaused, slides.length]);
+  }, [slides.length, currentSlide]);
 
   const handlePrev = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -88,8 +85,6 @@ export default function Hero({ onOpenConsultation }) {
   return (
     <section
       id="home"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -317,7 +312,7 @@ export default function Hero({ onOpenConsultation }) {
 
         </div>
 
-        {/* Bottom Slide Indicators Bar (01 / 02 / 03) */}
+        {/* Bottom Slide Indicators (Modern Animated Capsule Pills without numeric text) */}
         <div
           style={{
             position: 'absolute',
@@ -325,7 +320,7 @@ export default function Hero({ onOpenConsultation }) {
             left: '1.25rem',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.75rem',
+            gap: '0.6rem',
             zIndex: 10,
           }}
         >
@@ -337,36 +332,32 @@ export default function Hero({ onOpenConsultation }) {
                 onClick={() => setCurrentSlide(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.4rem',
-                  padding: '0.35rem 0.65rem',
-                  borderRadius: '20px',
-                  border: isActive ? '1.5px solid #0084D6' : '1px solid #E2E8F0',
-                  backgroundColor: isActive ? 'rgba(0, 132, 214, 0.1)' : 'rgba(255, 255, 255, 0.85)',
+                  position: 'relative',
+                  width: isActive ? '38px' : '12px',
+                  height: '8px',
+                  borderRadius: '999px',
+                  border: 'none',
+                  backgroundColor: isActive ? 'rgba(0, 132, 214, 0.2)' : '#CBD5E1',
                   cursor: 'pointer',
-                  transition: 'all 0.25s ease',
+                  padding: 0,
+                  overflow: 'hidden',
+                  transition: 'width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease',
                 }}
               >
-                <span
-                  style={{
-                    width: isActive ? '20px' : '6px',
-                    height: '6px',
-                    borderRadius: '3px',
-                    backgroundColor: isActive ? '#0084D6' : '#94A3B8',
-                    transition: 'all 0.3s ease',
-                  }}
-                />
-                <span
-                  style={{
-                    fontSize: '0.74rem',
-                    fontFamily: 'var(--font-mono)',
-                    fontWeight: isActive ? 700 : 500,
-                    color: isActive ? '#0084D6' : '#64748B',
-                  }}
-                >
-                  0{idx + 1}
-                </span>
+                {isActive && (
+                  <div
+                    key={`progress-${currentSlide}`}
+                    className="hero-progress-active"
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      height: '100%',
+                      backgroundColor: '#0084D6',
+                      borderRadius: '999px',
+                    }}
+                  />
+                )}
               </button>
             );
           })}
@@ -375,6 +366,14 @@ export default function Hero({ onOpenConsultation }) {
       </div>
 
       <style>{`
+        @keyframes heroProgressBar {
+          0% { width: 0%; }
+          100% { width: 100%; }
+        }
+        .hero-progress-active {
+          animation: heroProgressBar 5s linear forwards;
+        }
+
         /* Desktop & Laptop */
         @media (min-width: 992px) {
           .hero-bg-graphic {
