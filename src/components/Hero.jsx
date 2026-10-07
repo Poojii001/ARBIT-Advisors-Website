@@ -312,15 +312,23 @@ export default function Hero({ onOpenConsultation }) {
 
         </div>
 
-        {/* Bottom Slide Indicators (Modern Animated Capsule Pills without numeric text) */}
+        {/* Bottom Slide Indicators (Centered in the bottom) */}
         <div
           style={{
             position: 'absolute',
-            bottom: '-2.5rem',
-            left: '1.25rem',
+            bottom: '1.5rem',
+            left: '50%',
+            transform: 'translateX(-50%)',
             display: 'flex',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: '0.6rem',
+            padding: '0.35rem 0.65rem',
+            borderRadius: '999px',
+            backgroundColor: 'rgba(255, 255, 255, 0.75)',
+            backdropFilter: 'blur(6px)',
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.05)',
+            border: '1px solid rgba(226, 232, 240, 0.8)',
             zIndex: 10,
           }}
         >
