@@ -195,8 +195,8 @@ export default function Hero({ onOpenConsultation }) {
               {activeSlideData.subtitle}
             </p>
 
-            {/* Hero CTA Button & Slider Controls Row */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', alignItems: 'center' }}>
+            {/* Hero CTA Button */}
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: 'clamp(0.75rem, 1.5vw, 1.25rem)' }}>
               <button
                 onClick={onOpenConsultation}
                 className="btn-gold animate-fade-in"
@@ -207,71 +207,6 @@ export default function Hero({ onOpenConsultation }) {
                 {activeSlideData.cta}
                 <ArrowRight size={16} />
               </button>
-
-              {/* Slider Arrow Controls */}
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                <button
-                  onClick={handlePrev}
-                  aria-label="Previous slide"
-                  style={{
-                    width: '38px',
-                    height: '38px',
-                    borderRadius: '50%',
-                    border: '1px solid #CBD5E1',
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#0A1931',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#0084D6';
-                    e.currentTarget.style.color = '#0084D6';
-                    e.currentTarget.style.transform = 'scale(1.06)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#CBD5E1';
-                    e.currentTarget.style.color = '#0A1931';
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
-                >
-                  <ChevronLeft size={18} />
-                </button>
-
-                <button
-                  onClick={handleNext}
-                  aria-label="Next slide"
-                  style={{
-                    width: '38px',
-                    height: '38px',
-                    borderRadius: '50%',
-                    border: '1px solid #CBD5E1',
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#0A1931',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#0084D6';
-                    e.currentTarget.style.color = '#0084D6';
-                    e.currentTarget.style.transform = 'scale(1.06)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#CBD5E1';
-                    e.currentTarget.style.color = '#0A1931';
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
-                >
-                  <ChevronRight size={18} />
-                </button>
-              </div>
             </div>
 
           </div>
@@ -312,20 +247,20 @@ export default function Hero({ onOpenConsultation }) {
         <div
           style={{
             position: 'absolute',
-            bottom: '0.85rem',
+            bottom: '1.25rem',
             left: '50%',
             transform: 'translateX(-50%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             gap: '0.6rem',
-            padding: '0.3rem 0.6rem',
+            padding: '0.35rem 0.65rem',
             borderRadius: '999px',
-            backgroundColor: 'rgba(255, 255, 255, 0.75)',
+            backgroundColor: 'rgba(255, 255, 255, 0.82)',
             backdropFilter: 'blur(6px)',
-            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.05)',
-            border: '1px solid rgba(226, 232, 240, 0.8)',
-            zIndex: 10,
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.08)',
+            border: '1px solid rgba(226, 232, 240, 0.85)',
+            zIndex: 20,
           }}
         >
           {slides.map((slide, idx) => {
@@ -368,6 +303,86 @@ export default function Hero({ onOpenConsultation }) {
         </div>
 
       </div>
+
+      {/* Floating Prev Arrow Control at Vertical Mid-Height */}
+      <button
+        onClick={handlePrev}
+        aria-label="Previous slide"
+        style={{
+          position: 'absolute',
+          left: 'clamp(0.4rem, 1.8vw, 1.25rem)',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          width: 'clamp(36px, 3.8vw, 44px)',
+          height: 'clamp(36px, 3.8vw, 44px)',
+          borderRadius: '50%',
+          border: '1px solid rgba(203, 213, 225, 0.9)',
+          backgroundColor: 'rgba(255, 255, 255, 0.88)',
+          backdropFilter: 'blur(8px)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#0A1931',
+          cursor: 'pointer',
+          zIndex: 25,
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+          transition: 'all 0.25s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = '#0084D6';
+          e.currentTarget.style.color = '#0084D6';
+          e.currentTarget.style.transform = 'translateY(-50%) scale(1.08)';
+          e.currentTarget.style.backgroundColor = '#FFFFFF';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = 'rgba(203, 213, 225, 0.9)';
+          e.currentTarget.style.color = '#0A1931';
+          e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+          e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.88)';
+        }}
+      >
+        <ChevronLeft size={20} />
+      </button>
+
+      {/* Floating Next Arrow Control at Vertical Mid-Height */}
+      <button
+        onClick={handleNext}
+        aria-label="Next slide"
+        style={{
+          position: 'absolute',
+          right: 'clamp(0.4rem, 1.8vw, 1.25rem)',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          width: 'clamp(36px, 3.8vw, 44px)',
+          height: 'clamp(36px, 3.8vw, 44px)',
+          borderRadius: '50%',
+          border: '1px solid rgba(203, 213, 225, 0.9)',
+          backgroundColor: 'rgba(255, 255, 255, 0.88)',
+          backdropFilter: 'blur(8px)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#0A1931',
+          cursor: 'pointer',
+          zIndex: 25,
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+          transition: 'all 0.25s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = '#0084D6';
+          e.currentTarget.style.color = '#0084D6';
+          e.currentTarget.style.transform = 'translateY(-50%) scale(1.08)';
+          e.currentTarget.style.backgroundColor = '#FFFFFF';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = 'rgba(203, 213, 225, 0.9)';
+          e.currentTarget.style.color = '#0A1931';
+          e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+          e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.88)';
+        }}
+      >
+        <ChevronRight size={20} />
+      </button>
 
       <style>{`
         @keyframes heroProgressBar {
