@@ -90,10 +90,10 @@ export default function Hero({ onOpenConsultation }) {
       onTouchEnd={handleTouchEnd}
       style={{
         position: 'relative',
-        minHeight: 'clamp(540px, 84vh, 780px)',
+        minHeight: 'clamp(420px, 58vh, 540px)',
         display: 'flex',
         alignItems: 'center',
-        padding: 'clamp(2.5rem, 5vw, 4.5rem) 0 clamp(3.5rem, 6vw, 5rem) 0',
+        padding: 'clamp(1.5rem, 3vw, 2.25rem) 0 clamp(2.25rem, 3.5vw, 3rem) 0',
         overflow: 'hidden',
         backgroundColor: '#FFFFFF',
       }}
@@ -109,11 +109,12 @@ export default function Hero({ onOpenConsultation }) {
               position: 'absolute',
               top: 0,
               right: 0,
+              width: '100%',
               height: '100%',
               backgroundImage: `url(${slide.image})`,
               backgroundSize: 'cover',
-              backgroundPosition: 'right 30%',
-              opacity: isActive ? 0.95 : 0,
+              backgroundPosition: 'center 40%',
+              opacity: isActive ? 1 : 0,
               zIndex: isActive ? 0 : -1,
               transition: 'opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 6s ease-out',
               transform: isActive ? 'scale(1.02)' : 'scale(1)',
@@ -122,7 +123,7 @@ export default function Hero({ onOpenConsultation }) {
         );
       })}
 
-      {/* Seamless Soft Fade Gradient from Pure White to Transparent Image */}
+      {/* Light Soft Fade Gradient - Allows Background Image to be Clearly Visible */}
       <div
         className="hero-gradient-overlay"
         style={{
@@ -139,16 +140,16 @@ export default function Hero({ onOpenConsultation }) {
           position: 'absolute',
           top: '-10%',
           left: '-5%',
-          width: 'clamp(250px, 40vw, 450px)',
-          height: 'clamp(250px, 40vw, 450px)',
-          background: 'radial-gradient(circle, rgba(254, 243, 199, 0.45) 0%, transparent 70%)',
+          width: 'clamp(200px, 30vw, 350px)',
+          height: 'clamp(200px, 30vw, 350px)',
+          background: 'radial-gradient(circle, rgba(254, 243, 199, 0.35) 0%, transparent 70%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
       />
 
       <div className="container" style={{ zIndex: 2, position: 'relative', width: '100%' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: 'clamp(1rem, 3vw, 2rem)', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: 'clamp(1rem, 2.5vw, 2rem)', alignItems: 'center' }}>
           
           {/* Left Hero Content Column with Keyed Transition */}
           <div style={{ gridColumn: 'span 12' }} className="hero-content-col" key={currentSlide}>
@@ -158,7 +159,7 @@ export default function Hero({ onOpenConsultation }) {
               className="gold-badge animate-fade-in"
               style={{
                 letterSpacing: '0.16em',
-                marginBottom: 'clamp(0.75rem, 2vw, 1.1rem)',
+                marginBottom: 'clamp(0.5rem, 1.2vw, 0.75rem)',
                 fontWeight: 700,
                 color: '#D97706',
               }}
@@ -170,12 +171,12 @@ export default function Hero({ onOpenConsultation }) {
             <h1
               className="animate-fade-in"
               style={{
-                fontSize: 'clamp(1.95rem, 4.2vw, 3.25rem)',
-                lineHeight: 1.2,
+                fontSize: 'clamp(1.85rem, 3.6vw, 2.85rem)',
+                lineHeight: 1.18,
                 fontWeight: 800,
                 letterSpacing: '-0.02em',
                 color: '#0A1931',
-                marginBottom: 'clamp(1rem, 2.5vw, 1.4rem)',
+                marginBottom: 'clamp(0.6rem, 1.4vw, 0.9rem)',
                 maxWidth: '680px',
               }}
             >
@@ -188,12 +189,12 @@ export default function Hero({ onOpenConsultation }) {
             <p
               className="animate-fade-in"
               style={{
-                fontSize: 'clamp(0.92rem, 1.4vw, 1.04rem)',
-                lineHeight: 1.7,
+                fontSize: 'clamp(0.9rem, 1.25vw, 1rem)',
+                lineHeight: 1.6,
                 color: '#334155',
-                maxWidth: '580px',
-                marginBottom: 'clamp(1.5rem, 3vw, 2.2rem)',
-                fontWeight: 400,
+                maxWidth: '560px',
+                marginBottom: 'clamp(1rem, 2vw, 1.4rem)',
+                fontWeight: 450,
               }}
             >
               {activeSlideData.subtitle}
@@ -316,14 +317,14 @@ export default function Hero({ onOpenConsultation }) {
         <div
           style={{
             position: 'absolute',
-            bottom: '1.5rem',
+            bottom: '0.85rem',
             left: '50%',
             transform: 'translateX(-50%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             gap: '0.6rem',
-            padding: '0.35rem 0.65rem',
+            padding: '0.3rem 0.6rem',
             borderRadius: '999px',
             backgroundColor: 'rgba(255, 255, 255, 0.75)',
             backdropFilter: 'blur(6px)',
@@ -385,10 +386,11 @@ export default function Hero({ onOpenConsultation }) {
         /* Desktop & Laptop */
         @media (min-width: 992px) {
           .hero-bg-graphic {
-            width: 68% !important;
+            width: 100% !important;
+            opacity: 1 !important;
           }
           .hero-gradient-overlay {
-            background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 36%, rgba(255, 255, 255, 0.88) 54%, rgba(255, 255, 255, 0.2) 80%, transparent 100%) !important;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 40%, rgba(255, 255, 255, 0.35) 75%, rgba(255, 255, 255, 0.08) 100%) !important;
           }
           .hero-content-col {
             grid-column: span 7 !important;
@@ -404,11 +406,11 @@ export default function Hero({ onOpenConsultation }) {
         /* Tablet (768px - 991px) */
         @media (min-width: 768px) and (max-width: 991px) {
           .hero-bg-graphic {
-            width: 75% !important;
-            opacity: 0.7 !important;
+            width: 100% !important;
+            opacity: 0.95 !important;
           }
           .hero-gradient-overlay {
-            background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.95) 45%, rgba(255, 255, 255, 0.45) 85%, transparent 100%) !important;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.80) 52%, rgba(255, 255, 255, 0.35) 100%) !important;
           }
           .hero-content-col {
             grid-column: span 12 !important;
@@ -423,10 +425,10 @@ export default function Hero({ onOpenConsultation }) {
           .hero-bg-graphic {
             width: 100% !important;
             background-position: center right !important;
-            opacity: 0.25 !important;
+            opacity: 0.45 !important;
           }
           .hero-gradient-overlay {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.88) 100%) !important;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 55%, rgba(255, 255, 255, 0.5) 100%) !important;
           }
           .hero-content-col {
             grid-column: span 12 !important;
