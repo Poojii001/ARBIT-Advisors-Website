@@ -13,8 +13,8 @@ export default function Hero({ onOpenConsultation }) {
     {
       id: 1,
       image: '/assets/sansadbhavan1.jpg',
-      bgPosition: 'center 38%',
-      scale: 1.42,
+      bgPosition: 'center 22%',
+      scale: 1.15,
       badge: t.hero?.badge || 'POLITICAL PR & STRATEGIC ADVISORY',
       title1: t.hero?.title1 || 'Shaping Political Narratives,',
       title2: t.hero?.title2 || 'Driving Electoral Success.',
@@ -26,7 +26,7 @@ export default function Hero({ onOpenConsultation }) {
       id: 2,
       image: '/assets/sansadbhavan2.jpg',
       bgPosition: 'center 45%',
-      scale: 1.04,
+      scale: 1.02,
       badge: 'DATA-DRIVEN ELECTORAL INTELLIGENCE',
       title1: 'Empowering Visionary Leaders,',
       title2: 'Winning Democratic Mandates.',
@@ -37,8 +37,8 @@ export default function Hero({ onOpenConsultation }) {
     {
       id: 3,
       image: '/assets/sansadbhavan3.jpg',
-      bgPosition: 'center 46%',
-      scale: 1.42,
+      bgPosition: 'center 32%',
+      scale: 1.15,
       badge: 'MEDIA RELATIONS & CRISIS COMMAND',
       title1: 'Dominating Media Spheres,',
       title2: 'Fortifying Public Trust.',
@@ -96,10 +96,10 @@ export default function Hero({ onOpenConsultation }) {
       onTouchEnd={handleTouchEnd}
       style={{
         position: 'relative',
-        minHeight: 'clamp(420px, 58vh, 540px)',
+        minHeight: 'clamp(520px, 72vh, 680px)',
         display: 'flex',
         alignItems: 'center',
-        padding: 'clamp(1.5rem, 3vw, 2.25rem) 0 clamp(2.25rem, 3.5vw, 3rem) 0',
+        padding: 'clamp(2.5rem, 4vw, 3.5rem) 0 clamp(3.5rem, 5vw, 4.5rem) 0',
         overflow: 'hidden',
         backgroundColor: '#FFFFFF',
       }}
@@ -107,7 +107,7 @@ export default function Hero({ onOpenConsultation }) {
       {/* Background Slides with Cross-Fade Transitions */}
       {slides.map((slide, index) => {
         const isActive = index === currentSlide;
-        const baseScale = slide.scale || (index === 0 || index === 2 ? 1.42 : 1.04);
+        const baseScale = slide.scale || (index === 0 || index === 2 ? 1.15 : 1.02);
         const activeTransform = isActive ? `scale(${baseScale * 1.03})` : `scale(${baseScale})`;
 
         return (
@@ -122,7 +122,7 @@ export default function Hero({ onOpenConsultation }) {
               height: '100%',
               backgroundImage: `url(${slide.image})`,
               backgroundSize: 'cover',
-              backgroundPosition: slide.bgPosition || 'center 45%',
+              backgroundPosition: slide.bgPosition || 'center 35%',
               opacity: isActive ? 1 : 0,
               zIndex: isActive ? 0 : -1,
               transition: 'opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 6s ease-out',
