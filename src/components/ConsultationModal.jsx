@@ -48,45 +48,50 @@ export default function ConsultationModal({ isOpen, onClose }) {
       <div
         className="modal-content"
         onClick={(e) => e.stopPropagation()}
-        style={{ padding: '2.4rem', maxWidth: '640px', backgroundColor: '#FFFFFF', borderRadius: '12px', border: '1px solid #E2E8F0' }}
+        style={{ padding: 'clamp(1.25rem, 3.5vw, 2.25rem)', maxWidth: '620px', width: '100%', backgroundColor: '#FFFFFF', borderRadius: '12px', border: '1px solid #E2E8F0' }}
       >
         <button
           onClick={handleReset}
+          aria-label="Close modal"
           style={{
             position: 'absolute',
-            top: '1.25rem',
-            right: '1.25rem',
+            top: '1.2rem',
+            right: '1.2rem',
             color: '#64748B',
             padding: '0.4rem',
             borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#F1F5F9',
           }}
         >
-          <X size={20} />
+          <X size={18} />
         </button>
 
         {submitted ? (
-          <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
+          <div style={{ textAlign: 'center', padding: 'clamp(1.5rem, 3vw, 2rem) 0.5rem' }}>
             <div
               style={{
-                width: '64px',
-                height: '64px',
+                width: '60px',
+                height: '60px',
                 borderRadius: '50%',
                 backgroundColor: '#EFF6FF',
                 border: '2px solid #0084D6',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                margin: '0 auto 1.5rem auto',
+                margin: '0 auto 1.25rem auto',
                 color: '#0084D6',
               }}
             >
-              <CheckCircle2 size={32} />
+              <CheckCircle2 size={30} />
             </div>
 
-            <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#0A1931', marginBottom: '0.75rem' }}>
+            <h3 style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.6rem)', fontWeight: 800, color: '#0A1931', marginBottom: '0.65rem' }}>
               {t.modal.successTitle}
             </h3>
-            <p style={{ color: '#475569', fontSize: '0.96rem', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto 2rem auto' }}>
+            <p style={{ color: '#475569', fontSize: '0.94rem', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto 1.75rem auto' }}>
               {t.modal.successDesc}
             </p>
 
@@ -100,14 +105,14 @@ export default function ConsultationModal({ isOpen, onClose }) {
           </div>
         ) : (
           <div>
-            <div className="gold-badge" style={{ marginBottom: '0.4rem', color: '#D97706' }}>
+            <div className="gold-badge" style={{ marginBottom: '0.35rem', color: '#D97706' }}>
               {t.modal.badge}
             </div>
 
-            <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0A1931', marginBottom: '0.5rem' }}>
+            <h3 style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.5rem)', fontWeight: 800, color: '#0A1931', marginBottom: '0.45rem' }}>
               {t.modal.title}
             </h3>
-            <p style={{ color: '#475569', fontSize: '0.9rem', lineHeight: 1.55, marginBottom: '1.25rem' }}>
+            <p style={{ color: '#475569', fontSize: '0.88rem', lineHeight: 1.5, marginBottom: '1.15rem' }}>
               {t.modal.subtitle}
             </p>
 
@@ -115,42 +120,42 @@ export default function ConsultationModal({ isOpen, onClose }) {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: '0.6rem',
-                padding: '0.75rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))',
+                gap: '0.5rem',
+                padding: '0.65rem',
                 backgroundColor: '#EFF6FF',
                 borderRadius: '8px',
                 border: '1px solid #DBEAFE',
-                marginBottom: '1.5rem',
-                fontSize: '0.78rem',
+                marginBottom: '1.25rem',
+                fontSize: '0.76rem',
               }}
             >
               <a
                 href={`tel:${t.contact.phone}`}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#0A1931', fontWeight: 600 }}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#0A1931', fontWeight: 600, padding: '2px' }}
               >
-                <Phone size={13} color="#0084D6" /> {t.contact.phone}
+                <Phone size={13} color="#0084D6" style={{ flexShrink: 0 }} /> {t.contact.phone}
               </a>
               <a
                 href={`mailto:${t.contact.email}`}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#0A1931', fontWeight: 600 }}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#0A1931', fontWeight: 600, padding: '2px' }}
               >
-                <Mail size={13} color="#0084D6" /> Email Desk
+                <Mail size={13} color="#0084D6" style={{ flexShrink: 0 }} /> Email Desk
               </a>
               <a
                 href={t.contact.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#16A34A', fontWeight: 700 }}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#16A34A', fontWeight: 700, padding: '2px' }}
               >
-                <MessageSquare size={13} color="#16A34A" /> WhatsApp
+                <MessageSquare size={13} color="#16A34A" style={{ flexShrink: 0 }} /> WhatsApp
               </a>
             </div>
 
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.9rem' }} className="form-two-cols">
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem' }} className="form-two-cols">
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <label style={{ display: 'block', fontSize: '0.74rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     {t.modal.nameLabel}
                   </label>
                   <input
@@ -161,13 +166,14 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '0.7rem 0.85rem',
+                      padding: '0.65rem 0.8rem',
                       backgroundColor: '#F8FAFC',
                       border: '1px solid #CBD5E1',
                       borderRadius: '6px',
                       color: '#0A1931',
                       fontSize: '0.88rem',
                       outline: 'none',
+                      minHeight: '40px',
                     }}
                     onFocus={(e) => (e.target.style.borderColor = '#0084D6')}
                     onBlur={(e) => (e.target.style.borderColor = '#CBD5E1')}
@@ -175,7 +181,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <label style={{ display: 'block', fontSize: '0.74rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     {t.modal.titleLabel}
                   </label>
                   <input
@@ -185,13 +191,14 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '0.7rem 0.85rem',
+                      padding: '0.65rem 0.8rem',
                       backgroundColor: '#F8FAFC',
                       border: '1px solid #CBD5E1',
                       borderRadius: '6px',
                       color: '#0A1931',
                       fontSize: '0.88rem',
                       outline: 'none',
+                      minHeight: '40px',
                     }}
                     onFocus={(e) => (e.target.style.borderColor = '#0084D6')}
                     onBlur={(e) => (e.target.style.borderColor = '#CBD5E1')}
@@ -199,9 +206,9 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.9rem' }} className="form-two-cols">
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem' }} className="form-two-cols">
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <label style={{ display: 'block', fontSize: '0.74rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     {t.modal.emailLabel}
                   </label>
                   <input
@@ -212,13 +219,14 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '0.7rem 0.85rem',
+                      padding: '0.65rem 0.8rem',
                       backgroundColor: '#F8FAFC',
                       border: '1px solid #CBD5E1',
                       borderRadius: '6px',
                       color: '#0A1931',
                       fontSize: '0.88rem',
                       outline: 'none',
+                      minHeight: '40px',
                     }}
                     onFocus={(e) => (e.target.style.borderColor = '#0084D6')}
                     onBlur={(e) => (e.target.style.borderColor = '#CBD5E1')}
@@ -226,7 +234,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <label style={{ display: 'block', fontSize: '0.74rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     {t.modal.phoneLabel}
                   </label>
                   <input
@@ -237,13 +245,14 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '0.7rem 0.85rem',
+                      padding: '0.65rem 0.8rem',
                       backgroundColor: '#F8FAFC',
                       border: '1px solid #CBD5E1',
                       borderRadius: '6px',
                       color: '#0A1931',
                       fontSize: '0.88rem',
                       outline: 'none',
+                      minHeight: '40px',
                     }}
                     onFocus={(e) => (e.target.style.borderColor = '#0084D6')}
                     onBlur={(e) => (e.target.style.borderColor = '#CBD5E1')}
@@ -252,7 +261,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <label style={{ display: 'block', fontSize: '0.74rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   {t.modal.serviceLabel}
                 </label>
                 <select
@@ -260,13 +269,14 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                   style={{
                     width: '100%',
-                    padding: '0.7rem 0.85rem',
+                    padding: '0.65rem 0.8rem',
                     backgroundColor: '#F8FAFC',
                     border: '1px solid #CBD5E1',
                     borderRadius: '6px',
                     color: '#0A1931',
                     fontSize: '0.88rem',
                     outline: 'none',
+                    minHeight: '40px',
                   }}
                 >
                   {t.modal.serviceOptions.map((opt, i) => (
@@ -278,7 +288,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <label style={{ display: 'block', fontSize: '0.74rem', fontWeight: 700, color: '#334155', marginBottom: '0.3rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   {t.modal.messageLabel}
                 </label>
                 <textarea
@@ -288,7 +298,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   style={{
                     width: '100%',
-                    padding: '0.7rem 0.85rem',
+                    padding: '0.65rem 0.8rem',
                     backgroundColor: '#F8FAFC',
                     border: '1px solid #CBD5E1',
                     borderRadius: '6px',
@@ -302,8 +312,8 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 />
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#64748B', fontSize: '0.74rem' }}>
-                <Lock size={12} color="#0084D6" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', color: '#64748B', fontSize: '0.72rem' }}>
+                <Lock size={12} color="#0084D6" style={{ flexShrink: 0 }} />
                 <span>{t.modal.privacyNote}</span>
               </div>
 
@@ -311,12 +321,12 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 type="submit"
                 disabled={loading}
                 className="btn-gold"
-                style={{ width: '100%', marginTop: '0.3rem', padding: '0.85rem' }}
+                style={{ width: '100%', marginTop: '0.25rem', padding: '0.8rem' }}
               >
                 {loading ? t.modal.submitting : (
                   <>
                     {t.modal.submitBtn}
-                    <ArrowRight size={16} />
+                    <ArrowRight size={15} />
                   </>
                 )}
               </button>

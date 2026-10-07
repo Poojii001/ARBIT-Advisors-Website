@@ -63,7 +63,7 @@ export default function Footer({ onOpenConsultation }) {
       style={{
         backgroundColor: '#071026',
         color: '#94A3B8',
-        padding: '5rem 0 2rem 0',
+        padding: 'clamp(3rem, 5vw, 4.5rem) 0 2rem 0',
         borderTop: '1px solid rgba(255, 255, 255, 0.08)',
         position: 'relative',
       }}
@@ -73,10 +73,10 @@ export default function Footer({ onOpenConsultation }) {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '1.25rem',
-            marginBottom: '4rem',
-            padding: '1.6rem 1.8rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
+            gap: '1rem',
+            marginBottom: 'clamp(2.5rem, 4vw, 3.5rem)',
+            padding: 'clamp(1.2rem, 2.5vw, 1.6rem) clamp(1rem, 2.5vw, 1.8rem)',
             backgroundColor: '#0A1931',
             borderRadius: '10px',
             border: '1px solid rgba(255, 255, 255, 0.08)',
@@ -88,9 +88,9 @@ export default function Footer({ onOpenConsultation }) {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '1rem',
+              gap: '0.85rem',
               color: '#FFFFFF',
-              padding: '0.5rem',
+              padding: '0.4rem',
               borderRadius: '6px',
               transition: 'all 0.2s ease',
             }}
@@ -99,8 +99,8 @@ export default function Footer({ onOpenConsultation }) {
           >
             <div
               style={{
-                width: '42px',
-                height: '42px',
+                width: '40px',
+                height: '40px',
                 borderRadius: '8px',
                 backgroundColor: 'rgba(0, 132, 214, 0.15)',
                 border: '1px solid rgba(0, 132, 214, 0.3)',
@@ -114,10 +114,10 @@ export default function Footer({ onOpenConsultation }) {
               <Phone size={18} />
             </div>
             <div>
-              <div style={{ fontSize: '0.74rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.72rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
                 {t.contact.phoneLabel}
               </div>
-              <div style={{ fontSize: '0.96rem', fontWeight: 700, color: '#FFFFFF' }}>
+              <div style={{ fontSize: '0.94rem', fontWeight: 700, color: '#FFFFFF' }}>
                 {t.contact.phone}
               </div>
             </div>
@@ -129,9 +129,9 @@ export default function Footer({ onOpenConsultation }) {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '1rem',
+              gap: '0.85rem',
               color: '#FFFFFF',
-              padding: '0.5rem',
+              padding: '0.4rem',
               borderRadius: '6px',
               transition: 'all 0.2s ease',
             }}
@@ -140,8 +140,8 @@ export default function Footer({ onOpenConsultation }) {
           >
             <div
               style={{
-                width: '42px',
-                height: '42px',
+                width: '40px',
+                height: '40px',
                 borderRadius: '8px',
                 backgroundColor: 'rgba(255, 255, 255, 0.04)',
                 border: '1px solid rgba(255, 255, 255, 0.12)',
@@ -155,10 +155,10 @@ export default function Footer({ onOpenConsultation }) {
               <Mail size={18} />
             </div>
             <div>
-              <div style={{ fontSize: '0.74rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.72rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
                 {t.contact.emailLabel}
               </div>
-              <div style={{ fontSize: '0.96rem', fontWeight: 700, color: '#FFFFFF' }}>
+              <div style={{ fontSize: '0.94rem', fontWeight: 700, color: '#FFFFFF' }}>
                 {t.contact.email}
               </div>
             </div>
@@ -172,9 +172,9 @@ export default function Footer({ onOpenConsultation }) {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '1rem',
+              gap: '0.85rem',
               color: '#FFF',
-              padding: '0.5rem',
+              padding: '0.4rem',
               borderRadius: '6px',
               transition: 'all 0.2s ease',
             }}
@@ -183,8 +183,8 @@ export default function Footer({ onOpenConsultation }) {
           >
             <div
               style={{
-                width: '42px',
-                height: '42px',
+                width: '40px',
+                height: '40px',
                 borderRadius: '50%',
                 backgroundColor: 'rgba(37, 211, 102, 0.15)',
                 border: '1px solid #25D366',
@@ -198,10 +198,10 @@ export default function Footer({ onOpenConsultation }) {
               <MessageSquare size={18} />
             </div>
             <div>
-              <div style={{ fontSize: '0.75rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.72rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
                 {t.contact.whatsappLabel}
               </div>
-              <div style={{ fontSize: '0.98rem', fontWeight: 700, color: '#25D366' }}>
+              <div style={{ fontSize: '0.94rem', fontWeight: 700, color: '#25D366' }}>
                 {t.contact.chatOnWhatsapp} &rarr;
               </div>
             </div>
@@ -213,18 +213,18 @@ export default function Footer({ onOpenConsultation }) {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '2.5rem',
-            marginBottom: '2.25rem',
+            gap: 'clamp(1.5rem, 3vw, 2.5rem)',
+            marginBottom: '2rem',
           }}
         >
-          {/* Col 1: Brand & Identity (3.5 cols) */}
+          {/* Col 1: Brand & Identity */}
           <div style={{ gridColumn: 'span 12' }} className="footer-brand-col">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.9rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <img
                 src="/assets/arbit_logo.png"
                 alt="Arbit Advisors"
                 style={{
-                  height: '44px',
+                  height: '40px',
                   width: 'auto',
                   objectFit: 'contain',
                   borderRadius: '4px',
@@ -232,31 +232,31 @@ export default function Footer({ onOpenConsultation }) {
               />
 
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                  <span style={{ fontSize: '1.2rem', fontWeight: 800, letterSpacing: '0.08em', color: '#FFF' }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '5px' }}>
+                  <span style={{ fontSize: '1.15rem', fontWeight: 800, letterSpacing: '0.08em', color: '#FFF' }}>
                     ARBIT
                   </span>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.14em', color: 'var(--theme-primary)' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', color: 'var(--theme-primary)' }}>
                     ADVISORS
                   </span>
                 </div>
-                <span style={{ fontSize: '0.55rem', letterSpacing: '0.22em', color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: '-2px' }}>
+                <span style={{ fontSize: '0.54rem', letterSpacing: '0.22em', color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: '-2px' }}>
                   {t.nav.tagline}
                 </span>
               </div>
             </div>
 
-            <p style={{ fontSize: '0.88rem', lineHeight: 1.6, color: '#94A3B8', maxWidth: '300px' }}>
+            <p style={{ fontSize: '0.86rem', lineHeight: 1.6, color: '#94A3B8', maxWidth: '320px' }}>
               {t.footer.brandDesc}
             </p>
           </div>
 
-          {/* Col 2: Quick Links (2 cols) */}
+          {/* Col 2: Quick Links */}
           <div style={{ gridColumn: 'span 6' }} className="footer-links-col">
-            <h4 style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+            <h4 style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '1rem' }}>
               {t.footer.quickLinks}
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.88rem' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.86rem' }}>
               <li><a href="#home" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.nav.home}</a></li>
               <li><a href="#about" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.nav.about}</a></li>
               <li><a href="#services" style={{ color: '#94A3B8' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--theme-cyan)')} onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}>{t.nav.services}</a></li>
@@ -266,12 +266,12 @@ export default function Footer({ onOpenConsultation }) {
             </ul>
           </div>
 
-          {/* Col 3: Our Services (Harmonized with Homepage Cards) (2.5 cols) */}
+          {/* Col 3: Our Services */}
           <div style={{ gridColumn: 'span 6' }} className="footer-services-col">
-            <h4 style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+            <h4 style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '1rem' }}>
               {t.footer.ourServices}
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.88rem' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem', fontSize: '0.86rem' }}>
               {t.capabilities.items.map((item, i) => (
                 <li key={i}>
                   <a
@@ -287,14 +287,14 @@ export default function Footer({ onOpenConsultation }) {
             </ul>
           </div>
 
-          {/* Col 4: Connect & Newsletter (4 cols) */}
+          {/* Col 4: Connect & Newsletter */}
           <div style={{ gridColumn: 'span 12' }} className="footer-stay-updated-col">
             {/* Social Icons */}
             <div style={{ marginBottom: '1.25rem' }}>
-              <h4 style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '1rem' }}>
+              <h4 style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '0.85rem' }}>
                 {t.footer.connectWithUs}
               </h4>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
                 {socialLinks.map((social, i) => (
                   <a
                     key={i}
@@ -333,14 +333,14 @@ export default function Footer({ onOpenConsultation }) {
 
             {/* Stay Updated Newsletter Box */}
             <div>
-              <h4 style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+              <h4 style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
                 {t.footer.stayUpdated}
               </h4>
-              <p style={{ fontSize: '0.82rem', color: '#94A3B8', marginBottom: '0.85rem' }}>
+              <p style={{ fontSize: '0.82rem', color: '#94A3B8', marginBottom: '0.75rem' }}>
                 {t.footer.stayUpdatedSub}
               </p>
 
-              <form onSubmit={handleSubscribe} style={{ display: 'flex', maxWidth: '340px' }}>
+              <form onSubmit={handleSubscribe} style={{ display: 'flex', width: '100%', maxWidth: '340px' }}>
                 <input
                   type="email"
                   required
@@ -349,12 +349,13 @@ export default function Footer({ onOpenConsultation }) {
                   onChange={(e) => setEmail(e.target.value)}
                   style={{
                     flex: 1,
-                    padding: '0.75rem 1rem',
+                    minWidth: 0,
+                    padding: '0.7rem 0.85rem',
                     backgroundColor: 'rgba(10, 18, 36, 0.8)',
                     border: '1px solid rgba(255, 255, 255, 0.15)',
                     borderRight: 'none',
                     borderRadius: '4px 0 0 4px',
-                    fontSize: '0.85rem',
+                    fontSize: '0.84rem',
                     color: '#FFF',
                     outline: 'none',
                   }}
@@ -365,7 +366,7 @@ export default function Footer({ onOpenConsultation }) {
                   type="submit"
                   aria-label="Subscribe to newsletter"
                   style={{
-                    padding: '0.75rem 1.1rem',
+                    padding: '0.7rem 1rem',
                     backgroundColor: 'var(--theme-primary)',
                     color: '#FFFFFF',
                     borderRadius: '0 4px 4px 0',
@@ -375,7 +376,7 @@ export default function Footer({ onOpenConsultation }) {
                     fontWeight: 700,
                   }}
                 >
-                  {subscribed ? <Check size={18} color="#FFFFFF" /> : <ArrowRight size={18} />}
+                  {subscribed ? <Check size={18} color="#FFFFFF" /> : <ArrowRight size={17} />}
                 </button>
               </form>
               {subscribed && (
@@ -390,22 +391,22 @@ export default function Footer({ onOpenConsultation }) {
         {/* Regulatory & No Government Affiliation Disclaimer */}
         <div
           style={{
-            padding: '1.25rem 1.5rem',
+            padding: 'clamp(1rem, 2.5vw, 1.25rem) clamp(1rem, 2.5vw, 1.5rem)',
             backgroundColor: 'rgba(14, 26, 56, 0.75)',
             border: '1px solid rgba(255, 255, 255, 0.08)',
             borderRadius: '6px',
-            marginBottom: '2rem',
+            marginBottom: '1.75rem',
             display: 'flex',
             alignItems: 'flex-start',
-            gap: '1rem',
+            gap: '0.85rem',
           }}
         >
           <ShieldAlert size={20} color="var(--theme-cyan)" style={{ flexShrink: 0, marginTop: '2px' }} />
           <div>
-            <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--theme-light)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.25rem' }}>
+            <div style={{ fontSize: '0.76rem', fontWeight: 700, color: 'var(--theme-light)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.25rem' }}>
               {t.disclaimer.title}
             </div>
-            <p style={{ fontSize: '0.78rem', lineHeight: 1.55, color: '#94A3B8' }}>
+            <p style={{ fontSize: '0.76rem', lineHeight: 1.55, color: '#94A3B8' }}>
               {t.disclaimer.text}
             </p>
           </div>
@@ -414,7 +415,7 @@ export default function Footer({ onOpenConsultation }) {
         {/* Bottom Copyright & Legal */}
         <div
           style={{
-            paddingTop: '1.5rem',
+            paddingTop: '1.25rem',
             borderTop: '1px solid rgba(255, 255, 255, 0.06)',
             display: 'flex',
             flexWrap: 'wrap',
@@ -426,7 +427,7 @@ export default function Footer({ onOpenConsultation }) {
           }}
         >
           <div>&copy; 2026 Arbit Advisors. {t.footer.rights}</div>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
+          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
             <a href="#privacy" style={{ color: '#64748B' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#64748B')}>{t.footer.privacyPolicy}</a>
             <a href="#terms" style={{ color: '#64748B' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF')} onMouseLeave={(e) => (e.currentTarget.style.color = '#64748B')}>{t.footer.termsConditions}</a>
           </div>
@@ -446,6 +447,25 @@ export default function Footer({ onOpenConsultation }) {
           }
           .footer-stay-updated-col {
             grid-column: span 4 !important;
+          }
+        }
+        @media (min-width: 600px) and (max-width: 991px) {
+          .footer-brand-col {
+            grid-column: span 6 !important;
+          }
+          .footer-stay-updated-col {
+            grid-column: span 6 !important;
+          }
+          .footer-links-col {
+            grid-column: span 6 !important;
+          }
+          .footer-services-col {
+            grid-column: span 6 !important;
+          }
+        }
+        @media (max-width: 599px) {
+          .footer-brand-col, .footer-links-col, .footer-services-col, .footer-stay-updated-col {
+            grid-column: span 12 !important;
           }
         }
       `}</style>

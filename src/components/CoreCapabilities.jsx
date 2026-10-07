@@ -15,16 +15,16 @@ export default function CoreCapabilities({ onOpenConsultation }) {
     <section
       id="services"
       style={{
-        padding: '5.5rem 0',
+        padding: 'clamp(3.5rem, 6vw, 5.5rem) 0',
         backgroundColor: '#FFFFFF',
         borderBottom: '1px solid #E2E8F0',
         position: 'relative',
       }}
     >
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '2.5rem', alignItems: 'stretch' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: 'clamp(1.75rem, 3vw, 2.5rem)', alignItems: 'stretch' }}>
           
-          {/* Left Column: Heading & Introduction (4 cols) */}
+          {/* Left Column: Heading & Introduction (4 cols on desktop) */}
           <div style={{ gridColumn: 'span 12' }} className="capabilities-left-col">
             <div className="gold-badge" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', fontWeight: 700, color: '#D97706' }}>
               {t.capabilities.badge}
@@ -32,7 +32,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
             
             <h2
               style={{
-                fontSize: 'clamp(1.8rem, 2.9vw, 2.45rem)',
+                fontSize: 'clamp(1.75rem, 3.2vw, 2.45rem)',
                 fontWeight: 800,
                 color: '#0A1931',
                 lineHeight: 1.25,
@@ -45,11 +45,11 @@ export default function CoreCapabilities({ onOpenConsultation }) {
 
             <p
               style={{
-                fontSize: '0.98rem',
+                fontSize: 'clamp(0.92rem, 1.3vw, 0.98rem)',
                 color: '#475569',
                 lineHeight: 1.68,
                 marginBottom: '1.8rem',
-                maxWidth: '380px',
+                maxWidth: '420px',
               }}
             >
               {t.capabilities.description}
@@ -58,20 +58,20 @@ export default function CoreCapabilities({ onOpenConsultation }) {
             <button
               onClick={() => setSelectedServiceIndex(0)}
               className="btn-gold-outline"
-              style={{ padding: '0.78rem 1.5rem', fontSize: '0.86rem' }}
+              style={{ padding: '0.75rem 1.5rem', fontSize: '0.86rem' }}
             >
               {t.capabilities.exploreBtn}
               <ArrowRight size={15} />
             </button>
           </div>
 
-          {/* Right Column: Capability Cards (8 cols) */}
+          {/* Right Column: Capability Cards (8 cols on desktop) */}
           <div style={{ gridColumn: 'span 12' }} className="capabilities-right-col">
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+                gap: 'clamp(1.2rem, 2vw, 1.5rem)',
                 height: '100%',
               }}
             >
@@ -82,7 +82,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                     key={cap.number}
                     className="glass-card"
                     style={{
-                      padding: '2.2rem 1.7rem',
+                      padding: 'clamp(1.5rem, 3vw, 2.2rem) clamp(1.25rem, 2.5vw, 1.7rem)',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
@@ -97,7 +97,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                           fontFamily: 'var(--font-mono)',
                           fontWeight: 700,
                           color: '#0084D6',
-                          marginBottom: '1.25rem',
+                          marginBottom: '1rem',
                         }}
                       >
                         {cap.number}
@@ -106,15 +106,15 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                       {/* Icon with Electric Azure Background */}
                       <div
                         style={{
-                          width: '46px',
-                          height: '46px',
+                          width: '44px',
+                          height: '44px',
                           borderRadius: '8px',
                           border: '1px solid #DBEAFE',
                           backgroundColor: '#EFF6FF',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          marginBottom: '1.25rem',
+                          marginBottom: '1.15rem',
                           color: '#0084D6',
                         }}
                       >
@@ -124,7 +124,7 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                       {/* Title */}
                       <h3
                         style={{
-                          fontSize: '1.25rem',
+                          fontSize: 'clamp(1.15rem, 2vw, 1.25rem)',
                           fontWeight: 700,
                           color: '#0A1931',
                           marginBottom: '0.75rem',
@@ -160,7 +160,8 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                           color: '#0084D6',
                           letterSpacing: '0.01em',
                           transition: 'all 0.2s ease',
-                          padding: '4px 0',
+                          padding: '6px 0',
+                          minHeight: '36px',
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.transform = 'translateX(4px)';
@@ -188,48 +189,53 @@ export default function CoreCapabilities({ onOpenConsultation }) {
           <div
             className="modal-content"
             onClick={(e) => e.stopPropagation()}
-            style={{ padding: '2.5rem' }}
+            style={{ padding: 'clamp(1.5rem, 4vw, 2.5rem)', maxWidth: '620px' }}
           >
             <button
               onClick={() => setSelectedServiceIndex(null)}
+              aria-label="Close modal"
               style={{
                 position: 'absolute',
-                top: '1.5rem',
-                right: '1.5rem',
+                top: '1.2rem',
+                right: '1.2rem',
                 color: '#64748B',
-                padding: '0.3rem',
+                padding: '0.4rem',
                 borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: '#F1F5F9',
               }}
             >
-              <X size={20} />
+              <X size={18} />
             </button>
 
             <div className="gold-badge" style={{ marginBottom: '0.5rem', color: '#D97706' }}>
               {t.capabilities.modalBadge} &bull; {selectedService.number}
             </div>
-            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0A1931', marginBottom: '1rem' }}>
+            <h3 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 800, color: '#0A1931', marginBottom: '0.85rem' }}>
               {selectedService.title}
             </h3>
-            <p style={{ color: '#475569', fontSize: '0.98rem', lineHeight: 1.6, marginBottom: '1.8rem' }}>
+            <p style={{ color: '#475569', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
               {selectedService.description}
             </p>
 
-            <div style={{ marginBottom: '2rem' }}>
-              <h4 style={{ fontSize: '0.88rem', letterSpacing: '0.08em', color: '#0084D6', textTransform: 'uppercase', marginBottom: '1rem', fontWeight: 700 }}>
+            <div style={{ marginBottom: '1.8rem' }}>
+              <h4 style={{ fontSize: '0.84rem', letterSpacing: '0.08em', color: '#0084D6', textTransform: 'uppercase', marginBottom: '0.85rem', fontWeight: 700 }}>
                 {t.capabilities.deliverablesTitle}
               </h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {selectedService.details.map((item, idx) => (
-                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                    <CheckCircle2 size={18} color="#0084D6" style={{ flexShrink: 0, marginTop: '2px' }} />
-                    <span style={{ fontSize: '0.92rem', color: '#334155', lineHeight: 1.5 }}>{item}</span>
+                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
+                    <CheckCircle2 size={17} color="#0084D6" style={{ flexShrink: 0, marginTop: '3px' }} />
+                    <span style={{ fontSize: '0.9rem', color: '#334155', lineHeight: 1.5 }}>{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end', paddingTop: '1rem', borderTop: '1px solid #E2E8F0' }}>
-              <button onClick={() => setSelectedServiceIndex(null)} className="btn-gold-outline" style={{ padding: '0.75rem 1.4rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'flex-end', paddingTop: '1rem', borderTop: '1px solid #E2E8F0' }}>
+              <button onClick={() => setSelectedServiceIndex(null)} className="btn-gold-outline" style={{ padding: '0.7rem 1.3rem' }}>
                 {t.capabilities.closeBtn}
               </button>
               <button
@@ -238,10 +244,10 @@ export default function CoreCapabilities({ onOpenConsultation }) {
                   onOpenConsultation();
                 }}
                 className="btn-gold"
-                style={{ padding: '0.75rem 1.5rem' }}
+                style={{ padding: '0.7rem 1.4rem' }}
               >
                 {t.capabilities.inquireBtn}
-                <ArrowRight size={16} />
+                <ArrowRight size={15} />
               </button>
             </div>
           </div>

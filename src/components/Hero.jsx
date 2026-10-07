@@ -10,36 +10,36 @@ export default function Hero({ onOpenConsultation }) {
       id="home"
       style={{
         position: 'relative',
-        minHeight: '84vh',
+        minHeight: 'clamp(520px, 82vh, 760px)',
         display: 'flex',
         alignItems: 'center',
-        padding: '3.5rem 0 4.5rem 0',
+        padding: 'clamp(2.5rem, 5vw, 4.5rem) 0',
         overflow: 'hidden',
         backgroundColor: '#FFFFFF',
       }}
     >
-      {/* Clear Background Graphic using home.png (Parliament building) on the right */}
+      {/* Parliament Background Image (Responsive width & position) */}
       <div
+        className="hero-bg-graphic"
         style={{
           position: 'absolute',
           top: 0,
           right: 0,
-          width: '68%',
           height: '100%',
           backgroundImage: 'url(/assets/home.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'right 35%',
-          opacity: 0.98,
+          opacity: 0.95,
           zIndex: 0,
         }}
       />
 
       {/* Seamless Soft Fade Gradient from Pure White to Transparent Image */}
       <div
+        className="hero-gradient-overlay"
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 36%, rgba(255, 255, 255, 0.88) 54%, rgba(255, 255, 255, 0.2) 80%, transparent 100%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
@@ -51,8 +51,8 @@ export default function Hero({ onOpenConsultation }) {
           position: 'absolute',
           top: '-10%',
           left: '-5%',
-          width: '450px',
-          height: '450px',
+          width: 'clamp(250px, 40vw, 450px)',
+          height: 'clamp(250px, 40vw, 450px)',
           background: 'radial-gradient(circle, rgba(254, 243, 199, 0.5) 0%, transparent 70%)',
           zIndex: 1,
           pointerEvents: 'none',
@@ -60,9 +60,9 @@ export default function Hero({ onOpenConsultation }) {
       />
 
       <div className="container" style={{ zIndex: 2, position: 'relative', width: '100%' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '2rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: 'clamp(1rem, 3vw, 2rem)', alignItems: 'center' }}>
           
-          {/* Left Hero Content Column (7 cols) */}
+          {/* Left Hero Content Column */}
           <div style={{ gridColumn: 'span 12' }} className="hero-content-col">
             
             {/* Tag Badge */}
@@ -70,8 +70,7 @@ export default function Hero({ onOpenConsultation }) {
               className="gold-badge animate-fade-in"
               style={{
                 letterSpacing: '0.16em',
-                marginBottom: '1rem',
-                fontSize: '0.74rem',
+                marginBottom: 'clamp(0.75rem, 2vw, 1.1rem)',
                 fontWeight: 700,
                 color: '#D97706',
               }}
@@ -83,13 +82,13 @@ export default function Hero({ onOpenConsultation }) {
             <h1
               className="animate-fade-in"
               style={{
-                fontSize: 'clamp(2.2rem, 3.8vw, 3.15rem)',
+                fontSize: 'clamp(1.95rem, 4.2vw, 3.25rem)',
                 lineHeight: 1.2,
                 fontWeight: 800,
                 letterSpacing: '-0.02em',
                 color: '#0A1931',
-                marginBottom: '1.25rem',
-                maxWidth: '660px',
+                marginBottom: 'clamp(1rem, 2.5vw, 1.4rem)',
+                maxWidth: '680px',
               }}
             >
               {t.hero.title1}<br />
@@ -101,30 +100,24 @@ export default function Hero({ onOpenConsultation }) {
             <p
               className="animate-fade-in"
               style={{
-                fontSize: '1.02rem',
-                lineHeight: 1.72,
+                fontSize: 'clamp(0.92rem, 1.4vw, 1.04rem)',
+                lineHeight: 1.7,
                 color: '#334155',
-                maxWidth: '560px',
-                marginBottom: '2rem',
+                maxWidth: '580px',
+                marginBottom: 'clamp(1.5rem, 3vw, 2.2rem)',
                 fontWeight: 400,
               }}
             >
               {t.hero.subtitle}
             </p>
 
-            {/* Hero CTA Button - Electric Azure Blue from Logo */}
-            <div>
+            {/* Hero CTA Button */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
               <button
                 onClick={onOpenConsultation}
                 className="btn-gold"
                 style={{
-                  padding: '0.88rem 1.95rem',
-                  fontSize: '0.94rem',
-                  fontWeight: 700,
-                  backgroundColor: '#0084D6',
-                  color: '#FFFFFF',
-                  borderRadius: '6px',
-                  boxShadow: '0 4px 14px rgba(0, 132, 214, 0.35)',
+                  padding: 'clamp(0.78rem, 1.8vw, 0.92rem) clamp(1.4rem, 2.5vw, 2rem)',
                 }}
               >
                 {t.hero.cta}
@@ -134,16 +127,16 @@ export default function Hero({ onOpenConsultation }) {
 
           </div>
 
-          {/* Right Floating Strategic Pillar Typography */}
+          {/* Right Floating Strategic Pillar Typography (Desktop / Laptop Only) */}
           <div className="hero-pillars-watermark">
             <div
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '0.95rem',
+                gap: 'clamp(0.7rem, 1.2vw, 1rem)',
                 textAlign: 'right',
                 letterSpacing: '0.22em',
-                fontSize: '0.85rem',
+                fontSize: 'clamp(0.75rem, 1vw, 0.88rem)',
                 fontWeight: 700,
                 textTransform: 'uppercase',
               }}
@@ -167,7 +160,14 @@ export default function Hero({ onOpenConsultation }) {
       </div>
 
       <style>{`
+        /* Desktop & Laptop */
         @media (min-width: 992px) {
+          .hero-bg-graphic {
+            width: 68% !important;
+          }
+          .hero-gradient-overlay {
+            background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 36%, rgba(255, 255, 255, 0.88) 54%, rgba(255, 255, 255, 0.2) 80%, transparent 100%) !important;
+          }
           .hero-content-col {
             grid-column: span 7 !important;
           }
@@ -175,10 +175,40 @@ export default function Hero({ onOpenConsultation }) {
             grid-column: span 5 !important;
             display: flex !important;
             justify-content: flex-end !important;
-            padding-right: 2rem;
+            padding-right: 1.5rem;
           }
         }
-        @media (max-width: 991px) {
+
+        /* Tablet (768px - 991px) */
+        @media (min-width: 768px) and (max-width: 991px) {
+          .hero-bg-graphic {
+            width: 75% !important;
+            opacity: 0.7 !important;
+          }
+          .hero-gradient-overlay {
+            background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.95) 45%, rgba(255, 255, 255, 0.45) 85%, transparent 100%) !important;
+          }
+          .hero-content-col {
+            grid-column: span 12 !important;
+          }
+          .hero-pillars-watermark {
+            display: none !important;
+          }
+        }
+
+        /* Mobile (< 768px) */
+        @media (max-width: 767px) {
+          .hero-bg-graphic {
+            width: 100% !important;
+            background-position: center right !important;
+            opacity: 0.25 !important;
+          }
+          .hero-gradient-overlay {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.88) 100%) !important;
+          }
+          .hero-content-col {
+            grid-column: span 12 !important;
+          }
           .hero-pillars-watermark {
             display: none !important;
           }

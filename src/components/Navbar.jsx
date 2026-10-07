@@ -35,14 +35,14 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
         transition: 'all 0.3s ease',
       }}
     >
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '80px' }}>
+      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: '74px', padding: '0.6rem 1.25rem' }}>
         {/* Brand Logo */}
-        <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '0.9rem' }}>
+        <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
           <img
             src="/assets/arbit_logo.png"
             alt="Arbit Advisors"
             style={{
-              height: '44px',
+              height: 'clamp(36px, 4vw, 44px)',
               width: 'auto',
               objectFit: 'contain',
               borderRadius: '4px',
@@ -50,15 +50,15 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
           />
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-              <span style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '0.08em', color: '#FFFFFF' }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '5px' }}>
+              <span style={{ fontSize: 'clamp(1.1rem, 2.2vw, 1.25rem)', fontWeight: 800, letterSpacing: '0.08em', color: '#FFFFFF' }}>
                 ARBIT
               </span>
-              <span style={{ fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.14em', color: '#0084D6' }}>
+              <span style={{ fontSize: 'clamp(0.72rem, 1.5vw, 0.8rem)', fontWeight: 800, letterSpacing: '0.14em', color: '#0084D6' }}>
                 ADVISORS
               </span>
             </div>
-            <span style={{ fontSize: '0.58rem', letterSpacing: '0.22em', color: '#94A3B8', textTransform: 'uppercase', marginTop: '-2px' }}>
+            <span className="navbar-tagline" style={{ fontSize: '0.56rem', letterSpacing: '0.2em', color: '#94A3B8', textTransform: 'uppercase', marginTop: '-2px' }}>
               {t.nav.tagline}
             </span>
           </div>
@@ -66,7 +66,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
 
         {/* Desktop Navigation Links */}
         <nav style={{ display: 'none' }} className="desktop-nav">
-          <ul style={{ display: 'flex', alignItems: 'center', gap: '2.2rem', listStyle: 'none' }}>
+          <ul style={{ display: 'flex', alignItems: 'center', gap: 'clamp(1.2rem, 2.2vw, 2.2rem)', listStyle: 'none' }}>
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -74,13 +74,14 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
                   <a
                     href={link.href}
                     style={{
-                      fontSize: '0.92rem',
+                      fontSize: 'clamp(0.85rem, 1.1vw, 0.92rem)',
                       fontWeight: isActive ? 700 : 500,
                       color: isActive ? '#FFFFFF' : '#CBD5E1',
                       letterSpacing: '0.01em',
                       padding: '8px 0',
                       display: 'inline-block',
                       transition: 'color 0.2s ease',
+                      whiteSpace: 'nowrap',
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#00A3FF')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? '#FFFFFF' : '#CBD5E1')}
@@ -107,7 +108,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
         </nav>
 
         {/* Right CTA Button & Language Switcher */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           {/* Language Switcher Pill */}
           <button
             onClick={toggleLanguage}
@@ -115,16 +116,17 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.45rem',
-              padding: '0.45rem 0.85rem',
+              gap: '0.35rem',
+              padding: '0.4rem 0.75rem',
               borderRadius: '20px',
               border: '1px solid rgba(0, 132, 214, 0.45)',
               backgroundColor: 'rgba(0, 132, 214, 0.1)',
               color: '#FFFFFF',
-              fontSize: '0.82rem',
+              fontSize: '0.78rem',
               fontWeight: 600,
               cursor: 'pointer',
               transition: 'all 0.2s ease',
+              minHeight: '36px',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = 'rgba(0, 132, 214, 0.2)';
@@ -135,7 +137,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               e.currentTarget.style.borderColor = 'rgba(0, 132, 214, 0.45)';
             }}
           >
-            <Globe size={14} color="#00A3FF" />
+            <Globe size={13} color="#00A3FF" />
             <span style={{ color: language === 'en' ? '#00A3FF' : '#94A3B8' }}>EN</span>
             <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>|</span>
             <span style={{ color: language === 'hi' ? '#00A3FF' : '#94A3B8' }}>हिंदी</span>
@@ -149,8 +151,8 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               alignItems: 'center',
               justifyContent: 'center',
               gap: '0.5rem',
-              padding: '0.65rem 1.4rem',
-              fontSize: '0.88rem',
+              padding: '0.6rem 1.25rem',
+              fontSize: '0.85rem',
               fontWeight: 700,
               backgroundColor: '#0084D6',
               color: '#FFFFFF',
@@ -159,6 +161,8 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               boxShadow: '0 4px 14px rgba(0, 132, 214, 0.3)',
               cursor: 'pointer',
               transition: 'all 0.2s ease',
+              whiteSpace: 'nowrap',
+              minHeight: '38px',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = '#006EB3';
@@ -170,7 +174,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
             }}
           >
             {t.nav.getInTouch}
-            <ArrowRight size={15} />
+            <ArrowRight size={14} />
           </button>
 
           {/* Mobile Hamburger Toggle */}
@@ -183,12 +187,15 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               alignItems: 'center',
               justifyContent: 'center',
               color: '#00A3FF',
-              padding: '0.5rem',
-              borderRadius: '4px',
+              padding: '0.45rem',
+              borderRadius: '6px',
               border: '1px solid rgba(0, 132, 214, 0.4)',
+              backgroundColor: 'rgba(0, 132, 214, 0.08)',
+              minHeight: '38px',
+              minWidth: '38px',
             }}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
@@ -199,28 +206,36 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
           style={{
             backgroundColor: '#071026',
             borderBottom: '1px solid rgba(0, 132, 214, 0.3)',
-            padding: '1.5rem',
+            padding: '1.25rem 1.5rem 1.75rem 1.5rem',
             display: 'flex',
             flexDirection: 'column',
-            gap: '1rem',
+            gap: '0.85rem',
+            animation: 'fadeIn 0.2s ease forwards',
           }}
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.id}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              style={{
-                fontSize: '1rem',
-                fontWeight: 600,
-                color: '#E2E8F0',
-                padding: '0.5rem 0',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-              }}
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <a
+                key={link.id}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                style={{
+                  fontSize: '1rem',
+                  fontWeight: isActive ? 700 : 600,
+                  color: isActive ? '#00A3FF' : '#E2E8F0',
+                  padding: '0.6rem 0',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <span>{link.name}</span>
+                {isActive && <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#0084D6' }} />}
+              </a>
+            );
+          })}
 
           {/* Language Toggle in Mobile Drawer */}
           <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
@@ -228,13 +243,14 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               onClick={() => setLanguage('en')}
               style={{
                 flex: 1,
-                padding: '0.6rem',
-                borderRadius: '4px',
+                padding: '0.65rem',
+                borderRadius: '6px',
                 border: language === 'en' ? '1px solid #0084D6' : '1px solid rgba(255, 255, 255, 0.1)',
                 backgroundColor: language === 'en' ? 'rgba(0, 132, 214, 0.2)' : 'transparent',
                 color: language === 'en' ? '#00A3FF' : '#94A3B8',
                 fontWeight: 600,
                 fontSize: '0.9rem',
+                minHeight: '42px',
               }}
             >
               English
@@ -243,13 +259,14 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               onClick={() => setLanguage('hi')}
               style={{
                 flex: 1,
-                padding: '0.6rem',
-                borderRadius: '4px',
+                padding: '0.65rem',
+                borderRadius: '6px',
                 border: language === 'hi' ? '1px solid #0084D6' : '1px solid rgba(255, 255, 255, 0.1)',
                 backgroundColor: language === 'hi' ? 'rgba(0, 132, 214, 0.2)' : 'transparent',
                 color: language === 'hi' ? '#00A3FF' : '#94A3B8',
                 fontWeight: 600,
                 fontSize: '0.9rem',
+                minHeight: '42px',
               }}
             >
               हिंदी
@@ -262,7 +279,7 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
               onOpenConsultation();
             }}
             className="btn-gold"
-            style={{ width: '100%', marginTop: '0.5rem' }}
+            style={{ width: '100%', marginTop: '0.5rem', padding: '0.85rem' }}
           >
             {t.nav.getInTouch}
             <ArrowRight size={16} />
@@ -272,12 +289,18 @@ export default function Navbar({ onOpenConsultation, activeSection }) {
 
       {/* Responsive media query styles */}
       <style>{`
-        @media (min-width: 900px) {
+        @media (min-width: 992px) {
           .desktop-nav { display: block !important; }
+          .desktop-btn { display: inline-flex !important; }
           .mobile-toggle { display: none !important; }
         }
-        @media (max-width: 899px) {
+        @media (max-width: 991px) {
+          .desktop-nav { display: none !important; }
           .desktop-btn { display: none !important; }
+          .mobile-toggle { display: flex !important; }
+        }
+        @media (max-width: 420px) {
+          .navbar-tagline { display: none !important; }
         }
       `}</style>
     </header>

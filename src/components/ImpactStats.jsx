@@ -58,7 +58,7 @@ export default function ImpactStats() {
       id="impact"
       style={{
         position: 'relative',
-        padding: '3.5rem 0',
+        padding: 'clamp(2.5rem, 5vw, 3.75rem) 0',
         backgroundColor: '#F8FAFC',
         overflow: 'hidden',
         borderTop: '1px solid #E2E8F0',
@@ -70,23 +70,23 @@ export default function ImpactStats() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '2rem',
+            gap: 'clamp(1.5rem, 3vw, 2.25rem)',
             alignItems: 'center',
           }}
         >
-          {/* Left Column: Heading (4 cols) */}
+          {/* Left Column: Heading (4 cols on desktop) */}
           <div style={{ gridColumn: 'span 12' }} className="compact-impact-left">
-            <div className="gold-badge" style={{ fontSize: '0.7rem', letterSpacing: '0.16em', fontWeight: 700, marginBottom: '0.5rem', color: '#D97706' }}>
+            <div className="gold-badge" style={{ fontSize: '0.7rem', letterSpacing: '0.16em', fontWeight: 700, marginBottom: '0.4rem', color: '#D97706' }}>
               {t.impact.badge}
             </div>
             <h2
               style={{
-                fontSize: 'clamp(1.6rem, 2.4vw, 2.1rem)',
+                fontSize: 'clamp(1.5rem, 2.8vw, 2.1rem)',
                 fontWeight: 800,
                 color: '#0A1931',
                 lineHeight: 1.22,
                 letterSpacing: '-0.015em',
-                marginBottom: '0.75rem',
+                marginBottom: '0.65rem',
               }}
             >
               {t.impact.title1}<br />
@@ -98,10 +98,10 @@ export default function ImpactStats() {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '0.5rem',
+                gap: '0.45rem',
                 color: '#64748B',
                 fontSize: '0.74rem',
-                marginTop: '0.5rem',
+                marginTop: '0.4rem',
               }}
             >
               <Info size={13} color="#0084D6" style={{ flexShrink: 0 }} />
@@ -109,13 +109,13 @@ export default function ImpactStats() {
             </div>
           </div>
 
-          {/* Right Column: 3 Compact Metric Cards (8 cols) */}
+          {/* Right Column: 3 Compact Metric Cards (8 cols on desktop) */}
           <div style={{ gridColumn: 'span 12' }} className="compact-impact-right">
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                gap: '1.25rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
+                gap: 'clamp(0.85rem, 2vw, 1.25rem)',
               }}
             >
               {stats.map((item, index) => {
@@ -124,7 +124,7 @@ export default function ImpactStats() {
                   <div
                     key={index}
                     style={{
-                      padding: '1.4rem 1.2rem',
+                      padding: 'clamp(1.1rem, 2vw, 1.4rem) clamp(1rem, 2vw, 1.2rem)',
                       backgroundColor: '#FFFFFF',
                       border: '1px solid #E2E8F0',
                       borderRadius: '10px',
@@ -154,7 +154,7 @@ export default function ImpactStats() {
 
                       <div
                         style={{
-                          fontSize: 'clamp(1.7rem, 2.2vw, 2.2rem)',
+                          fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)',
                           fontWeight: 800,
                           color: '#0A1931',
                           fontFamily: 'var(--font-mono)',
@@ -168,7 +168,7 @@ export default function ImpactStats() {
 
                       <div
                         style={{
-                          fontSize: '0.74rem',
+                          fontSize: '0.72rem',
                           fontWeight: 700,
                           letterSpacing: '0.08em',
                           color: '#D97706',
