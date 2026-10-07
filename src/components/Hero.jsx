@@ -13,6 +13,8 @@ export default function Hero({ onOpenConsultation }) {
     {
       id: 1,
       image: '/assets/sansadbhavan1.jpg',
+      bgPosition: 'center 42%',
+      scale: 1.20,
       badge: t.hero?.badge || 'POLITICAL PR & STRATEGIC ADVISORY',
       title1: t.hero?.title1 || 'Shaping Political Narratives,',
       title2: t.hero?.title2 || 'Driving Electoral Success.',
@@ -23,6 +25,8 @@ export default function Hero({ onOpenConsultation }) {
     {
       id: 2,
       image: '/assets/sansadbhavan2.jpg',
+      bgPosition: 'center 45%',
+      scale: 1.02,
       badge: 'DATA-DRIVEN ELECTORAL INTELLIGENCE',
       title1: 'Empowering Visionary Leaders,',
       title2: 'Winning Democratic Mandates.',
@@ -33,6 +37,8 @@ export default function Hero({ onOpenConsultation }) {
     {
       id: 3,
       image: '/assets/sansadbhavan3.jpg',
+      bgPosition: 'center 46%',
+      scale: 1.20,
       badge: 'MEDIA RELATIONS & CRISIS COMMAND',
       title1: 'Dominating Media Spheres,',
       title2: 'Fortifying Public Trust.',
@@ -101,6 +107,9 @@ export default function Hero({ onOpenConsultation }) {
       {/* Background Slides with Cross-Fade Transitions */}
       {slides.map((slide, index) => {
         const isActive = index === currentSlide;
+        const baseScale = slide.scale || (index === 0 || index === 2 ? 1.20 : 1.02);
+        const activeTransform = isActive ? `scale(${baseScale * 1.03})` : `scale(${baseScale})`;
+
         return (
           <div
             key={slide.id || index}
@@ -117,7 +126,7 @@ export default function Hero({ onOpenConsultation }) {
               opacity: isActive ? 1 : 0,
               zIndex: isActive ? 0 : -1,
               transition: 'opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 6s ease-out',
-              transform: isActive ? 'scale(1.02)' : 'scale(1)',
+              transform: activeTransform,
             }}
           />
         );

@@ -20,6 +20,8 @@ export const translations = {
         {
           id: 1,
           image: '/assets/sansadbhavan1.jpg',
+          bgPosition: 'center 42%',
+          scale: 1.20,
           badge: 'POLITICAL PR & STRATEGIC ADVISORY',
           title1: 'Shaping Political Narratives,',
           title2: 'Driving Electoral Success.',
@@ -31,6 +33,8 @@ export const translations = {
         {
           id: 2,
           image: '/assets/sansadbhavan2.jpg',
+          bgPosition: 'center 45%',
+          scale: 1.02,
           badge: 'DATA-DRIVEN ELECTORAL INTELLIGENCE',
           title1: 'Empowering Visionary Leaders,',
           title2: 'Winning Democratic Mandates.',
@@ -42,6 +46,8 @@ export const translations = {
         {
           id: 3,
           image: '/assets/sansadbhavan3.jpg',
+          bgPosition: 'center 46%',
+          scale: 1.20,
           badge: 'MEDIA RELATIONS & CRISIS COMMAND',
           title1: 'Dominating Media Spheres,',
           title2: 'Fortifying Public Trust.',
@@ -358,6 +364,8 @@ Our crisis framework establishes immediate forensic verification, direct escalat
         {
           id: 1,
           image: '/assets/sansadbhavan1.jpg',
+          bgPosition: 'center 42%',
+          scale: 1.20,
           badge: 'राजनीतिक पीआर एवं रणनीतिक परामर्श',
           title1: 'राजनीतिक आख्यान का निर्माण,',
           title2: 'चुनावी विजय का मजबूत आधार।',
@@ -369,6 +377,8 @@ Our crisis framework establishes immediate forensic verification, direct escalat
         {
           id: 2,
           image: '/assets/sansadbhavan2.jpg',
+          bgPosition: 'center 45%',
+          scale: 1.02,
           badge: 'डेटा-आधारित चुनावी रणनीति एवं बुद्धिमत्ता',
           title1: 'दूरदर्शी नेतृत्व का सशक्तीकरण,',
           title2: 'निर्णायक जनादेश की गारंटी।',
@@ -380,6 +390,8 @@ Our crisis framework establishes immediate forensic verification, direct escalat
         {
           id: 3,
           image: '/assets/sansadbhavan3.jpg',
+          bgPosition: 'center 46%',
+          scale: 1.20,
           badge: 'मीडिया संबंध एवं त्वरित संकट प्रबंधन',
           title1: 'मीडिया पटल पर सशक्त उपस्थिति,',
           title2: 'जनविश्वास का अटूट कवच।',
