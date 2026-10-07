@@ -113,7 +113,7 @@ export default function Hero({ onOpenConsultation }) {
               height: '100%',
               backgroundImage: `url(${slide.image})`,
               backgroundSize: 'cover',
-              backgroundPosition: 'center 40%',
+              backgroundPosition: slide.bgPosition || 'center 45%',
               opacity: isActive ? 1 : 0,
               zIndex: isActive ? 0 : -1,
               transition: 'opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 6s ease-out',
@@ -123,26 +123,12 @@ export default function Hero({ onOpenConsultation }) {
         );
       })}
 
-      {/* Light Soft Fade Gradient - Allows Background Image to be Clearly Visible */}
+      {/* Crystal Clear Light Fade Gradient - Minimal Whiteness for Maximum Image Visibility */}
       <div
         className="hero-gradient-overlay"
         style={{
           position: 'absolute',
           inset: 0,
-          zIndex: 1,
-          pointerEvents: 'none',
-        }}
-      />
-      
-      {/* Subtle Warm Amber Flourish in Top Left Corner */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '-10%',
-          left: '-5%',
-          width: 'clamp(200px, 30vw, 350px)',
-          height: 'clamp(200px, 30vw, 350px)',
-          background: 'radial-gradient(circle, rgba(254, 243, 199, 0.35) 0%, transparent 70%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
@@ -390,7 +376,7 @@ export default function Hero({ onOpenConsultation }) {
             opacity: 1 !important;
           }
           .hero-gradient-overlay {
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 40%, rgba(255, 255, 255, 0.35) 75%, rgba(255, 255, 255, 0.08) 100%) !important;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.65) 35%, rgba(255, 255, 255, 0.15) 65%, transparent 100%) !important;
           }
           .hero-content-col {
             grid-column: span 7 !important;
@@ -407,10 +393,10 @@ export default function Hero({ onOpenConsultation }) {
         @media (min-width: 768px) and (max-width: 991px) {
           .hero-bg-graphic {
             width: 100% !important;
-            opacity: 0.95 !important;
+            opacity: 1 !important;
           }
           .hero-gradient-overlay {
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.80) 52%, rgba(255, 255, 255, 0.35) 100%) !important;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.60) 48%, rgba(255, 255, 255, 0.15) 100%) !important;
           }
           .hero-content-col {
             grid-column: span 12 !important;
@@ -424,11 +410,11 @@ export default function Hero({ onOpenConsultation }) {
         @media (max-width: 767px) {
           .hero-bg-graphic {
             width: 100% !important;
-            background-position: center right !important;
-            opacity: 0.45 !important;
+            background-position: center center !important;
+            opacity: 0.6 !important;
           }
           .hero-gradient-overlay {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 55%, rgba(255, 255, 255, 0.5) 100%) !important;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.70) 50%, rgba(255, 255, 255, 0.25) 100%) !important;
           }
           .hero-content-col {
             grid-column: span 12 !important;
